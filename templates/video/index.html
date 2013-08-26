@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+	<div class="large-12 columns">
+		<h2>What's new</h2>
+	</div>
+	<div class="large-6 columns">
+		<img src="http://placehold.it/800x450" alt="" style="width: 100%">
+	</div>
+	<div class="large-6 columns">
+		<h3>{{ newest_video.title }}</h3>
+		<time>{{ newest_video.pub_date }}</time>
+		<p>{{ newest_video.description }}</p>
+	</div>
+</div>
+
+{% if video_list %}
+<div class="row">
+	<div class="large-12 columns">
+		<h2>Videos</h2>
+
+		<ul class="large-block-grid-3">
+			{% for video in video_list %}
+			<li><a href="{% url 'apps.video.views.video_detail' video.id %}">
+				<img src="http://placehold.it/400x225" alt="" style="width: 100%">
+				<h3>{{ video.title }}</h3>
+			</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+{% endif %}
+
+{% endblock %}

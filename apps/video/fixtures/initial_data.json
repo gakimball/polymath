@@ -1,0 +1,47 @@
+[
+    {
+        "fields": {
+            "description": "Produced by Ben Peterson and Drew Siner / Music by Sonith",
+            "length": "4:58",
+            "pub_date": "2012-11-01",
+            "series": null,
+            "service": "youtube",
+            "slug": "",
+            "image": "images/videos/thumbnail.jpg",
+            "title": "Sonith - \"Come Down\"",
+            "videoid": "I-3UhbZ-82U"
+        },
+        "model": "video.video",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "description": "Painting: \"402 N. Calvert St.\" by Abbey Labrum / Produced by Drew Siner and Ben Peterson / Music by Sonith",
+            "length": "3:24",
+            "pub_date": "2012-11-09",
+            "series": null,
+            "service": "youtube",
+            "slug": "",
+            "image": "images/videos/Untitled-3.jpg",
+            "title": "Sonith - \"Vision I\"",
+            "videoid": "Irc3AcmrTes"
+        },
+        "model": "video.video",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "description": "Produced by Dustin Demoret / Music by Sonith",
+            "length": "2:59",
+            "pub_date": "2012-12-09",
+            "series": null,
+            "service": "youtube",
+            "slug": "",
+            "image": "images/videos/thumb.jpg",
+            "title": "Sonith - \"Lost\"",
+            "videoid": "38YjvASrZqc"
+        },
+        "model": "video.video",
+        "pk": 3
+    }
+]
