@@ -1,0 +1,19 @@
+.button {
+	display: inline-block;
+	font-size: 1.2em;
+	background: #999;
+	border-radius: 1000px;
+	margin-right: 0.8em;
+	margin-bottom: 0.8em;
+	color: #fff;
+	padding: 0.5em 1em;
+	
+	&:hover {
+		color: #fff;
+	}
+	
+	&.music {
+		background: $music-color;
+		&:hover { background: darken($music-color, 10%); }
+	}
+}

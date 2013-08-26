@@ -1,0 +1,33 @@
+.dept-icon-list, .social-icon-list {
+	list-style-type: none;
+	
+	li {
+		margin-bottom: 1em;
+	}
+	a {
+		font-size: 2em;
+		font-weight: 600;
+		color: #000;
+		line-height: 1em;
+	}
+	span {
+		font-size: 0.5em;
+		color: #999;
+		font-weight: bold;
+		display: block;
+		text-transform: uppercase;
+		position: relative;
+		top: -0.6em;
+	}
+
+	// Colors
+	.music a { color: $music-color; }
+	.video a { color: $video-color; }
+	.writing a { color: $writing-color; }
+	.audio a { color: $audio-color; }
+	.facebook a { color: $facebook-color; }
+	.twitter a { color: $twitter-color; }
+	.tumblr a { color: $tumblr-color; }
+	.youtube a { color: $youtube-color; }
+}
+

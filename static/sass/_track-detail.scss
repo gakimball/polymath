@@ -1,0 +1,57 @@
+/*
+	Hero unit for tracks
+*/
+.track-detail {
+	background: #ccc;
+	text-align: center;
+	
+	@media #{$small} {
+		text-align: left;
+	}
+	
+	.row {
+		padding-top: 1em;
+		padding-bottom: 1em;
+		background: #999;
+	}
+
+	// Album art
+	.album-art {
+		@include grid-column(10, $offset: 1);
+		margin-bottom: 1em;
+		
+		@media #{$small} {
+			@include grid-column(3);
+		}
+		
+		img {
+			width: 100%;
+			max-width: emCalc(320px);
+			border: 5px solid #fff;
+		}
+	}
+
+	// Track info
+	.info {
+		@include grid-column(12);
+		
+		@media #{$small} {
+			@include grid-column(7);
+		}
+	}
+	// Track title
+	.title {
+		display: inline-block;
+		background: #fff;
+		border-radius: 1000px;
+		line-height: 100%;
+		padding: 0.25em 0.7em;
+		
+		// Track artist
+		span {
+			font-size: 0.5em;
+			color: #999;
+			display: block;
+		}
+	}
+}

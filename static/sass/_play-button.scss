@@ -1,0 +1,38 @@
+/*
+	Play button
+*/
+.play-button {
+	display: block;
+	width: 3.75em;
+	height: 3.75em;
+	background: $music-color;
+	border-radius: 1000px;
+	
+	// Hover state
+	&:hover {
+		background: darken($music-color, 10%);
+	}
+	
+	// Play button
+	&::after {
+		display: block;
+		content: '\25B6';
+		position: relative;
+		top: -0.35em;
+		left: 0.25em;
+		color: #fff;
+		font-size: 3.75em;
+	}
+
+	// Pause button
+	&.paused::after {
+		content: '';
+		top: 0.25em;
+		left: 0.275em;
+		width: 0.15em;
+		height: 0.5em;
+		background: #fff;
+		-webkit-box-shadow: 0.3em 0 0 #fff;
+		        box-shadow: 0.3em 0 0 #fff;
+	}
+}
