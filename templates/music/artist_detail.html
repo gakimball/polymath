@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+	<div class="large-5 columns">
+		<img src="http://placehold.it/800x450">
+	</div>
+	<div class="large-7 columns">
+		<h1>{{ artist.name }}</h1>
+		{% with album_ct=artist.album_set.all|length track_ct=artist.track_set.all|length %}
+			<p>{{ album_ct }} album{{ album_ct|pluralize }}, {{ track_ct }} track{{ track_ct|pluralize }}</p>
+		{% endwith %}
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-12 columns">
+		{% if artist.album_set.all|length > 0 %}
+			<h2>Albums</h2>
+			{% for album in artist.album_set.all %}
+				<div class="row">
+					<div class="large-5 columns">
+						<img src="http://placehold.it/500x500" alt="">
+					</div>
+					<div class="large-7 columns">
+						<h3>{{ album.title }}</h3>
+						<p>{{ album.year }}</p>
+						<ul>
+							{% for track in album.track_set.all %}
+								<li><a href="#">{{ track.title }} <span>{{ track.length }}</span></a></li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

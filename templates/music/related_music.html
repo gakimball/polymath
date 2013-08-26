@@ -1,0 +1,60 @@
+<div class="row">
+	{% include 'sidebar.html' %}
+
+	<div class="large-7 columns">
+		{% if album_list %}
+		<section>
+			<h2>More from {{ track.artist }}</h2>
+
+			<ul class="large-block-grid-3 small-block-grid-1">
+				{% for album in album_list %}
+				<li>
+					<a href="#">
+						<img src="http://placehold.it/50x50" alt="">
+						<p><i>{{ album.title }}</i></p>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</section>
+		{% endif %}
+
+		{% if track_list %}
+		<section>
+			<h2>More Music</h2>
+
+			<ul>
+				{% for track in track_list %}
+				<li>
+					<a href="{% url 'apps.music.views.track_detail' track.id %}">
+						<img src="http://placehold.it/100x100" alt="">
+						<a href="#" class="paused play-button"></a>
+						<p>{{ track.title }}</p>
+						<p>{{ track.artist }}</p>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</section>
+		{% endif %}
+
+		<section>
+			<h2>More Polymath</h2>
+
+			<ul class="large-block-grid-2 small-block-grid-1">
+				<li>
+					<a href="#">
+						<img src="http://placehold.it/160x90" alt="">
+						<p>Video</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="http://placehold.it/160x90" alt="">
+						<p>Fiction</p>
+					</a>
+				</li>
+			</ul>
+		</section>
+	</div>
+</div>

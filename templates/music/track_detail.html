@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load related_music %}
+
+{% block title %}"{{ track.title }}" by {{ track.artist }}{% endblock %}
+
+{% block content %}
+
+<div class="track-detail">
+	<div class="row">
+		<div class="album-art">
+			<img src="{% static track.cover %}">
+		</div>
+		<div class="info">
+			<h1 class="title">{{ track.title }} <span>by {{ track.artist }}</span></h1>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-5 columns">
+		<h2>Credits</h2>
+		
+		<div class="row">
+			<div class="small-4 columns">
+				<img src="http://placehold.it/75x75" alt="" class="portrait" style="width: 100%; border-radius: 1000px">
+			</div>
+			<div class="small-8 columns">
+				<p>{{ track.artist }} is a project by <span>{{ track.artist.owner }}</span></p>
+				<p><a href="#">See contributions »</a></p>
+			</div>
+		</div>
+	</div>
+	<div class="large-7 columns">
+		<h2>Listen to <i>{{ track.album.title }}</i></h2>
+
+		<div class="row">
+			<div class="large-5 columns">
+				<img src="http://placehold.it/100x100" alt="" style="width: 100%">
+			</div>
+			<div class="large-7 columns">
+				<a href="#" class="music button">Play All</a>
+				{% if track.album.download_link %}
+					<a href="#" class="music button">Download</a>
+				{% endif %}
+
+				<ol class="tracklist">
+				{% for track in track.album.track_set.all %}
+					<li><a href="#">{{ track.title }} <span>{{ track.length }}</span></a></li>
+				{% endfor %}
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% related_music %}
+
+{% endblock %}

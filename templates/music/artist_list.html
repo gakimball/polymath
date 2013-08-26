@@ -1,0 +1,10 @@
+{% if artist_list %}
+	<ul class="large-block-grid-3">
+	{% for artist in artist_list %}
+		<li><a href="{% url 'apps.music.views.artist_detail' artist.slug %}">
+			<img src="http://placehold.it/800x450" alt="">
+			<p>{{ artist.name }}</p>
+		</a></li>
+	{% endfor %}
+	</ul>
+{% endif %}

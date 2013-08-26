@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Music{% endblock %}
+
+{% block content %}
+
+<div class="row">
+	<div class="large-12 columns">
+		{% if track_list %}
+		<section>
+			<h2>What's new</h2>
+
+				<ul class="large-block-grid-4 small-block-grid-1">
+				{% for track in track_list %}
+					<li>
+						<img src="http://placehold.it/100x100" alt="">
+						<p>{{ track.title }}</p>
+						<p><a href="#">{{ track.artist }}</a></p>
+					</li>
+				{% endfor %}
+				</ul>
+		</section>
+		{% endif %}
+
+		{% if artist_list %}
+		<section>
+			<h2>Artists</h2>
+
+			{% load artist_list %}
+			{% artist_list %}
+		</section>
+		{% endif %}
+	</div>
+</div>
+
+{% endblock %}
