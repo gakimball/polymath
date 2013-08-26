@@ -3,7 +3,7 @@ import dj_database_url
 
 # Django settings for polymath project.
 
-DEBUG = True
+DEBUG = True if os.environ.get('DJANGO_DEBUG', None) == '1' else False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -13,7 +13,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://geoff@localhost/polymath')
+    'default': dj_database_url.config()
 }
 
 # Allow all host headers

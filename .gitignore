@@ -13,6 +13,7 @@ lib64
 static/uploads
 .DS_Store
 venv
+.env
 .sass-cache
 css
 stylesheets
