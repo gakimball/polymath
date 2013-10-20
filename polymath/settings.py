@@ -55,10 +55,10 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 
 if DEBUG is False:
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-    STATICFILES_STORAGE = DEFAULT_FILE_STORAGE
+    DEFAULT_FILE_STORAGE = lambda: S3BotoStorage(location='media')
+    STATICFILES_STORAGE  = lambda: S3BotoStorage(location='static')
     MEDIA_ROOT = '/uploads'
-    MEDIA_URL = 'polymathic.s3.amazonaws.com/'
+    MEDIA_URL = 'polymathic.s3.amazonaws.com'
 
 
 # List of finder classes that know how to find static files in
