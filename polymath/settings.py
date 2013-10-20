@@ -13,8 +13,17 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'polymath',  # Or path to database file if using sqlite3.
+        'USER': 'geoff',  # Not used with sqlite3.
+        'PASSWORD': '',  # Not used with sqlite3.
+        'HOST': 'localhost',  # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
+    }
 }
+# DATABASES = { 'default': dj_database_url.config() }
+SOUTH_DATABASE_ADAPTERS = { 'default':'south.db.postgresql_psycopg2' }
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
@@ -39,6 +48,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     '/Applications/MAMP/htdocs/polymath/static',
 )
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+if DEBUG is False:
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    STATICFILES_STORAGE = DEFAULT_FILE_STORAGE
+    MEDIA_ROOT = '/uploads'
+    MEDIA_URL = 'polymathic.s3.amazonaws.com/'
+
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -105,6 +125,7 @@ INSTALLED_APPS = (
     # 'apps.promos',
 
     'south',
+    'django_extensions',
 )
 
 # A sample logging configuration. The only tangible logging
