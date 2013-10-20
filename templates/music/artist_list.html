@@ -1,9 +1,9 @@
 {% if artist_list %}
-	<ul class="large-block-grid-3">
+	<ul class="large-block-grid-3 artist-list">
 	{% for artist in artist_list %}
-		<li><a href="{% url 'apps.music.views.artist_detail' artist.slug %}">
-			<img src="http://placehold.it/800x450" alt="">
-			<p>{{ artist.name }}</p>
+		<li><a href="{% url 'apps.music.views.artist_detail' artist.slug %}" class="block-link">
+			<img src="http://placehold.it/800x450" alt="{{ artist.name }}" class="thumb">
+			<h3>{{ artist.name }}</h3>
 		</a></li>
 	{% endfor %}
 	</ul>

@@ -30,6 +30,22 @@
 			{% artist_list %}
 		</section>
 		{% endif %}
+
+		{% if album_list %}
+		<section>
+				<h2>Releases</h2>
+				
+				<ul class="large-block-grid-4 small-block-grid-1">
+				{% for album in album_list %}
+					<li><a href="#" class="block-link">
+						<img src="http://placehold.it/200x200" alt="" class="thumb">
+						<h3>{{ album.title }}</h3>
+						<p><i>{{ album.year }}</i></p>
+					</a></li>
+				{% endfor %}
+				</ul>
+		</section>
+		{% endif %}
 	</div>
 </div>
 

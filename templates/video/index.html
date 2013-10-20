@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %}Video{% endblock %}
+
 {% block content %}
 
 <div class="row">
@@ -24,7 +26,7 @@
 		<ul class="large-block-grid-3">
 			{% for video in video_list %}
 			<li><a href="{% url 'apps.video.views.video_detail' video.id %}">
-				<img src="http://placehold.it/400x225" alt="" style="width: 100%">
+				<img src="http://placehold.it/400x225" alt="" class="thumb">
 				<h3>{{ video.title }}</h3>
 			</a></li>
 			{% endfor %}

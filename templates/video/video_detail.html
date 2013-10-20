@@ -1,45 +1,45 @@
 {% extends 'base.html' %}
 
+{% block title %}{{ video.title }}{% endblock %}
+
 {% block content %}
 
-<div class="video-detail">
+<div class="video-detail-player">
 	<div class="row">
-		<div class="large-12 columns">
-			<div class="flex-video widescreen{% if video.service == 'vimeo' %} vimeo{% endif %} ">
-				{% if video.service == "youtube" %}
-					<iframe id="video-detail-player" width="875" height="492" src="http://www.youtube.com/embed/{{ video.videoid }}" frameborder="0" allowfullscreen></iframe>
-				{% elif video.service == "vimeo" %}
-					<iframe src="http://player.vimeo.com/video/{{ video.videoid }}?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="875" height="492" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-				{% endif %}
-			</div>
-
-			<h1>{{ video.title }}</h1>
-
-			<time>{{ video.pub_date }}</time>
-			<p>{{ video.description }}</p>
+		<div class="flex-video widescreen{% if video.service == 'vimeo' %} vimeo{% endif %} ">
+			{% if video.service == "youtube" %}
+				<iframe id="video-detail-player" width="875" height="492" src="http://www.youtube.com/embed/{{ video.videoid }}" frameborder="0" allowfullscreen></iframe>
+			{% elif video.service == "vimeo" %}
+				<iframe src="http://player.vimeo.com/video/{{ video.videoid }}?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="875" height="492" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			{% endif %}
 		</div>
 	</div>
 </div>
 
-<div class="row">
-	{% include 'sidebar.html' %}
+<div class="row main video-detail-info">
+	<div class="large-10 large-centered columns">
+		<h1>{{ video.title }}</h1>
 
-	<div class="large-7 columns">
-		{% if video_list %}
+		<time>{{ video.pub_date }}</time>
+		<p>{{ video.description }}</p>
+	</div>
+</div>
+
+{% if video_list %}
+<div class="row">
+	<div class="large-12 columns">
 		<h2>More Videos</h2>
 
-		<ul>
+		<ul class="large-block-grid-3 small-block-grid-1">
 			{% for v in video_list %}
-			<li><a href="{% url 'apps.video.views.video_detail' v.id %}">
-				<p>{{ v.title }}</p>
-				<p>{{ v.length }}</p>
+			<li><a href="{% url 'apps.video.views.video_detail' v.id %}" class="block-link">
+				<img src="http://placehold.it/16x9" alt="{{ v.title }}" class="thumb">
+				<h3>{{ v.title }}</h3>
 			</a></li>
 			{% endfor %}
 		</ul>
-		{% endif %}
-
-		<h2>More Polymath</h2>
 	</div>
 </div>
+{% endif %}
 
 {% endblock content %}

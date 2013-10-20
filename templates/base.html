@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
@@ -10,34 +11,60 @@
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
  	<link rel="stylesheet" href="{{ STATIC_URL }}css/app.css" />
  	<script src="{{ STATIC_URL }}js/vendor/custom.modernizr.js"></script>
- </head>
+</head>
 
- <body>
+ <body class="{{ current_dept|lower }}-page">
  	
-	<div class="row header">
-		<div class="large-6 columns">
-			<p class="logo"><a href="/">Polymath</a></p>
-			<p class="active-dept {{current_dept|lower}}"><a href="{% url current_dept_index %}">{{ current_dept }}</a></p>
-			<a class="nav-icon">Menu</a>
-
+	<header class="header"><div class="row">
+		<div class="large-12 columns">
+			<a href="/" class="logo">
+				<img src="{% static 'img/logo.svg' %}">
+				<span>Polymath</span>
+			</a>
 			<ul class="dept-nav">
-				<li><a href="{% url 'apps.music.views.index' %}" class="music">Music</a></li>
-				<li><a href="{% url 'apps.video.views.index' %}" class="video">Video</a></li>
-				<li><a href="#" class="writing">Writing</a></li>
+				<li class="music"><a href="{% url 'apps.music.views.index' %}">Music</a></li>
+				<li class="video"><a href="{% url 'apps.video.views.index' %}">Video</a></li>
+				<li class="writing disabled"><a href="">Writing</a></li>
+				<li class="audio disabled"><a href="">Audio</a></li>
 			</ul>
-		</div>
-		<div class="large-6 columns">
 			<ul class="secondary-nav">
-				<li><a href="<% url 'apps.people.views.people_list' %>">people</a></li>
-				<li><a href="#">about</a></li>
-				<li><a href="#">schedule</a></li>
-				<li><a href="#">updates</a></li>
-				<li><a href="#">social</a></li>
+				<li class="about"><a href="{% url 'apps.people.views.about' %}">Who are we?</a></li>
+				<li class="icon"><a href="">c</a></li>
+				<li class="icon"><a href="http://facebook.com/PolymathArts" target="_blank">f</a></li>
+				<li class="icon"><a href="http://twitter.com/PolymathArts" target="_blank">t</a></li>
+				<li class="icon"><a href="">y</a></li>
 			</ul>
 		</div>
-	</div>
+	</div></header>
 
 	{% block content %}{% endblock %}
+
+	<footer class="footer">
+		<hr class="divider">
+		<p class="polymath">Polymath</p>
+		<img src="{% static 'img/logo.svg' %}" alt="" class="logo">
+		<div class="nav">
+			<ul>
+				<li>Departments:</li>
+				<li class="music"><a href="">Music</a></li>
+				<li class="video"><a href="">Video</a></li>
+				<li class="writing"><a href="">Writing</a></li>
+				<li class="audio"><a href="">Audio</a></li>
+			</ul>
+			<ul>
+				<li>Colophon:</li>
+				<li><a href="{% url 'apps.people.views.about' %}">About Polymath</a></li>
+				<li><a href="">Release Calendar</a></li>
+			</ul>
+			<ul>
+				<li>Social:</li>
+				<li><a href="https://facebook.com/PolymathArts" target="_blank">Facebook</a></li>
+				<li><a href="https://twitter.com/PolymathArts" target="_blank">Twitter</a></li>
+				<li><a href="" target="_blank">Tumblr</a></li>
+				<li><a href="" target="_blank">YouTube</a></li>
+			</ul>
+		</div>
+	</footer>
 
 	<script src="{{ STATIC_URL }}js/vendor/zepto.js"></script>
 	<script>
