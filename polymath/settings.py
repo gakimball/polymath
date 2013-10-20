@@ -22,7 +22,8 @@ DATABASES = {
         'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
     }
 }
-# DATABASES = { 'default': dj_database_url.config() }
+if DEBUG is not True:
+    DATABASES = { 'default': dj_database_url.config() }
 SOUTH_DATABASE_ADAPTERS = { 'default':'south.db.postgresql_psycopg2' }
 
 # Allow all host headers
