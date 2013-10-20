@@ -12,12 +12,15 @@
 @import "colors";
 
 @import "header";
+@import "footer";
 @import "sidebar";
 
 @import "buttons";
 @import "play-button";
 
+@import "about";
 @import "track-detail";
+@import "artist";
 @import "video-detail";
 
 body {
@@ -31,8 +34,65 @@ body {
 	}
 }
 
+$link-highlight-factor: 25%;
+
+a {
+  font-weight: 600;
+
+  &.block-link {
+    display: block;
+  }
+
+  &:hover {
+    color: lighten($primary-color, $link-highlight-factor);
+  }
+  h3:hover {
+    color: $primary-color;
+  }
+
+  .music-page & {
+    color: $music-color;
+    &:hover {
+      color: lighten($music-color, $link-highlight-factor);
+      h3 { color: $music-color; }
+    }
+  }
+  .video-page & {
+    color: $video-color;
+    &:hover {
+      color: lighten($video-color, $link-highlight-factor);
+      h3 { color: $video-color; }
+    }
+  }
+}
 ul, ol {
 	list-style-position: inside;
+}
+
+.thumb {
+  margin-bottom: 0.75em;
+
+  @media #{$small} {
+    width: 100%;
+  }
+}
+
+.main {
+  box-shadow: -30px -30px 45px -30px rgba(#000, 0.5), 30px -30px 45px -30px rgba(#000, 0.5);
+}
+
+.divider {
+  max-width: $row-width;
+  height: 1px;
+  background: #999;
+  border: 0;
+  outline: 0;
+  clear: both;
+  margin: 2em auto;
+
+  @media #{$small} {
+    margin: 3em auto;
+  }
 }
 
 // @import "foundation/components/visibility";

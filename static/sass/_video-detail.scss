@@ -1,3 +1,27 @@
-.video-detail {
-	background: #ccc;
+.video-detail-player {
+	background: rgba(#000, 0.75);
+
+  .flex-video {
+    margin-bottom: 0;
+  }
+}
+.video-detail-info {
+  padding-top: 1em;
+  margin-bottom: 2em;
+
+  h1 {
+    font-weight: 200;
+  }
+  time, p {
+    font-size: 1.25em;
+  }
+  time {
+    display: block;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+    font-style: italic;
+  }
+  p {
+    line-height: 1.2;
+  }
 }

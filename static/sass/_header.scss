@@ -1,201 +1,148 @@
 $mobile-nav-break: $small;
 
-$logo-size-large: 2.25em;
-
-/*
-	Header container
-*/
 .header {
-	padding-bottom: 0.15em;
-	
-	@media #{$mobile-nav-break} {
-		.large-6:first-child {
-			width: auto;
-			position: relative;
-		}
-	}
-	
-	@media screen and (min-width: $row-width) {
-		.columns {
-			padding-left: 0;
-			padding-right: 0;
-		}
-	}
-}
+	@include clearfix;
 
-/*
-	Logo
-*/
-.logo {
-	display: inline-block;
-	font-size: $logo-size-large;
-	font-weight: 300;
-	margin-bottom: 0;
-	
-	a {
+	width: 100%;
+	height: 3.5em;
+	background: #fff;
+	box-shadow: 0 0 10px rgba(#000, 0.5);
+
+	.row {
+		border: {
+			 left: 1px solid #ccc;
+			right: 1px solid #ccc;
+		}
+	}
+
+	.logo {
+		height: 3.5em;
+		line-height: 3.5em;
+		float: left;
+		border-right: 1px solid #ccc;
 		color: #000;
-	}
-	&:hover {
-		opacity: 0.75;
-	}
-}
+		padding: {
+			left: $column-gutter / 2;
+			right: $column-gutter;
+		}
 
-/*
-	Current department
-*/
-.active-dept {
-	display: inline-block;
-	font-size: $logo-size-large;
-	font-weight: 300;
-	margin-bottom: 0em;
-	margin-left: 0.2em;
-	
-	// Dropdown arrow
-	@media #{$mobile-nav-break} {
-		&::after {
-			content: '\2228';
-			font-size: 0.65em;
-			margin-left: 0.25em;
-			font-weight: 900;
+		img {
+			height: 2.8em;
+			margin-right: 0.5em;
 			position: relative;
-			top: -3px;
+			top: -0.5em;
+		}
+		span {
+			color: black;
+			font-weight: normal;
+			font-size: emCalc(30px);
+		}
+		&:hover span {
+			color: #666;
 		}
 	}
-	
-	// Colors
-	&.music {
-		&, a { color: $music-color };
-	}
-	&.video {
-		&, a { color: $video-color };
-	}
-	&.writing {
-		&, a { color: $writing-color };
-	}
 }
 
-/*
-	Mobile nav icon
-*/
-.nav-icon {
-	$bar-height: emCalc(4px);
-	$bar-color: #333;
-
-	text-indent: -9999px;
-	float: right;
-	width: 1.75em;
-	height: $bar-height;
-	background: $bar-color;
-	
-	position: relative;
-	top: 0.8em;
-	
-	-webkit-box-shadow: 0 $bar-height * 2 0 $bar-color, 0 $bar-height * 4 0 $bar-color;
-	        box-shadow: 0 $bar-height * 2 0 $bar-color, 0 $bar-height * 4 0 $bar-color;
-	
-	@media #{$mobile-nav-break} {
-		display: none;
-	} 
-}
-
-/*
-	Nav menus
-*/
-.dept-nav, .secondary-nav {
-	display: none;
-	margin-left: 0;
-	list-style-type: none;
-	
-	.nav-open & {
-		display: block;
-	}
-}
-
-/*
-	Department nav
-*/
 .dept-nav {
-	margin-bottom: 0.75em;
-	
-	// Link colors
-	a {
-		font-size: 1.25em;
-		font-weight: 300;
-	}
-	.music { color: $music-color; }
-	.video { color: $video-color; }
-	.writing { color: $writing-color; }
+	height: 3.5em;
+	line-height: 3.5em;
+	padding: 0 $column-gutter / 2;
+	float: left;
+	display: inline-block;
+	border-right: 1px solid #ccc;
+	margin-bottom: 0;
 
-	// Desktop version: dropdown menu
-	@media #{$mobile-nav-break} {
-		position: absolute;
-		top: 100%;
-		right: 0;
-		z-index: 100;
-		width: 100%;
-		padding: 0 1em;
-		background: #fff;
-		text-align: right;
-		
-		.active-dept:hover ~ &, &:hover {
+	li {
+		display: inline-block;
+	}
+	li:not(:last-child) {
+		margin-right: $column-gutter / 2;
+	}
+	a {
+		position: relative;
+		display: inline-block;
+		height: 100%;
+		font-size: emCalc(20px);
+		font-weight: normal;
+
+		&::after {
+			display: none;
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 4px;
+			background: #000;
+			bottom: 0;
+		}
+		&:hover::after {
 			display: block;
 		}
-		
-		li {
-			margin-bottom: 1em;
-			line-height: 1em;
+	}
+	.music a, {
+		&, &:hover { color: $music-color; }
+		&::after {
+			background: $music-color;
+			.music-page & { display: block; }
 		}
-		a {
-			position: relative;
-			line-height: 1em;
-			font-size: $logo-size-large;
-			@include transition-property(left);
-			@include transition-duration(0.15s);
-			@include transition-timing-function(ease-out);
-			
-			&:hover {
-				left: -0.5em;
-				@include transition-property(left);
-				@include transition-duration(0.15s);
-				@include transition-timing-function(ease-out);
-			}
+	}
+	.video a {
+		&, &:hover { color: $video-color; }
+		&::after {
+			background: $video-color;
+			.video-page & { display: block; }
+		}
+	}
+	.writing a {
+		&, &:hover { color: $writing-color; }
+		&::after {
+			background: $writing-color;
+			.writing-page & { display: block; }
+		}
+	}
+	.audio a {
+		&, &:hover { color: $audio-color; }
+		&::after {
+			background: $audio-color;
+			.audio-page & { display: block; }
+		}
+	}
+	.disabled a {
+		&, &:hover {
+			color: #ccc;
+			cursor: default;
+		}
+		&:hover::after {
+			display: none;
 		}
 	}
 }
 
-/*
-	Secondary nav
-*/
 .secondary-nav {
-	a {
-		color: #333;
-		font-weight: 300;
-	}
+	position: absolute;
+	top: 0;
+	right: 0;
+	list-style-type: none;
+	height: 3.5em;
+	line-height: 3.5em;
 
-	// Desktop version: float right
-	@media #{$mobile-nav-break} {
-		float: right;
-		list-style-type: circle;
-		margin: 0.5em 0;
-		position: relative;
-		top: 0.25em;
-		
-		li {
-			overflow: visible;
-			margin-left: 1em;
-			display: inline-block;
-			
-			a {
-				font-size: 1.25em;
-				font-weight: normal;
-			}
+	@media screen and (max-width: emCalc(825px)) {
+		li:not(:first-child) {
+			display: none;
 		}
 	}
-}
 
-// Desktop view: dept. nav is a hover dropdown, secondary nav is always visible
-@media #{$mobile-nav-break} {
-	.secondary-nav {
-		display: block;
+	li {
+		display: inline-block;
+	}
+	a {
+		display: inline-block;
+		border-left: 1px solid #ccc;
+	}
+	.about a {
+		padding: 0 1em;
+	}
+	.icon a {
+		width: 2em;
+		text-align: center;
 	}
 }
