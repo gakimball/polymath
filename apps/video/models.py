@@ -1,7 +1,6 @@
 from django.db import models
-
-from django.db import models
 from django.template.defaultfilters import slugify
+from durationfield.db.models.fields.duration import DurationField
 
 class Video(models.Model):
     title = models.CharField(max_length=255)
@@ -11,8 +10,7 @@ class Video(models.Model):
     series = models.ForeignKey('VideoSeries', blank=True, null=True)
 
     image = models.ImageField(blank=True, upload_to='videos/images', help_text='Optional, but seriously, upload one. 16:9 preferred.')
-    background = models.ImageField(blank=True, upload_to='videos/backgrounds', help_text='Background image for video\'s page')
-    length = models.CharField(max_length=5, help_text='Write it like this: "3:04". No leading zeroes in the minutes place.')
+    length = models.CharField(max_length=5)
     
     VIDEO_SERVICES = (
         ('youtube', 'YouTube'),
@@ -30,8 +28,8 @@ class Video(models.Model):
     def save(self):
         if not self.id:
             self.slug = slugify(self.title)
-        if not self.thumbnail:
-            self.thumbnail = 'placeholder/video.jpg'
+        if not self.image:
+            self.image = 'placeholder/video.jpg'
         super(Video, self).save()
 
     class Meta:
@@ -41,7 +39,7 @@ class Video(models.Model):
 class VideoSeries(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True,help_text='Optional. Keep it to one paragraph.')
-    image = models.ImageField(upload_to='videos/series/images',help_text='Promotional image for the series.')
+    image = models.ImageField(upload_to='videoseries/images',help_text='Promotional image for the series.')
 
     def __unicode__(self):
         return self.title
