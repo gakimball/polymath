@@ -12,7 +12,7 @@ def index(request):
     artist_list = Artist.objects.only('name', 'image')
 
     # Downloadable albums
-    album_list = Album.objects.exclude(download_link='').order_by('title').reverse()
+    album_list = Album.objects.order_by('-year')
 
     # Data dictionary
     data_dict = {
