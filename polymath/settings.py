@@ -66,6 +66,7 @@ if DEBUG is False:
     STATICFILES_STORAGE  = 'polymath.s3utils.StaticS3Storage'
     MEDIA_ROOT = '/uploads/'
     MEDIA_URL = 'http://polymathic.s3.amazonaws.com/'
+    STATIC_URL = 'http://polymathic.s3.amazonaws.com/'
 
 DEBUG = True
 
