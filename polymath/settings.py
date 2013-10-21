@@ -40,6 +40,9 @@ USE_I18N = False
 USE_L10N = True
 USE_TZ = True
 
+# Project root
+PROJECT_DIR = os.path.dirname(__file__)
+
 # Media
 MEDIA_ROOT = '/Applications/MAMP/htdocs/polymath/static/uploads'
 MEDIA_URL = 'http://0.0.0.0:5000/static/uploads/'
@@ -48,7 +51,7 @@ MEDIA_URL = 'http://0.0.0.0:5000/static/uploads/'
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    '/Applications/MAMP/htdocs/polymath/static',
+    os.path.join(PROJECT_DIR, 'static'),
 )
 
 # Make this unique, and don't share it with anybody.
@@ -99,7 +102,6 @@ ROOT_URLCONF = 'polymath.urls'
 WSGI_APPLICATION = 'polymath.wsgi.application'
 
 # Templates
-PROJECT_DIR = os.path.dirname(__file__)
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'templates')
 )
