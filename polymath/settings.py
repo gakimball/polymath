@@ -1,6 +1,5 @@
 import os
 import dj_database_url
-from storages.backends.s3boto import S3BotoStorage
 
 # Django settings for polymath project.
 
@@ -51,11 +50,15 @@ STATICFILES_DIRS = (
     '/Applications/MAMP/htdocs/polymath/static',
 )
 
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'Kittens')
+
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 
 if DEBUG is False:
+    from storages.backends.s3boto import S3BotoStorage
     DEFAULT_FILE_STORAGE = lambda: S3BotoStorage(location='media')
     STATICFILES_STORAGE  = lambda: S3BotoStorage(location='static')
     MEDIA_ROOT = '/uploads/'
@@ -70,9 +73,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
-
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'Kittens')
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
