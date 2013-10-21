@@ -15,5 +15,3 @@ polymath/static/uploads
 venv
 .env
 .sass-cache
-css
-stylesheets

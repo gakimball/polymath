@@ -1,0 +1,115 @@
+/* LOGIN FORM */
+
+body.login {
+    background: #333;
+}
+
+.login #container {
+    width: 28em;
+    min-width: 338px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+.login #container:after {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -175px;
+    margin-left: -45px;
+    content: '\8fce';
+    color: #666;
+    font-size: 7em;
+}
+
+.login #content-main {
+    width: 100%;
+}
+
+.login #header {
+    background: #333;
+    color: #333;
+    pointer-events: none;
+}
+.login #site-name {
+    color: #333;
+    text-align: center;
+    margin: 0;
+    margin-bottom: -20px;
+    padding: 0;
+    padding-left: 40px;
+}
+.login #site-name:before {
+    content: 'Who are you?';
+    display: inline;
+    color: #fff;
+    font-size: 2em;
+}
+
+.login form {
+    margin-top: 1em;
+}
+
+.login .form-row {
+    padding: 4px 0;
+    float: left;
+    width: 100%;
+}
+
+.login .form-row label {
+    display: none;
+
+    /*float: left;
+    width: 9em;
+    padding-right: 0.5em;
+    line-height: 2em;
+    text-align: right;
+    font-size: 1em;
+    color: #fff;*/
+}
+
+.login .form-row #id_username, .login .form-row #id_password {
+    width: 300px;
+    background: transparent;
+    margin-bottom: 8px;
+    font-size: 2em;
+    border-width: 0;
+    border-bottom: 2px dotted #ccc;
+    padding-bottom: 8px;
+    color: #ddd;
+}
+.login .form-row #id_username:focus, .login .form-row #id_password:focus {
+    outline: none;
+}
+
+.login span.help {
+    font-size: 10px;
+    display: block;
+}
+
+.login .submit-row {
+    clear: both;
+    padding: 1em 0 0 9.4em;
+}
+
+.login input[type='submit'] {
+    background: #ccc;
+    color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    font-size: 1.75em;
+    font-weight: bold;
+    border: 0;
+    -webkit-transition: background-color 0.1s linear;
+}
+.login input[type='submit']:hover {
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login .password-reset-link {
+    text-align: center;
+}
