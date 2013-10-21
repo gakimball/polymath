@@ -22,7 +22,7 @@ DATABASES = {
         'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
     }
 }
-if DEBUG is not True:
+if DEBUG is False:
     DATABASES = { 'default': dj_database_url.config() }
 SOUTH_DATABASE_ADAPTERS = { 'default':'south.db.postgresql_psycopg2' }
 
@@ -60,6 +60,7 @@ if DEBUG is False:
     MEDIA_ROOT = '/uploads/'
     MEDIA_URL = 'http://polymathic.s3.amazonaws.com/'
 
+DEBUG = True
 
 # List of finder classes that know how to find static files in
 # various locations.
