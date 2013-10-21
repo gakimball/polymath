@@ -60,8 +60,10 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 
 if DEBUG is False:
     from storages.backends.s3boto import S3BotoStorage
-    DEFAULT_FILE_STORAGE = lambda: S3BotoStorage(location='media')
-    STATICFILES_STORAGE  = lambda: S3BotoStorage(location='static')
+    S3Media  = lambda: S3BotoStorage(location='media')
+    S3Static = lambda: S3BotoStorage(location='static')
+    DEFAULT_FILE_STORAGE = 'S3Media'
+    STATICFILES_STORAGE  = 'S3Static'
     MEDIA_ROOT = '/uploads/'
     MEDIA_URL = 'http://polymathic.s3.amazonaws.com/'
 
