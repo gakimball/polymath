@@ -1,4 +1,5 @@
 import os
+import os.path
 import dj_database_url
 
 # Django settings for polymath project.
@@ -94,8 +95,10 @@ ROOT_URLCONF = 'polymath.urls'
 
 WSGI_APPLICATION = 'polymath.wsgi.application'
 
+# Templates
+PROJECT_DIR = os.path.dirname(__file__)
 TEMPLATE_DIRS = (
-    '/Applications/MAMP/htdocs/polymath/templates'
+    os.path.join(PROJECT_DIR, 'templates')
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
