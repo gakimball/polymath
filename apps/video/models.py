@@ -9,8 +9,8 @@ class Video(models.Model):
 
     series = models.ForeignKey('VideoSeries', blank=True, null=True)
 
-    image = models.ImageField(blank=True, upload_to='videos/images', help_text='Optional, but seriously, upload one. 16:9 preferred.')
-    length = models.CharField(max_length=5)
+    image = models.ImageField(blank=True, upload_to='videos/images', help_text='Aspect ratio is 16:9.')
+    length = DurationField(help_text='Write it like this: h:mm:ss')
     
     VIDEO_SERVICES = (
         ('youtube', 'YouTube'),
@@ -38,8 +38,9 @@ class Video(models.Model):
 
 class VideoSeries(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField(blank=True,help_text='Optional. Keep it to one paragraph.')
-    image = models.ImageField(upload_to='videoseries/images',help_text='Promotional image for the series.')
+    description = models.TextField(blank=True, help_text='Optional. Keep it to one paragraph.')
+    year = models.CharField(max_length=4, help_text='Year of production.')
+    image = models.ImageField(upload_to='videoseries/images', help_text='Aspect ratio is 16:9.')
 
     def __unicode__(self):
         return self.title

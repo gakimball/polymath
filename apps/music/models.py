@@ -34,9 +34,6 @@ class Track(models.Model):
     def save(self):
         if not self.id:
             self.slug = slugify(self.title)
-            self.stats_initplays = 0
-            self.stats_totalplays = 0
-            self.stats_downloads = 0
         if self.download_link:
             try:
                 self.file_size = self.download_link.size / 1024
@@ -64,6 +61,13 @@ class Album(models.Model):
     description = models.TextField(blank=True, help_text='Optional: keep it to one paragraph.')
     artist = models.ForeignKey('Artist', help_text='Artist for the album.')
     year = models.CharField('release year', max_length=4, help_text='Four digits, please.')
+
+    RELEASE_TYPES = (
+        ('album', 'Album'),
+        ('single', 'Single'),
+        ('split', 'Split'),
+    )
+    release_type = models.CharField(max_length=6, choices=RELEASE_TYPES, help_text='Release type determines the format of the page.')
     
     image = models.ImageField(upload_to='albums/images/', help_text='Album art goes here. However, when you add a track, each track may have its own picture as well.')
     download_link = models.FileField(upload_to='downloads/albums/', blank=True, null=True, help_text='Optional: .zip file of album. Don\'t upload it until the entire album has been released for streaming.')
@@ -92,16 +96,17 @@ class Album(models.Model):
 
 class Artist(models.Model):
     name = models.CharField(max_length=255, unique=True)
-    owner = models.ForeignKey('people.Person', null=True, blank=True, help_text='Who\'s project is this?')
-    biography = models.TextField(blank=True, help_text='Optional: one paragraph only for now.')
     slug = models.SlugField(editable=False)
+    owner = models.ForeignKey('people.Person', null=True, blank=True, help_text='Who\'s project is this?')
+
+    quote = models.TextField(blank=True)
+    biography = models.TextField(blank=True, help_text='Optional: one paragraph only for now.')
 
     twitter = models.CharField('twitter name', max_length=30, help_text="Optional: Twitter username without the @ sign", blank=True)
     facebook = models.URLField('facebook page', help_text="Optional: full URL of Facebook page", blank=True)
     email = models.EmailField('email address', help_text="Optional: email address for artist", blank=True)
 
     image = models.ImageField(blank=True, upload_to='artists/images', help_text='Main artist photo.')
-
     background = models.ImageField(blank=True,upload_to='artists/backgrounds/',help_text='Optional, but come on: background image for artist.')
     
     class Meta:
@@ -111,8 +116,7 @@ class Artist(models.Model):
         return self.name
 
     def save(self):
-        if not self.id:
-            self.slug = slugify(self.name)
+        self.slug = slugify(self.name)
         if not self.image:
             self.image = 'placeholder/artist.jpg'
         super(Artist, self).save()
