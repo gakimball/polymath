@@ -7,6 +7,8 @@ $mobile-nav-break: $small;
 	height: 3.5em;
 	background: #fff;
 	box-shadow: 0 0 10px rgba(#000, 0.5);
+	position: relative;
+	z-index: 100;
 
 	.row {
 		border: {
@@ -51,6 +53,11 @@ $mobile-nav-break: $small;
 	display: inline-block;
 	border-right: 1px solid #ccc;
 	margin-bottom: 0;
+	display: none;
+
+	@media screen and (min-width: emCalc(650px)) {
+		display: block;
+	}
 
 	li {
 		display: inline-block;
@@ -124,11 +131,10 @@ $mobile-nav-break: $small;
 	list-style-type: none;
 	height: 3.5em;
 	line-height: 3.5em;
+	display: none;
 
-	@media screen and (max-width: emCalc(825px)) {
-		li:not(:first-child) {
-			display: none;
-		}
+	@media screen and (min-width: emCalc(650px)) {
+		display: block;
 	}
 
 	li {
