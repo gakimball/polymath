@@ -15,17 +15,17 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'polymath',  # Or path to database file if using sqlite3.
-        'USER': 'geoff',  # Not used with sqlite3.
-        'PASSWORD': '',  # Not used with sqlite3.
-        'HOST': 'localhost',  # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',  # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'polymath',
+        'USER': 'geoff',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-if DEBUG is False:
-    DATABASES = { 'default': dj_database_url.config() }
-SOUTH_DATABASE_ADAPTERS = { 'default':'south.db.postgresql_psycopg2' }
+# if DEBUG is False:
+    # DATABASES = { 'default': dj_database_url.config() }
+SOUTH_DATABASE_ADAPTERS = { 'default': 'south.db.postgresql_psycopg2' }
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
@@ -43,13 +43,6 @@ USE_TZ = True
 # Project root
 PROJECT_DIR = os.path.dirname(__file__)
 
-# Media
-MEDIA_ROOT = '/Applications/MAMP/htdocs/polymath/static/uploads'
-MEDIA_URL = 'http://0.0.0.0:5000/static/uploads/'
-
-# Static
-STATIC_ROOT = ''
-STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'static'),
 )
@@ -61,10 +54,15 @@ AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 
+# Local media settings
+MEDIA_ROOT = '/Applications/MAMP/htdocs/polymath/polymath/static/uploads'
+MEDIA_URL = 'http://0.0.0.0:5000/static/uploads/'
+STATIC_ROOT = ''
+STATIC_URL = '/static/'
+
+# Deployment media settings
 if DEBUG is False:
     from storages.backends.s3boto import S3BotoStorage
-    # S3Media  = lambda: S3BotoStorage(location='media')
-    # S3Static = lambda: S3BotoStorage(location='static')
     DEFAULT_FILE_STORAGE = 'polymath.s3utils.MediaS3Storage'
     STATICFILES_STORAGE  = 'polymath.s3utils.StaticS3Storage'
     MEDIA_ROOT = '/uploads/'
@@ -72,10 +70,9 @@ if DEBUG is False:
     STATIC_ROOT = '/static/'
     STATIC_URL = 'http://polymathic.s3.amazonaws.com/static/'
 
+# Temporary override for Heroku
 DEBUG = True
 
-# List of finder classes that know how to find static files in
-# various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
