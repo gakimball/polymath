@@ -13,7 +13,7 @@
 				<ul class="large-block-grid-4 small-block-grid-1">
 				{% for track in track_list %}
 					<li>
-						<img src="http://placehold.it/100x100" alt="">
+						<img src="{% if track.image %}{{ track.image.url }}{% else %}{{ track.album.image.url }}{% endif %}" alt="">
 						<p>{{ track.title }}</p>
 						<p><a href="#">{{ track.artist }}</a></p>
 					</li>
@@ -38,7 +38,7 @@
 				<ul class="large-block-grid-4 small-block-grid-1">
 				{% for album in album_list %}
 					<li><a href="#" class="block-link">
-						<img src="http://placehold.it/200x200" alt="" class="thumb">
+						<img src="{{ album.image.url }}" alt="" class="thumb">
 						<h3>{{ album.title }}</h3>
 						<p><i>{{ album.year }}</i></p>
 					</a></li>

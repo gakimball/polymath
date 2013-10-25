@@ -8,6 +8,6 @@ def index(request):
 
 def video_detail(request, video_id):
     video = get_object_or_404(Video, pk=video_id)
-    video_list = Video.objects.only('title', 'image', 'length').exclude(pk=video_id)
+    video_list = Video.objects.only('title', 'image', 'length')
 
     return render(request, 'video/video_detail.html', {'video': video, 'video_list': video_list})

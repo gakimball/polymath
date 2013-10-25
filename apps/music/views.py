@@ -6,12 +6,12 @@ from django.http import Http404
 def index(request):
     # Recent tracks
     track_count = 4
-    track_list = Track.objects.only('title', 'artist', 'album', 'id')[:track_count]
+    track_list = Track.objects.only('title', 'artist', 'album', 'id').reverse()[:track_count]
 
     # Artists
     artist_list = Artist.objects.only('name', 'image')
 
-    # Downloadable albums
+    # Albums
     album_list = Album.objects.order_by('-year')
 
     # Data dictionary
@@ -25,8 +25,14 @@ def index(request):
 
 def artist_detail(request, artist_slug):
     artist = get_object_or_404(Artist, slug=artist_slug)
+    artist_list = Artist.objects.only('name')
 
-    return render(request, 'music/artist_detail.html', {'artist': artist, })
+    data_dict = {
+        'artist': artist,
+        'artist_list': artist_list,
+    }
+
+    return render(request, 'music/artist_detail.html', data_dict)
 
 def track_detail(request, track_id):
     track = get_object_or_404(Track, pk=track_id)

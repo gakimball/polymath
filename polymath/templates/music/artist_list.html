@@ -2,7 +2,7 @@
 	<ul class="large-block-grid-3 artist-list">
 	{% for artist in artist_list %}
 		<li><a href="{% url 'apps.music.views.artist_detail' artist.slug %}" class="block-link">
-			<img src="http://placehold.it/800x450" alt="{{ artist.name }}" class="thumb">
+			<img src="{{ artist.image.url }}" alt="{{ artist.name }}" class="thumb">
 			<h3>{{ artist.name }}</h3>
 		</a></li>
 	{% endfor %}
