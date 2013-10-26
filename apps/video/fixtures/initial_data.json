@@ -7,7 +7,7 @@
             "series": null,
             "service": "youtube",
             "slug": "",
-            "image": "images/videos/thumbnail.jpg",
+            "image": "videos/images/thumbnail.jpg",
             "title": "Sonith - \"Come Down\"",
             "videoid": "I-3UhbZ-82U"
         },
@@ -22,7 +22,7 @@
             "series": null,
             "service": "youtube",
             "slug": "",
-            "image": "images/videos/Untitled-3.jpg",
+            "image": "videos/images/Untitled-3.jpg",
             "title": "Sonith - \"Vision I\"",
             "videoid": "Irc3AcmrTes"
         },
@@ -37,7 +37,7 @@
             "series": null,
             "service": "youtube",
             "slug": "",
-            "image": "images/videos/thumb.jpg",
+            "image": "videos/images/thumb.jpg",
             "title": "Sonith - \"Lost\"",
             "videoid": "38YjvASrZqc"
         },
