@@ -16,15 +16,14 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'polymath',
-        'USER': 'geoff',
+        'NAME': '',
+        'USER': '',
         'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'HOST': '',
+        'PORT': '',
     }
 }
-# if DEBUG is False:
-    # DATABASES = { 'default': dj_database_url.config() }
+DATABASES['default'] = dj_database_url.config()
 SOUTH_DATABASE_ADAPTERS = { 'default': 'south.db.postgresql_psycopg2' }
 
 # Allow all host headers
