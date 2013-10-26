@@ -97,7 +97,34 @@ ul, ol {
 
 .dept-hero-image {
   display: block;
+  position: relative;
+  margin-top: 1.5em;
   margin-bottom: 1.5em;
+
+  .background {
+
+  }
+  .content {
+    position: absolute;
+    bottom: 1.5em;
+    left: 1.5em;
+
+    p {
+      font-size: 1.5em;
+      margin-bottom: 0em;
+
+      // For black stuff
+      text-shadow: 0 0 20px black;
+
+      &:not(.link) {
+        color: #ccc;
+      }
+    }
+    .link {
+      font-weight: 600;
+      font-size: 2em;
+    }
+  }
 }
 
 // @import "foundation/components/visibility";

@@ -2837,5 +2837,28 @@ ul, ol {
 /* line 98, ../sass/app.scss */
 .dept-hero-image {
   display: block;
+  position: relative;
+  margin-top: 1.5em;
   margin-bottom: 1.5em;
+}
+/* line 107, ../sass/app.scss */
+.dept-hero-image .content {
+  position: absolute;
+  bottom: 1.5em;
+  left: 1.5em;
+}
+/* line 112, ../sass/app.scss */
+.dept-hero-image .content p {
+  font-size: 1.5em;
+  margin-bottom: 0em;
+  text-shadow: 0 0 20px black;
+}
+/* line 119, ../sass/app.scss */
+.dept-hero-image .content p:not(.link) {
+  color: #ccc;
+}
+/* line 123, ../sass/app.scss */
+.dept-hero-image .content .link {
+  font-weight: 600;
+  font-size: 2em;
 }
