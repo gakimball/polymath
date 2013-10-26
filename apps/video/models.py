@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from durationfield.db.models.fields.duration import DurationField
+from apps.music.models import Track
 
 class Video(models.Model):
     title = models.CharField(max_length=255)
@@ -8,6 +9,7 @@ class Video(models.Model):
     pub_date = models.DateField()
 
     series = models.ForeignKey('VideoSeries', blank=True, null=True)
+    track = models.ForeignKey('music.Track', verbose_name='Associated track', blank=True, null=True, help_text='If this is a music video, you can connect it to a track on the site.')
 
     image = models.ImageField(blank=True, upload_to='videos/images', help_text='Aspect ratio is 16:9.')
     length = DurationField(help_text='Write it like this: h:mm:ss')

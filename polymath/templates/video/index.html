@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Video{% endblock %}
 
 {% block content %}
 
 <div class="row">
-	<a href="" class="dept-hero-image">
-		<img src="http://placehold.it/1100x500" alt="">
+	<a href="{% url 'apps.video.views.video_detail' 5 %}" class="dept-hero-image">
+		<img class="background" src="{% static 'img/promos/outerspaces-promo.jpg' %}">
+		<div class="content">
+			<p>Coming in December</p>
+			<p class="link">Watch the trailer &rarr;</p>
+		</div>
 	</a>
 </div>
 
@@ -18,7 +23,7 @@
 		<ul class="large-block-grid-3">
 			{% for video in video_list %}
 			<li><a href="{% url 'apps.video.views.video_detail' video.id %}">
-				<img src="http://placehold.it/400x225" alt="" class="thumb">
+				<img src="{{ video.image.url }}" alt="" class="thumb">
 				<h3>{{ video.title }}</h3>
 			</a></li>
 			{% endfor %}

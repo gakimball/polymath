@@ -33,7 +33,7 @@
 		<ul class="large-block-grid-3 small-block-grid-1">
 			{% for v in video_list %}
 			<li><a href="{% url 'apps.video.views.video_detail' v.id %}" class="block-link">
-				<img src="http://placehold.it/16x9" alt="{{ v.title }}" class="thumb">
+				<img src="{{ v.image.url }}" alt="{{ v.title }}" class="thumb">
 				<h3>{{ v.title }}</h3>
 			</a></li>
 			{% endfor %}
