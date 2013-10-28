@@ -1,0 +1,103 @@
+$av: 'album-view';
+
+.#{$av} {
+  @include grid-row($behavior: nest);
+  margin-bottom: 1em;
+
+  @media #{$small} {
+    margin-bottom: 2em;
+  }
+}
+
+.#{$av}-cover {
+  @include grid-column(12);
+
+  margin-bottom: 1em;
+
+  .cover {
+    width: 100%;
+    max-width: 400px;
+
+    @media screen and (min-width: emCalc(650px)) {
+      max-width: 100%;
+    }
+  }
+}
+
+.#{$av}-info {
+  @include grid-column(12);
+
+  .title {
+    margin-bottom: 0;
+
+    @media #{$small} {
+      font-size: 2.5em;
+      font-weight: 300;
+    }
+  }
+  .year {
+    font-style: italic;
+    color: #666;
+
+    @media #{$small} {
+      font-size: 1.25em;
+    }
+  }
+}
+
+.#{$av}-tracklist {
+  list-style-type: none;
+  counter-reset: tracklist;
+
+  li {
+    &::before {
+      content: counter(tracklist);
+      counter-increment: tracklist;
+      color: #999;
+      float: left;
+      margin-right: 0.5em;
+    }
+    &:hover::before {
+      color: lighten($music-color, 20%);
+    }
+  }
+  a {
+    display: block;
+    font-weight: normal;
+    color: #000;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.1em;
+    margin-bottom: 0.3em;
+
+    &:hover {
+      color: $music-color;
+      border-color: $music-color;
+    }
+  }
+  span {
+    float: right;
+    color: #666;
+  }
+
+  @media #{$small} {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (min-width: emCalc(650px)) {
+  .#{$av}-cover {
+    @include grid-column(4);
+  }
+  .#{$av}-info {
+    @include grid-column(8);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .#{$av}-cover {
+    @include grid-column(5);
+  }
+  .#{$av}-info {
+    @include grid-column(7);
+  }
+}

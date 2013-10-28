@@ -15,8 +15,11 @@
 @import "footer";
 @import "sidebar";
 
+@import "links";
 @import "buttons";
 @import "play-button";
+
+@import "album-view";
 
 @import "about";
 @import "track-detail";
@@ -34,43 +37,23 @@ body {
 	}
 }
 
-$link-highlight-factor: 25%;
-
-a {
-  font-weight: 600;
-
-  &.block-link {
-    display: block;
-  }
-
-  &:hover {
-    color: lighten($primary-color, $link-highlight-factor);
-  }
-  h3:hover {
-    color: $primary-color;
-  }
-
-  .music-page & {
-    color: $music-color;
-    &:hover {
-      color: lighten($music-color, $link-highlight-factor);
-      h3 { color: $music-color; }
-    }
-  }
-  .video-page & {
-    color: $video-color;
-    &:hover {
-      color: lighten($video-color, $link-highlight-factor);
-      h3 { color: $video-color; }
-    }
-  }
+h2 {
+  padding-bottom: 0.1em;
+  border-bottom: 1px solid #999;
+  margin-bottom: 0.75em;
 }
+
 ul, ol {
 	list-style-position: inside;
 }
 
+ul[class*="large-block-grid"] li a {
+  display: block;
+}
+
 .thumb {
   margin-bottom: 0.75em;
+  width: 300px;
 
   @media #{$small} {
     width: 100%;
@@ -78,6 +61,7 @@ ul, ol {
 }
 
 .main {
+  padding: 1em;
   box-shadow: -30px -30px 45px -30px rgba(#000, 0.5), 30px -30px 45px -30px rgba(#000, 0.5);
 }
 
@@ -89,32 +73,29 @@ ul, ol {
   outline: 0;
   clear: both;
   margin: 2em auto;
+  display: none;
 
   @media #{$small} {
     margin: 3em auto;
   }
 }
 
-.dept-hero-image {
+.dept-promo {
   display: block;
   position: relative;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin: 1em 0;
 
   .background {
 
   }
   .content {
-    position: absolute;
-    bottom: 1.5em;
-    left: 1.5em;
+    background: #000;
+    padding: 1em;
 
     p {
-      font-size: 1.5em;
+      font-size: 1em;
       margin-bottom: 0em;
-
-      // For black stuff
-      text-shadow: 0 0 20px black;
+      line-height: 1.4;
 
       &:not(.link) {
         color: #ccc;
@@ -122,8 +103,53 @@ ul, ol {
     }
     .link {
       font-weight: 600;
-      font-size: 2em;
+      font-size: 1.5em;
     }
+  }
+
+  @media #{$small} {
+    margin: 1.5em 0;
+
+    .content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 1.5em;
+
+      // For black stuff
+      text-shadow: 0 0 20px black;
+
+      p {
+        font-size: 1.5em;
+      }
+      .link {
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+.related-track {
+  box-shadow: 0 4px 10px rgba(#000, 0.5);
+  padding: 0.5em;
+
+  .album-art {
+    width: emCalc(70px);
+    display: inline-block;
+    margin-right: 1em;
+  }
+  .info {
+    display: inline-block;
+
+    p {
+      margin: 0;
+    }
+  }
+  .album {
+    font-size: 1em;
+  }
+  .link {
+    display: block;
   }
 }
 

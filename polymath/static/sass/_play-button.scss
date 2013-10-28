@@ -3,8 +3,8 @@
 */
 .play-button {
 	display: block;
-	width: 3.75em;
-	height: 3.75em;
+	width: 5em;
+	height: 5em;
 	background: $music-color;
 	border-radius: 1000px;
 	
@@ -18,10 +18,11 @@
 		display: block;
 		content: '\25B6';
 		position: relative;
-		top: -0.35em;
-		left: 0.25em;
+		line-height: 1.15em;
 		color: #fff;
-		font-size: 3.75em;
+		font-size: 4em;
+		width: 100%;
+		text-align: center;
 	}
 
 	// Pause button

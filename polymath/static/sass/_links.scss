@@ -1,0 +1,31 @@
+$link-highlight-factor: 25%;
+
+a {
+  font-weight: 600;
+
+  &.block-link {
+    display: block;
+  }
+
+  &:hover {
+    color: lighten($primary-color, $link-highlight-factor);
+  }
+  h3:hover {
+    color: $primary-color;
+  }
+
+  .music-page & {
+    color: $music-color;
+    &:hover {
+      color: lighten($music-color, $link-highlight-factor);
+      h3 { color: $music-color; }
+    }
+  }
+  .video-page & {
+    color: $video-color;
+    &:hover {
+      color: lighten($video-color, $link-highlight-factor);
+      h3 { color: $video-color; }
+    }
+  }
+}

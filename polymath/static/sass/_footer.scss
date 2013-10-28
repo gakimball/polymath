@@ -3,6 +3,10 @@
 
   padding: 1em $column-gutter / 2 2em;
 
+  .divider {
+    display: block;
+  }
+
   .polymath {
     font-size: 2em;
     text-align: center;

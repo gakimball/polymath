@@ -2,32 +2,37 @@
 	Hero unit for tracks
 */
 .track-detail {
-	background: #ccc;
-	text-align: center;
+	background: $music-color;
+	color: #fff;
 	
 	@media #{$small} {
 		text-align: left;
+		padding: 1em 0;
 	}
 	
 	.row {
 		padding-top: 1em;
 		padding-bottom: 1em;
-		background: #999;
 	}
 
 	// Album art
 	.album-art {
-		@include grid-column(10, $offset: 1);
+		@include grid-column(12);
 		margin-bottom: 1em;
 		
-		@media #{$small} {
-			@include grid-column(3);
-		}
-		
 		img {
-			width: 100%;
+			width: 100px;
 			max-width: emCalc(320px);
-			border: 5px solid #fff;
+			border: 2px solid #fff;
+			box-shadow: 0 5px 20px rgba(#000, 0.5);
+		}
+
+		@media #{$small} {
+			@include grid-column(4);
+			img {
+				width: 100%;
+				border-width: 6px;
+			}
 		}
 	}
 
@@ -42,16 +47,84 @@
 	// Track title
 	.title {
 		display: inline-block;
-		background: #fff;
-		border-radius: 1000px;
 		line-height: 100%;
-		padding: 0.25em 0.7em;
-		
-		// Track artist
-		span {
-			font-size: 0.5em;
-			color: #999;
-			display: block;
+		color: #fff;
+		font-weight: 300;
+		font-size: 1.5em;
+		margin: 0;
+		line-height: 1.5;
+
+		@media #{$small} {
+			font-size: 3.5em;
+			line-height: 1.3;
 		}
+	}
+	.artist, .album {
+		font-size: 1em;
+		margin: 0;
+		line-height: 1.3;
+
+		@media #{$small} {
+			font-size: 1.5em;
+			line-height: 1.2;
+		}
+	}
+	.album {
+		font-style: italic;
+	}
+
+	.play-button {
+		background: #fff;
+
+		&::after {
+			color: $music-color;
+		}
+		&.paused::after {
+			background: $music-color;
+			-webkit-box-shadow: 0.3em 0 0 $music-color;
+			        box-shadow: 0.3em 0 0 $music-color;
+		}
+		&:hover {
+			$hover-color: lighten($music-color, 20%);
+			&::after {
+				color: $hover-color;
+			}
+			&.paused::after {
+				background: $hover-color;
+				-webkit-box-shadow: 0.3em 0 0 $hover-color;
+				        box-shadow: 0.3em 0 0 $hover-color;
+			}
+		}
+	}
+
+	.button {
+		background: white;
+		color: $music-color;
+
+		&:hover {
+			background: white;
+			color: lighten($music-color, 20%);
+		}
+	}
+}
+
+.audio-player {
+	margin: 1.5em 0;
+
+	.play-button {
+		display: inline-block;
+		margin-right: 1em;
+		vertical-align: middle;
+	}
+	.seeker {
+		display: inline-block;
+		font-size: 1.5em;
+		vertical-align: middle;
+	}
+	.time-current::after {
+		content: ' /';
+	}
+	.time-total {
+		opacity: 0.75;
 	}
 }

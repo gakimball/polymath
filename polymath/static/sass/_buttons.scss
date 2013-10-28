@@ -1,7 +1,7 @@
 .button {
 	display: inline-block;
 	font-size: 1.2em;
-	background: #999;
+	background: $primary-color;
 	border-radius: 1000px;
 	margin-right: 0.8em;
 	margin-bottom: 0.8em;
@@ -11,9 +11,40 @@
 	&:hover {
 		color: #fff;
 	}
-	
-	&.music {
+
+	.music-page & {
 		background: $music-color;
-		&:hover { background: darken($music-color, 10%); }
+		color: #fff;
+		&:hover {
+			background: lighten($music-color, 10%);
+			color: #fff;
+		}
+	}
+
+	.video-page & {
+		background: $video-color;
+		color: #fff;
+		&:hover {
+			background: lighten($video-color, 10%);
+			color: #fff;
+		}
+	}
+
+	.writing-page & {
+		background: $writing-color;
+		color: #fff;
+		&:hover {
+			background: lighten($writing-color, 10%);
+			color: #fff;
+		}
+	}
+
+	.audio-page & {
+		background: $audio-color;
+		color: #fff;
+		&:hover {
+			background: lighten($audio-color, 10%);
+			color: #fff;
+		}
 	}
 }
