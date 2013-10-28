@@ -7,13 +7,38 @@
 
 {% block content %}
 
+{% if track.color %}
+<style type="text/css">
+	.track-detail {
+		background-image: -webkit-linear-gradient(top, #ce5e5e, #{{ track.color }});
+	}
+	.track-detail .button, .track-detail .button:hover, .track-detail .play-button:after {
+		color: #{{ track.color }};
+	}
+</style>
+{% endif %}
+
 <div class="track-detail">
 	<div class="row">
 		<div class="album-art">
 			<img src="{% static track.cover %}">
 		</div>
 		<div class="info">
-			<h1 class="title">{{ track.title }} <span>by {{ track.artist }}</span></h1>
+			<h1 class="title">{{ track.title }}</h1>
+			<p class="artist">{{ track.artist }}</p>
+			<p class="album">{{ track.album }}</p>
+
+			<div class="audio-player">
+				<a href="" class="play-button"></a>
+				<div class="seeker">
+					<span class="time-current">0:00</span>
+					<span class="time-total">{{ track.length }}</span>
+				</div>
+			</div>
+
+			{% if track.download_link %}
+			<a href="{{ track.download_link.url }}" class="button">Download</a>
+			{% endif %}
 		</div>
 	</div>
 </div>
@@ -54,7 +79,5 @@
 		</div>
 	</div>
 </div>
-
-{% related_music %}
 
 {% endblock %}

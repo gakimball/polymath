@@ -11,6 +11,14 @@
 				<li{% if a.id == artist.id %} class="active"{% endif %}><a href="{% url 'apps.music.views.artist_detail' a.slug %}">{{ a.name }}</a></li>
 			{% endfor %}
 		</ul>
+		<div class="artist-detail-dropdown">
+			<p>Polymath Artists:</p>
+			<select onchange="location = '/artists/' + this.options[this.selectedIndex].value;">
+			{% for a in artist_list %}
+				<option value="{{ a.slug }}">{{ a.name }}</option>
+			{% endfor %}
+			</select>
+		</div>
 	</div>
 </div>
 
@@ -40,14 +48,18 @@
 		{% if artist.album_set.all|length > 0 %}
 			<h2>Albums</h2>
 			{% for album in artist.album_set.all %}
-				<div class="row">
-					<div class="large-5 columns">
-						<img src="http://placehold.it/500x500" alt="">
+				<div class="album-view">
+					<div class="album-view-cover">
+						<img class="cover" src="{{ album.image.url }}" alt="">
 					</div>
-					<div class="large-7 columns">
-						<h3>{{ album.title }}</h3>
-						<p>{{ album.year }}</p>
-						<ul>
+					<div class="album-view-info">
+						<h3 class="title">{{ album.title }}</h3>
+						<p class="year">{{ album.year }}</p>
+						<a href="#" class="button">Listen</a>
+						{% if album.download_link %}
+						<a href="{{ album.download_link.url }}" class="button">Download</a>
+						{% endif %}
+						<ul class="album-view-tracklist">
 							{% for track in album.track_set.all %}
 								<li><a href="#">{{ track.title }} <span>{{ track.length }}</span></a></li>
 							{% endfor %}

@@ -22,6 +22,18 @@
 
 		<time>{{ video.pub_date }}</time>
 		<p>{{ video.description }}</p>
+		{% if video.track %}
+		{% with video.track as track %}
+		<div class="related-track">
+			<img src="{{ track.album.image.url }}" alt="" class="album-art">
+			<div class="info">
+				<p class="title">"{{ track.title }}" by {{ track.artist }}</p>
+				<p class="album">from <i>{{ track.album }}</i></p>
+			</div>
+			<a href="{% url 'apps.music.views.track_detail' track.id %}" class="link">Listen &rarr;</a>
+		</div>
+		{% endwith %}
+		{% endif %}
 	</div>
 </div>
 
