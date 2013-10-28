@@ -15,6 +15,7 @@ class Track(models.Model):
     artist = models.ForeignKey('Artist', help_text='The artist for this track. It\'s probably the same as the album\'s artist, unless we\'re talking about a collaboration album.')
 
     image = models.ImageField(blank=True,upload_to='tracks/images/',help_text='Optional: unique cover art for this track. If your track is a single, you need to put an image here.')
+    color = models.CharField(max_length=6, blank=True, help_text='Optional: accent color for track.')
     length = models.CharField(max_length=5,help_text='Write it like this: "3:04". No leading zeroes in the minutes place.')
     
     audio_mp3 = models.FileField(upload_to='/tracks/mp3/',null=True,blank=True,help_text='Track in .mp3 format.')
@@ -73,7 +74,8 @@ class Album(models.Model):
     download_link = models.FileField(upload_to='downloads/albums/', blank=True, null=True, help_text='Optional: .zip file of album. Don\'t upload it until the entire album has been released for streaming.')
     file_size = models.IntegerField(editable=False, blank=True, null=True)
 
-    background = models.ImageField(upload_to='albums/backgrounds/',blank=True,help_text='Optional, but you\'d better have one.')
+    color = models.CharField(max_length=6, blank=True, help_text='Optional: accent color for album.')
+    background = models.ImageField(upload_to='albums/backgrounds/',blank=True,help_text='NOT IN UUUUSE.')
 
     class Meta:
         ordering = ['-year']
