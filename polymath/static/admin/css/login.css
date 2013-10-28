@@ -1,7 +1,7 @@
 /* LOGIN FORM */
 
 body.login {
-    background: #333;
+    background: #fff;
 }
 
 .login #container {
@@ -28,12 +28,12 @@ body.login {
 }
 
 .login #header {
-    background: #333;
-    color: #333;
+    background: #fff;
+    color: #000;
     pointer-events: none;
 }
 .login #site-name {
-    color: #333;
+    color: #fff;
     text-align: center;
     margin: 0;
     margin-bottom: -20px;
@@ -43,7 +43,7 @@ body.login {
 .login #site-name:before {
     content: 'Who are you?';
     display: inline;
-    color: #fff;
+    color: #000;
     font-size: 2em;
 }
 
@@ -59,14 +59,6 @@ body.login {
 
 .login .form-row label {
     display: none;
-
-    /*float: left;
-    width: 9em;
-    padding-right: 0.5em;
-    line-height: 2em;
-    text-align: right;
-    font-size: 1em;
-    color: #fff;*/
 }
 
 .login .form-row #id_username, .login .form-row #id_password {
@@ -77,10 +69,11 @@ body.login {
     border-width: 0;
     border-bottom: 2px dotted #ccc;
     padding-bottom: 8px;
-    color: #ddd;
+    color: #e7007b;
 }
 .login .form-row #id_username:focus, .login .form-row #id_password:focus {
     outline: none;
+    border-color: #e7007b;
 }
 
 .login span.help {
@@ -90,26 +83,32 @@ body.login {
 
 .login .submit-row {
     clear: both;
-    padding: 1em 0 0 9.4em;
+    padding: 3em 0 0 0;
+    text-align: center;
 }
 
 .login input[type='submit'] {
-    background: #ccc;
-    color: #333;
-    border-radius: 10px;
-    padding: 10px;
-    display: block;
+    background: #e7007b;
+    color: #fff;
+    border-radius: 100px;
+    padding: 10px 30px;
+    display: inline-block;
     font-size: 1.75em;
     font-weight: bold;
     border: 0;
     -webkit-transition: background-color 0.1s linear;
 }
 .login input[type='submit']:hover {
-    background: #333;
+    background: #a60058;
     color: #fff;
     cursor: pointer;
 }
 
 .login .password-reset-link {
     text-align: center;
+}
+
+.errornote {
+    background: white;
+    padding: 0.5em;
 }
