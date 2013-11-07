@@ -2,7 +2,7 @@ import re
 
 # Determines what dept. the user is currently in and creates a new context variable
 def current_dept(request):
-  music = '/(music|tracks|artists)'
+  music = '/(music|tracks|releases|artists)'
   video = '/video'
   writing = '/(writing|story)'
 
