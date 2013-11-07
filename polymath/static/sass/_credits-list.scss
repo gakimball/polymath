@@ -1,0 +1,23 @@
+.credits-list {
+  font-weight: 300;
+
+  .person {
+    display: inline;
+
+    &::after {
+      content: ', ';
+      font-weight: 300;
+    }
+  }
+  .credit {
+    display: inline;
+
+    &::after {
+      content: '';
+      display: block;
+    }
+  }
+  a {
+    font-weight: normal;
+  }
+}

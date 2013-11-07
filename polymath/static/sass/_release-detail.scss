@@ -1,0 +1,80 @@
+$rd: 'release-detail';
+
+.#{$rd}-header {
+  background-color: $music-color;
+  color: #fff;
+  margin-bottom: 1em;
+  padding-top: 1em;
+
+  @media #{$small} {
+    padding: 2em;
+  }
+
+  .cover {
+    max-width: 300px;
+    border: 4px solid white;
+    box-shadow: 0 7px 15px rgba(0,0,0,0.5);
+
+    @media #{$small} {
+      max-width: 100%;
+    }
+  }
+
+  .details {
+    @media #{$small} {
+      padding-left: 2em;
+    }
+  }
+
+  .title {
+    font-weight: 300;
+    font-size: 3.5em;
+    color: #fff;
+    margin-bottom: 0;
+    line-height: 1;
+  }
+  .artist {
+    font-size: 1.25em;
+    color: #eee;
+
+    a {
+      font-weight: 600;
+      color: #eee;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .button {
+    background: white;
+    color: $music-color;
+
+    &:hover {
+      background: #ddd;
+      color: lighten($music-color, 20%);
+    }
+  }
+
+  .info {
+    font-size: 1.1em;
+
+    dt {
+      font-weight: 300;
+      display: inline;
+
+      &::after {
+        content: ': ';
+      }
+    }
+    dd {
+      font-weight: normal;
+      display: inline;
+
+      &::after {
+        content: ' ';
+        display: block;
+      }
+    }
+  }
+}

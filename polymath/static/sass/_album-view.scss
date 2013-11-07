@@ -45,45 +45,6 @@ $av: 'album-view';
   }
 }
 
-.#{$av}-tracklist {
-  list-style-type: none;
-  counter-reset: tracklist;
-
-  li {
-    &::before {
-      content: counter(tracklist);
-      counter-increment: tracklist;
-      color: #999;
-      float: left;
-      margin-right: 0.5em;
-    }
-    &:hover::before {
-      color: lighten($music-color, 20%);
-    }
-  }
-  a {
-    display: block;
-    font-weight: normal;
-    color: #000;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 0.1em;
-    margin-bottom: 0.3em;
-
-    &:hover {
-      color: $music-color;
-      border-color: $music-color;
-    }
-  }
-  span {
-    float: right;
-    color: #666;
-  }
-
-  @media #{$small} {
-    font-size: 1.1em;
-  }
-}
-
 @media screen and (min-width: emCalc(650px)) {
   .#{$av}-cover {
     @include grid-column(4);

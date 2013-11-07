@@ -47,4 +47,31 @@
 			color: #fff;
 		}
 	}
+
+	// Other button types
+	&.giant-play {
+		vertical-align: middle;
+		font-size: 1.5em;
+
+		&::before {
+			vertical-align: text-bottom;
+			content: '\25B6';
+			position: relative;
+			font-size: 1.5em;
+			line-height: 0.8;
+			margin-right: 0.2em;
+			top: -2px;
+		}
+
+		@media #{$small} {
+			font-size: 2em;
+			line-height: 1.2em;
+
+			&::before {
+				font-size: 2em;
+				line-height: 0.6;
+				top: -4px;
+			}
+		}
+	}
 }

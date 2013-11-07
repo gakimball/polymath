@@ -1,0 +1,131 @@
+$ml: 'media-list';
+$title-size: $h3-font-size;
+
+.#{$ml} {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1em;
+
+  &.up-3 {
+    @include block-grid(3);
+  }
+  &.up-4 {
+    @include block-grid(4);
+  }
+}
+
+.#{$ml}-item {
+  margin-bottom: 1em;
+
+  li {
+    display: block;
+    color: black;
+  }
+  a {
+    .subtitle, .info {
+      color: black;
+    }
+    &:hover + .content .title {
+      color: $primary-color;
+      -webkit-transition: color 0.25s ease-out;
+
+      .music-page & {
+        color: $music-color;
+      }
+    }
+  }
+
+  .thumb {
+    display: block;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    max-width: 300px;
+    width: 100%;
+  }
+  .cover {
+    box-shadow: 0 7px 15px rgba(#000, 0.4);
+    &, &:hover {
+      -webkit-transition: box-shadow 0.2s ease-out;
+    }
+    &:hover {
+      box-shadow: 0 7px 30px rgba(#000, 0.8);
+    }
+  }
+  .title {
+    margin-bottom: 0.25em;
+    -webkit-transition: color 0.75s ease-out;
+    &:hover {
+      -webkit-transition: color 0.25s ease-out;
+    }
+  }
+  .subtitle {
+    font-weight: 300;
+    font-size: $title-size - emCalc(8px);
+    line-height: 1.4;
+    margin-bottom: 0.15em;
+  }
+  .info {
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .flavor {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  // Typographic adjustments
+  @media screen and (min-width: emCalc(650px)) {
+    .title {
+      margin-bottom: 0;
+      font-size: $title-size;
+    }
+    .subtitle {
+      font-size: $title-size - emCalc(3px);
+    }
+    .info {
+      font-size: 1.25em;
+    }
+  }
+  @media screen and (min-width: emCalc(800px)) {
+    .title {
+      font-size: $title-size + emCalc(4px);
+    }
+    .subtitle {
+      font-size: $title-size;
+    }
+  }
+
+  // Layout adjustments
+  ul:not(.up-3):not(.up-4) & {
+    @media screen and (min-width: emCalc(650px)) {
+      & {
+        @include clearfix;
+      }
+
+      .thumb {
+        max-width: none;
+        width: 25%;
+        float: left;
+        margin-right: 1.5em;
+      }
+      .content {
+        float: left;
+      }
+    }
+    @media #{$small} {
+      .thumb {
+        margin-right: 2em;
+      }
+    }
+    @media screen and (min-width: emCalc(900px)) {
+      .thumb {
+        width: 27.5%;
+      }
+    }
+  }
+}

@@ -1570,13 +1570,13 @@ td {
 /* Default Link Styles */
 /* line 151, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_type.scss */
 a {
-  color: #e7007b;
+  color: #b40c00;
   text-decoration: none;
   line-height: inherit;
 }
 /* line 157, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_type.scss */
 a:hover, a:focus {
-  color: #ce006d;
+  color: #9b0a00;
 }
 /* line 159, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_type.scss */
 a img {
@@ -2013,10 +2013,11 @@ blockquote p {
 }
 /* line 13, ../sass/_header.scss */
 .header .row {
+  height: 3.5em;
   border-left: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
 }
-/* line 20, ../sass/_header.scss */
+/* line 22, ../sass/_header.scss */
 .header .logo {
   height: 3.5em;
   line-height: 3.5em;
@@ -2026,25 +2027,25 @@ blockquote p {
   padding-left: 0.9375em;
   padding-right: 1.875em;
 }
-/* line 31, ../sass/_header.scss */
+/* line 33, ../sass/_header.scss */
 .header .logo img {
   height: 2.8em;
   margin-right: 0.5em;
   position: relative;
   top: -0.5em;
 }
-/* line 37, ../sass/_header.scss */
+/* line 39, ../sass/_header.scss */
 .header .logo span {
   color: black;
   font-weight: normal;
   font-size: 1.875em;
 }
-/* line 42, ../sass/_header.scss */
+/* line 44, ../sass/_header.scss */
 .header .logo:hover span {
   color: #666;
 }
 
-/* line 48, ../sass/_header.scss */
+/* line 50, ../sass/_header.scss */
 .dept-nav {
   height: 3.5em;
   line-height: 3.5em;
@@ -2056,20 +2057,20 @@ blockquote p {
   display: none;
 }
 @media screen and (min-width: 40.625em) {
-  /* line 48, ../sass/_header.scss */
+  /* line 50, ../sass/_header.scss */
   .dept-nav {
     display: block;
   }
 }
-/* line 62, ../sass/_header.scss */
+/* line 64, ../sass/_header.scss */
 .dept-nav li {
   display: inline-block;
 }
-/* line 65, ../sass/_header.scss */
+/* line 67, ../sass/_header.scss */
 .dept-nav li:not(:last-child) {
   margin-right: 0.9375em;
 }
-/* line 68, ../sass/_header.scss */
+/* line 70, ../sass/_header.scss */
 .dept-nav a {
   position: relative;
   display: inline-block;
@@ -2077,7 +2078,7 @@ blockquote p {
   font-size: 1.25em;
   font-weight: normal;
 }
-/* line 75, ../sass/_header.scss */
+/* line 77, ../sass/_header.scss */
 .dept-nav a::after {
   display: none;
   content: '';
@@ -2087,69 +2088,69 @@ blockquote p {
   background: #000;
   bottom: 0;
 }
-/* line 84, ../sass/_header.scss */
+/* line 86, ../sass/_header.scss */
 .dept-nav a:hover::after {
   display: block;
 }
-/* line 89, ../sass/_header.scss */
+/* line 91, ../sass/_header.scss */
 .dept-nav .music a, .dept-nav .music a:hover {
   color: #ce5e5e;
 }
-/* line 90, ../sass/_header.scss */
+/* line 92, ../sass/_header.scss */
 .dept-nav .music a::after {
   background: #ce5e5e;
 }
-/* line 92, ../sass/_header.scss */
+/* line 94, ../sass/_header.scss */
 .music-page .dept-nav .music a::after {
   display: block;
 }
-/* line 96, ../sass/_header.scss */
+/* line 98, ../sass/_header.scss */
 .dept-nav .video a, .dept-nav .video a:hover {
   color: #499e47;
 }
-/* line 97, ../sass/_header.scss */
+/* line 99, ../sass/_header.scss */
 .dept-nav .video a::after {
   background: #499e47;
 }
-/* line 99, ../sass/_header.scss */
+/* line 101, ../sass/_header.scss */
 .video-page .dept-nav .video a::after {
   display: block;
 }
-/* line 103, ../sass/_header.scss */
+/* line 105, ../sass/_header.scss */
 .dept-nav .writing a, .dept-nav .writing a:hover {
   color: #5e78ce;
 }
-/* line 104, ../sass/_header.scss */
+/* line 106, ../sass/_header.scss */
 .dept-nav .writing a::after {
   background: #5e78ce;
 }
-/* line 106, ../sass/_header.scss */
+/* line 108, ../sass/_header.scss */
 .writing-page .dept-nav .writing a::after {
   display: block;
 }
-/* line 110, ../sass/_header.scss */
+/* line 112, ../sass/_header.scss */
 .dept-nav .audio a, .dept-nav .audio a:hover {
   color: #ab4da8;
 }
-/* line 111, ../sass/_header.scss */
+/* line 113, ../sass/_header.scss */
 .dept-nav .audio a::after {
   background: #ab4da8;
 }
-/* line 113, ../sass/_header.scss */
+/* line 115, ../sass/_header.scss */
 .audio-page .dept-nav .audio a::after {
   display: block;
 }
-/* line 117, ../sass/_header.scss */
+/* line 119, ../sass/_header.scss */
 .dept-nav .disabled a, .dept-nav .disabled a:hover {
   color: #ccc;
   cursor: default;
 }
-/* line 121, ../sass/_header.scss */
+/* line 123, ../sass/_header.scss */
 .dept-nav .disabled a:hover::after {
   display: none;
 }
 
-/* line 127, ../sass/_header.scss */
+/* line 129, ../sass/_header.scss */
 .secondary-nav {
   position: absolute;
   top: 0;
@@ -2160,25 +2161,25 @@ blockquote p {
   display: none;
 }
 @media screen and (min-width: 40.625em) {
-  /* line 127, ../sass/_header.scss */
+  /* line 129, ../sass/_header.scss */
   .secondary-nav {
     display: block;
   }
 }
-/* line 140, ../sass/_header.scss */
+/* line 142, ../sass/_header.scss */
 .secondary-nav li {
   display: inline-block;
 }
-/* line 143, ../sass/_header.scss */
+/* line 145, ../sass/_header.scss */
 .secondary-nav a {
   display: inline-block;
   border-left: 1px solid #cccccc;
 }
-/* line 147, ../sass/_header.scss */
+/* line 149, ../sass/_header.scss */
 .secondary-nav .about a {
   padding: 0 1em;
 }
-/* line 150, ../sass/_header.scss */
+/* line 152, ../sass/_header.scss */
 .secondary-nav .icon a {
   width: 2em;
   text-align: center;
@@ -2403,11 +2404,11 @@ a.block-link {
 }
 /* line 10, ../sass/_links.scss */
 a:hover {
-  color: #ff68b8;
+  color: #ff2a1b;
 }
 /* line 13, ../sass/_links.scss */
 a h3:hover {
-  color: #e7007b;
+  color: #b40c00;
 }
 /* line 17, ../sass/_links.scss */
 .music-page a {
@@ -2415,7 +2416,7 @@ a h3:hover {
 }
 /* line 19, ../sass/_links.scss */
 .music-page a:hover {
-  color: #ecc0c0;
+  color: #e6acac;
 }
 /* line 21, ../sass/_links.scss */
 .music-page a:hover h3 {
@@ -2427,7 +2428,7 @@ a h3:hover {
 }
 /* line 26, ../sass/_links.scss */
 .video-page a:hover {
-  color: #96cf95;
+  color: #85c883;
 }
 /* line 28, ../sass/_links.scss */
 .video-page a:hover h3 {
@@ -2438,7 +2439,7 @@ a h3:hover {
 .button {
   display: inline-block;
   font-size: 1.2em;
-  background: #e7007b;
+  background: #b40c00;
   border-radius: 1000px;
   margin-right: 0.8em;
   margin-bottom: 0.8em;
@@ -2489,6 +2490,34 @@ a h3:hover {
   background: #bd6ebb;
   color: #fff;
 }
+/* line 52, ../sass/_buttons.scss */
+.button.giant-play {
+  vertical-align: middle;
+  font-size: 1.5em;
+}
+/* line 56, ../sass/_buttons.scss */
+.button.giant-play::before {
+  vertical-align: text-bottom;
+  content: '\25B6';
+  position: relative;
+  font-size: 1.5em;
+  line-height: 0.8;
+  margin-right: 0.2em;
+  top: -2px;
+}
+@media only screen and (min-width: 768px) {
+  /* line 52, ../sass/_buttons.scss */
+  .button.giant-play {
+    font-size: 2em;
+    line-height: 1.2em;
+  }
+  /* line 70, ../sass/_buttons.scss */
+  .button.giant-play::before {
+    font-size: 2em;
+    line-height: 0.6;
+    top: -4px;
+  }
+}
 
 /*
 	Play button
@@ -2496,8 +2525,8 @@ a h3:hover {
 /* line 4, ../sass/_play-button.scss */
 .play-button {
   display: block;
-  width: 5em;
-  height: 5em;
+  width: 3em;
+  height: 3em;
   background: #ce5e5e;
   border-radius: 1000px;
 }
@@ -2510,9 +2539,9 @@ a h3:hover {
   display: block;
   content: '\25B6';
   position: relative;
-  line-height: 1.15em;
+  line-height: 1.1em;
   color: #fff;
-  font-size: 4em;
+  font-size: 2.5em;
   width: 100%;
   text-align: center;
 }
@@ -2526,6 +2555,315 @@ a h3:hover {
   background: #fff;
   -webkit-box-shadow: 0.3em 0 0 white;
   box-shadow: 0.3em 0 0 white;
+}
+@media only screen and (min-width: 768px) {
+  /* line 4, ../sass/_play-button.scss */
+  .play-button {
+    width: 5em;
+    height: 5em;
+  }
+  /* line 44, ../sass/_play-button.scss */
+  .play-button::after {
+    line-height: 1.15em;
+    font-size: 4em;
+  }
+}
+
+/* line 4, ../sass/_media-list.scss */
+.media-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1em;
+}
+/* line 9, ../sass/_media-list.scss */
+.media-list.up-3 {
+  display: block;
+  padding: 0;
+  margin: 0 -0.625em;
+  *zoom: 1;
+}
+/* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+.media-list.up-3:before, .media-list.up-3:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+.media-list.up-3:after {
+  clear: both;
+}
+/* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+.media-list.up-3 > li {
+  display: inline;
+  height: auto;
+  float: left;
+  padding: 0 0.625em 1.25em;
+}
+/* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+.media-list.up-3 > li {
+  width: 33.33333%;
+  padding: 0 0.625em 1.25em;
+}
+/* line 40, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+.media-list.up-3 > li:nth-of-type(n) {
+  clear: none;
+}
+/* line 41, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+.media-list.up-3 > li:nth-of-type(3n+1) {
+  clear: both;
+}
+/* line 12, ../sass/_media-list.scss */
+.media-list.up-4 {
+  display: block;
+  padding: 0;
+  margin: 0 -0.625em;
+  *zoom: 1;
+}
+/* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+.media-list.up-4:before, .media-list.up-4:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+.media-list.up-4:after {
+  clear: both;
+}
+/* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+.media-list.up-4 > li {
+  display: inline;
+  height: auto;
+  float: left;
+  padding: 0 0.625em 1.25em;
+}
+/* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+.media-list.up-4 > li {
+  width: 25%;
+  padding: 0 0.625em 1.25em;
+}
+/* line 40, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+.media-list.up-4 > li:nth-of-type(n) {
+  clear: none;
+}
+/* line 41, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+.media-list.up-4 > li:nth-of-type(4n+1) {
+  clear: both;
+}
+
+/* line 17, ../sass/_media-list.scss */
+.media-list-item {
+  margin-bottom: 1em;
+}
+/* line 20, ../sass/_media-list.scss */
+.media-list-item li {
+  display: block;
+  color: black;
+}
+/* line 25, ../sass/_media-list.scss */
+.media-list-item a .subtitle, .media-list-item a .info {
+  color: black;
+}
+/* line 28, ../sass/_media-list.scss */
+.media-list-item a:hover + .content .title {
+  color: #b40c00;
+  -webkit-transition: color 0.25s ease-out;
+}
+/* line 32, ../sass/_media-list.scss */
+.music-page .media-list-item a:hover + .content .title {
+  color: #ce5e5e;
+}
+/* line 38, ../sass/_media-list.scss */
+.media-list-item .thumb {
+  display: block;
+  margin-bottom: 1em;
+  border: 1px solid #cccccc;
+  max-width: 300px;
+  width: 100%;
+}
+/* line 45, ../sass/_media-list.scss */
+.media-list-item .cover {
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+}
+/* line 47, ../sass/_media-list.scss */
+.media-list-item .cover, .media-list-item .cover:hover {
+  -webkit-transition: box-shadow 0.2s ease-out;
+}
+/* line 50, ../sass/_media-list.scss */
+.media-list-item .cover:hover {
+  box-shadow: 0 7px 30px rgba(0, 0, 0, 0.8);
+}
+/* line 54, ../sass/_media-list.scss */
+.media-list-item .title {
+  margin-bottom: 0.25em;
+  -webkit-transition: color 0.75s ease-out;
+}
+/* line 57, ../sass/_media-list.scss */
+.media-list-item .title:hover {
+  -webkit-transition: color 0.25s ease-out;
+}
+/* line 61, ../sass/_media-list.scss */
+.media-list-item .subtitle {
+  font-weight: 300;
+  font-size: 1.1875em;
+  line-height: 1.4;
+  margin-bottom: 0.15em;
+}
+/* line 67, ../sass/_media-list.scss */
+.media-list-item .info {
+  font-weight: 300;
+  font-style: italic;
+}
+/* line 72, ../sass/_media-list.scss */
+.media-list-item .flavor {
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  line-height: 1;
+}
+@media screen and (min-width: 40.625em) {
+  /* line 83, ../sass/_media-list.scss */
+  .media-list-item .title {
+    margin-bottom: 0;
+    font-size: 1.6875em;
+  }
+  /* line 87, ../sass/_media-list.scss */
+  .media-list-item .subtitle {
+    font-size: 1.5em;
+  }
+  /* line 90, ../sass/_media-list.scss */
+  .media-list-item .info {
+    font-size: 1.25em;
+  }
+}
+@media screen and (min-width: 50em) {
+  /* line 95, ../sass/_media-list.scss */
+  .media-list-item .title {
+    font-size: 1.9375em;
+  }
+  /* line 98, ../sass/_media-list.scss */
+  .media-list-item .subtitle {
+    font-size: 1.6875em;
+  }
+}
+@media screen and (min-width: 40.625em) {
+  /* line 106, ../sass/_media-list.scss */
+  ul:not(.up-3):not(.up-4) .media-list-item {
+    *zoom: 1;
+  }
+  /* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+  ul:not(.up-3):not(.up-4) .media-list-item:before, ul:not(.up-3):not(.up-4) .media-list-item:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+  ul:not(.up-3):not(.up-4) .media-list-item:after {
+    clear: both;
+  }
+  /* line 110, ../sass/_media-list.scss */
+  ul:not(.up-3):not(.up-4) .media-list-item .thumb {
+    max-width: none;
+    width: 25%;
+    float: left;
+    margin-right: 1.5em;
+  }
+  /* line 116, ../sass/_media-list.scss */
+  ul:not(.up-3):not(.up-4) .media-list-item .content {
+    float: left;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 121, ../sass/_media-list.scss */
+  ul:not(.up-3):not(.up-4) .media-list-item .thumb {
+    margin-right: 2em;
+  }
+}
+@media screen and (min-width: 56.25em) {
+  /* line 126, ../sass/_media-list.scss */
+  ul:not(.up-3):not(.up-4) .media-list-item .thumb {
+    width: 27.5%;
+  }
+}
+
+/* line 1, ../sass/_tracklist.scss */
+.tracklist, .big-tracklist {
+  list-style-type: none;
+  counter-reset: tracklist;
+}
+/* line 6, ../sass/_tracklist.scss */
+.tracklist li::before, .big-tracklist li::before {
+  content: counter(tracklist);
+  counter-increment: tracklist;
+  color: #999;
+  float: left;
+  margin-right: 0.5em;
+}
+/* line 13, ../sass/_tracklist.scss */
+.tracklist li:hover::before, .big-tracklist li:hover::before {
+  color: #e6acac;
+}
+/* line 17, ../sass/_tracklist.scss */
+.tracklist a, .big-tracklist a {
+  display: block;
+  font-weight: normal;
+  color: #000;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 0.1em;
+  margin-bottom: 0.3em;
+}
+/* line 25, ../sass/_tracklist.scss */
+.tracklist a:hover, .big-tracklist a:hover {
+  color: #ce5e5e;
+  border-color: #ce5e5e;
+}
+/* line 30, ../sass/_tracklist.scss */
+.tracklist span, .big-tracklist span {
+  float: right;
+  color: #666;
+}
+@media only screen and (min-width: 768px) {
+  /* line 1, ../sass/_tracklist.scss */
+  .tracklist, .big-tracklist {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (min-width: 40.625em) {
+  /* line 44, ../sass/_tracklist.scss */
+  .big-tracklist li {
+    font-size: 1.5em;
+  }
+  /* line 47, ../sass/_tracklist.scss */
+  .big-tracklist a {
+    padding-bottom: 0.3em;
+    margin-bottom: 0.5em;
+  }
+}
+
+/* line 1, ../sass/_credits-list.scss */
+.credits-list {
+  font-weight: 300;
+}
+/* line 4, ../sass/_credits-list.scss */
+.credits-list .person {
+  display: inline;
+}
+/* line 7, ../sass/_credits-list.scss */
+.credits-list .person::after {
+  content: ', ';
+  font-weight: 300;
+}
+/* line 12, ../sass/_credits-list.scss */
+.credits-list .credit {
+  display: inline;
+}
+/* line 15, ../sass/_credits-list.scss */
+.credits-list .credit::after {
+  content: '';
+  display: block;
+}
+/* line 20, ../sass/_credits-list.scss */
+.credits-list a {
+  font-weight: normal;
 }
 
 /* line 3, ../sass/_album-view.scss */
@@ -2607,51 +2945,8 @@ a h3:hover {
   }
 }
 
-/* line 48, ../sass/_album-view.scss */
-.album-view-tracklist {
-  list-style-type: none;
-  counter-reset: tracklist;
-}
-/* line 53, ../sass/_album-view.scss */
-.album-view-tracklist li::before {
-  content: counter(tracklist);
-  counter-increment: tracklist;
-  color: #999;
-  float: left;
-  margin-right: 0.5em;
-}
-/* line 60, ../sass/_album-view.scss */
-.album-view-tracklist li:hover::before {
-  color: #e6acac;
-}
-/* line 64, ../sass/_album-view.scss */
-.album-view-tracklist a {
-  display: block;
-  font-weight: normal;
-  color: #000;
-  border-bottom: 1px solid #cccccc;
-  padding-bottom: 0.1em;
-  margin-bottom: 0.3em;
-}
-/* line 72, ../sass/_album-view.scss */
-.album-view-tracklist a:hover {
-  color: #ce5e5e;
-  border-color: #ce5e5e;
-}
-/* line 77, ../sass/_album-view.scss */
-.album-view-tracklist span {
-  float: right;
-  color: #666;
-}
-@media only screen and (min-width: 768px) {
-  /* line 48, ../sass/_album-view.scss */
-  .album-view-tracklist {
-    font-size: 1.1em;
-  }
-}
-
 @media screen and (min-width: 40.625em) {
-  /* line 88, ../sass/_album-view.scss */
+  /* line 49, ../sass/_album-view.scss */
   .album-view-cover {
     position: relative;
     padding-left: 0.9375em;
@@ -2660,7 +2955,7 @@ a h3:hover {
     float: left;
   }
 
-  /* line 91, ../sass/_album-view.scss */
+  /* line 52, ../sass/_album-view.scss */
   .album-view-info {
     position: relative;
     padding-left: 0.9375em;
@@ -2670,7 +2965,7 @@ a h3:hover {
   }
 }
 @media screen and (min-width: 800px) {
-  /* line 97, ../sass/_album-view.scss */
+  /* line 58, ../sass/_album-view.scss */
   .album-view-cover {
     position: relative;
     padding-left: 0.9375em;
@@ -2679,7 +2974,7 @@ a h3:hover {
     float: left;
   }
 
-  /* line 100, ../sass/_album-view.scss */
+  /* line 61, ../sass/_album-view.scss */
   .album-view-info {
     position: relative;
     padding-left: 0.9375em;
@@ -2703,7 +2998,7 @@ a h3:hover {
 /* line 11, ../sass/_about.scss */
 .about-tagline .weis em {
   font-style: normal;
-  color: #e7007b;
+  color: #b40c00;
 }
 /* line 16, ../sass/_about.scss */
 .about-tagline .weis-sub {
@@ -2910,6 +3205,93 @@ a h3:hover {
   opacity: 0.75;
 }
 
+/* line 3, ../sass/_release-detail.scss */
+.release-detail-header {
+  background-color: #ce5e5e;
+  color: #fff;
+  margin-bottom: 1em;
+  padding-top: 1em;
+}
+@media only screen and (min-width: 768px) {
+  /* line 3, ../sass/_release-detail.scss */
+  .release-detail-header {
+    padding: 2em;
+  }
+}
+/* line 13, ../sass/_release-detail.scss */
+.release-detail-header .cover {
+  max-width: 300px;
+  border: 4px solid white;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
+}
+@media only screen and (min-width: 768px) {
+  /* line 13, ../sass/_release-detail.scss */
+  .release-detail-header .cover {
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 23, ../sass/_release-detail.scss */
+  .release-detail-header .details {
+    padding-left: 2em;
+  }
+}
+/* line 29, ../sass/_release-detail.scss */
+.release-detail-header .title {
+  font-weight: 300;
+  font-size: 3.5em;
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1;
+}
+/* line 36, ../sass/_release-detail.scss */
+.release-detail-header .artist {
+  font-size: 1.25em;
+  color: #eee;
+}
+/* line 40, ../sass/_release-detail.scss */
+.release-detail-header .artist a {
+  font-weight: 600;
+  color: #eee;
+}
+/* line 43, ../sass/_release-detail.scss */
+.release-detail-header .artist a:hover {
+  color: #fff;
+}
+/* line 49, ../sass/_release-detail.scss */
+.release-detail-header .button {
+  background: white;
+  color: #ce5e5e;
+}
+/* line 53, ../sass/_release-detail.scss */
+.release-detail-header .button:hover {
+  background: #ddd;
+  color: #e6acac;
+}
+/* line 59, ../sass/_release-detail.scss */
+.release-detail-header .info {
+  font-size: 1.1em;
+}
+/* line 62, ../sass/_release-detail.scss */
+.release-detail-header .info dt {
+  font-weight: 300;
+  display: inline;
+}
+/* line 66, ../sass/_release-detail.scss */
+.release-detail-header .info dt::after {
+  content: ': ';
+}
+/* line 70, ../sass/_release-detail.scss */
+.release-detail-header .info dd {
+  font-weight: normal;
+  display: inline;
+}
+/* line 74, ../sass/_release-detail.scss */
+.release-detail-header .info dd::after {
+  content: ' ';
+  display: block;
+}
+
 /* line 2, ../sass/_artist.scss */
 .artist-list h3 {
   text-align: center;
@@ -3099,12 +3481,12 @@ a h3:hover {
   line-height: 1.2;
 }
 
-/* line 29, ../sass/app.scss */
+/* line 33, ../sass/app.scss */
 body {
   -webkit-font-smoothing: antialiased;
 }
 @media screen and (min-width: 72.5em) {
-  /* line 29, ../sass/app.scss */
+  /* line 33, ../sass/app.scss */
   body {
     background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(10%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.1)));
     background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0) 90%, rgba(0, 0, 0, 0.1) 100%);
@@ -3114,42 +3496,38 @@ body {
   }
 }
 
-/* line 40, ../sass/app.scss */
+/* line 44, ../sass/app.scss */
 h2 {
   padding-bottom: 0.1em;
   border-bottom: 1px solid #999999;
   margin-bottom: 0.75em;
 }
+/* line 49, ../sass/app.scss */
+h2.subheader {
+  border: none;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.75em;
+}
 
-/* line 46, ../sass/app.scss */
+/* line 58, ../sass/app.scss */
 ul, ol {
   list-style-position: inside;
 }
 
-/* line 50, ../sass/app.scss */
+/* line 62, ../sass/app.scss */
 ul[class*="large-block-grid"] li a {
   display: block;
 }
 
-/* line 54, ../sass/app.scss */
-.thumb {
-  margin-bottom: 0.75em;
-  width: 300px;
-}
-@media only screen and (min-width: 768px) {
-  /* line 54, ../sass/app.scss */
-  .thumb {
-    width: 100%;
-  }
-}
-
-/* line 63, ../sass/app.scss */
+/* line 75, ../sass/app.scss */
 .main {
   padding: 1em;
   box-shadow: -30px -30px 45px -30px rgba(0, 0, 0, 0.5), 30px -30px 45px -30px rgba(0, 0, 0, 0.5);
 }
 
-/* line 68, ../sass/app.scss */
+/* line 80, ../sass/app.scss */
 .divider {
   max-width: 62.5em;
   height: 1px;
@@ -3161,44 +3539,44 @@ ul[class*="large-block-grid"] li a {
   display: none;
 }
 @media only screen and (min-width: 768px) {
-  /* line 68, ../sass/app.scss */
+  /* line 80, ../sass/app.scss */
   .divider {
     margin: 3em auto;
   }
 }
 
-/* line 83, ../sass/app.scss */
+/* line 95, ../sass/app.scss */
 .dept-promo {
   display: block;
   position: relative;
   margin: 1em 0;
 }
-/* line 91, ../sass/app.scss */
+/* line 103, ../sass/app.scss */
 .dept-promo .content {
   background: #000;
   padding: 1em;
 }
-/* line 95, ../sass/app.scss */
+/* line 107, ../sass/app.scss */
 .dept-promo .content p {
   font-size: 1em;
   margin-bottom: 0em;
   line-height: 1.4;
 }
-/* line 100, ../sass/app.scss */
+/* line 112, ../sass/app.scss */
 .dept-promo .content p:not(.link) {
   color: #ccc;
 }
-/* line 104, ../sass/app.scss */
+/* line 116, ../sass/app.scss */
 .dept-promo .content .link {
   font-weight: 600;
   font-size: 1.5em;
 }
 @media only screen and (min-width: 768px) {
-  /* line 83, ../sass/app.scss */
+  /* line 95, ../sass/app.scss */
   .dept-promo {
     margin: 1.5em 0;
   }
-  /* line 113, ../sass/app.scss */
+  /* line 125, ../sass/app.scss */
   .dept-promo .content {
     position: absolute;
     bottom: 0;
@@ -3206,40 +3584,40 @@ ul[class*="large-block-grid"] li a {
     padding: 1.5em;
     text-shadow: 0 0 20px black;
   }
-  /* line 122, ../sass/app.scss */
+  /* line 134, ../sass/app.scss */
   .dept-promo .content p {
     font-size: 1.5em;
   }
-  /* line 125, ../sass/app.scss */
+  /* line 137, ../sass/app.scss */
   .dept-promo .content .link {
     font-size: 2em;
   }
 }
 
-/* line 132, ../sass/app.scss */
+/* line 144, ../sass/app.scss */
 .related-track {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   padding: 0.5em;
 }
-/* line 136, ../sass/app.scss */
+/* line 148, ../sass/app.scss */
 .related-track .album-art {
   width: 4.375em;
   display: inline-block;
   margin-right: 1em;
 }
-/* line 141, ../sass/app.scss */
+/* line 153, ../sass/app.scss */
 .related-track .info {
   display: inline-block;
 }
-/* line 144, ../sass/app.scss */
+/* line 156, ../sass/app.scss */
 .related-track .info p {
   margin: 0;
 }
-/* line 148, ../sass/app.scss */
+/* line 160, ../sass/app.scss */
 .related-track .album {
   font-size: 1em;
 }
-/* line 151, ../sass/app.scss */
+/* line 163, ../sass/app.scss */
 .related-track .link {
   display: block;
 }

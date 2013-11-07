@@ -3,8 +3,8 @@
 */
 .play-button {
 	display: block;
-	width: 5em;
-	height: 5em;
+	width: 3em;
+	height: 3em;
 	background: $music-color;
 	border-radius: 1000px;
 	
@@ -18,9 +18,9 @@
 		display: block;
 		content: '\25B6';
 		position: relative;
-		line-height: 1.15em;
+		line-height: 1.1em;
 		color: #fff;
-		font-size: 4em;
+		font-size: 2.5em;
 		width: 100%;
 		text-align: center;
 	}
@@ -35,5 +35,15 @@
 		background: #fff;
 		-webkit-box-shadow: 0.3em 0 0 #fff;
 		        box-shadow: 0.3em 0 0 #fff;
+	}
+
+	@media #{$small} {
+		width: 5em;
+		height: 5em;
+
+		&::after {
+			line-height: 1.15em;
+			font-size: 4em;
+		}
 	}
 }
