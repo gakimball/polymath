@@ -1,8 +1,43 @@
-/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
-/* zurb.com */
-/* humanstxt.org */
 
-/* SITE */
-  Standards: HTML5, CSS3
-  Components: jQuery, Orbit, Reveal
-  Software: Coda, Textmate, Git
+PPPPP  OOOOO  L      Y   Y  M   M   AAA    TTTTT  H   H
+P   P  O   O  L      Y   Y  MM MM  A   A     T    H   H
+PPPPP  O   O  L      YYYYY  M M M  AAAAA     T    HHHHH
+P      O   O  L          Y  M   M  A   A     T    H   H
+P      OOOOO  LLLLL  YYYYY  M   M  A   A     T    H   H
+
+ loves   youlo
+v     e s     y
+o      u      l     sssss
+ o           v     s   
+  es       yo       sssss
+    ul   ov              s
+      e s          ssssss
+       u
+
+
+Y   Y  OOOOO  U   U
+Y   Y  O   O  U   U
+YYYYY  O   O  U   U
+    Y  O   O  U   U
+YYYYY  OOOOO  UUUUU
+
+The Polymath website was designed and engineered by Geoff Kimball.
+   http://geoffkimball.com
+Twitter: @geoffkimball
+
+Staff:
+  Nick Faidley
+  Zach Himes
+  Geoff Kimball
+  Brian Maxwell
+  Ben Peterson
+  Drew Siner
+  Peter Timberlake
+
+Props to Phil Diaz, Django, and others.
+
+hello @ polymatharts . com
+
+http://facebook.com/PolymathArts
+ http://twitter.com/PolymathArts
+             http://polymathtk.tumblr.com
