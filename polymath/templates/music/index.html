@@ -6,22 +6,6 @@
 
 <div class="row">
 	<div class="large-12 columns">
-		{% if track_list %}
-		<section>
-			<h2>What's new</h2>
-
-				<ul class="large-block-grid-4 small-block-grid-1">
-				{% for track in track_list %}
-					<li>
-						<img src="{% if track.image %}{{ track.image.url }}{% else %}{{ track.album.image.url }}{% endif %}" alt="">
-						<p>{{ track.title }}</p>
-						<p><a href="#">{{ track.artist }}</a></p>
-					</li>
-				{% endfor %}
-				</ul>
-		</section>
-		{% endif %}
-
 		{% if artist_list %}
 		<section>
 			<h2>Artists</h2>
@@ -34,14 +18,30 @@
 		{% if album_list %}
 		<section>
 				<h2>Releases</h2>
-				
-				<ul class="large-block-grid-4 small-block-grid-1">
+
+				<ul class="media-list">
 				{% for album in album_list %}
-					<li><a href="#" class="block-link">
-						<img src="{{ album.image.url }}" alt="" class="thumb">
-						<h3>{{ album.title }}</h3>
-						<p><i>{{ album.year }}</i></p>
-					</a></li>
+					<li class="media-list-item">
+						<a href="{% url 'apps.music.views.release_detail' album.id %}">
+							<img src="{{ album.image.url }}" alt="" class="cover thumb">
+						</a>
+						<div class="content">
+							<a href="{% url 'apps.music.views.release_detail' album.id %}">
+								{% if album.flavor_text %}
+								<p class="flavor" style="color: #{{ album.color }} !important;">{{ album.flavor_text }}</p>
+								{% endif %}
+								<h3 class="title">{{ album.title }}</h3>
+								<p class="subtitle">
+									{% for artist in album.artists.all %}
+									{{ artist.name }}{% if not forloop.last %}, {% endif %}
+									{% endfor %}
+								</p>
+								<p class="info">{{ album.year }}, {{ album.track_set.count }} tracks</p>
+							</a>
+							<a href="{% url 'apps.music.views.release_detail' album.id %}" class="button">Listen</a>
+							{% if album.download_link %}<a href="{{ album.download_link.url }}" class="button">Download</a>{% endif %}
+						</div>
+					</li>
 				{% endfor %}
 				</ul>
 		</section>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% block release %}{% endblock %}
+
+{% if more_albums %}
+<div class="row"><div class="large-12 columns">
+  <h2>More Music</h2>
+
+  <ul class="media-list up-4">
+    {% for album in more_albums %}
+    <li class="media-list-item"><a href="{% url 'apps.music.views.release_detail' album.id %}">
+      <img src="{{ album.image.url }}" alt="{{ album.title }}" class="cover thumb">
+      <h3 class="title">{{ album.title }}</h3>
+      <p class="subtitle">{% for artist in album.artists.all %}
+        {{ artist.name }}{% if not forloop.last %},{% endif %}
+      {% endfor %}</p>
+    </a></li>
+    {% endfor %}
+  </ul>
+</div></div>
+{% endif %}
+
+{% endblock %}

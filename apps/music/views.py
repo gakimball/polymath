@@ -34,6 +34,17 @@ def artist_detail(request, artist_slug):
 
     return render(request, 'music/artist_detail.html', data_dict)
 
+def release_detail(request, album_id):
+    album = get_object_or_404(Album, pk=album_id)
+    more_albums = Album.objects.only('title', 'artists', 'image').order_by('?')[:4]
+
+    data_dict = {
+        'album': album,
+        'more_albums': more_albums,
+    }
+
+    return render(request, 'music/releases/'+album.release_type+'.html', data_dict)
+
 def track_detail(request, track_id):
     track = get_object_or_404(Track, pk=track_id)
 

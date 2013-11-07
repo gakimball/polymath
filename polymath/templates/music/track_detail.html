@@ -7,13 +7,13 @@
 
 {% block content %}
 
-{% if track.color %}
+{% if track.album.color %}
 <style type="text/css">
 	.track-detail {
-		background-image: -webkit-linear-gradient(top, #ce5e5e, #{{ track.color }});
+		background-image: -webkit-linear-gradient(top, #ce5e5e, #{{ track.album.color }});
 	}
 	.track-detail .button, .track-detail .button:hover, .track-detail .play-button:after {
-		color: #{{ track.color }};
+		color: #{{ track.album.color }};
 	}
 </style>
 {% endif %}
@@ -70,7 +70,7 @@
 					<a href="#" class="music button">Download</a>
 				{% endif %}
 
-				<ol class="tracklist">
+				<ol class="album-view-tracklist">
 				{% for track in track.album.track_set.all %}
 					<li><a href="#">{{ track.title }} <span>{{ track.length }}</span></a></li>
 				{% endfor %}

@@ -1,0 +1,62 @@
+{% extends 'music/release_detail.html' %}
+
+{% load credits_list %}
+
+{% block title %}{{ album.title }}{% endblock %}
+
+{% block release %}
+
+{% if album.color %}
+<style type="text/css">
+  .release-detail-header {
+    background-image: -webkit-linear-gradient(top, #ce5e5e, #{{ album.color }});
+  }
+  .release-detail-header .button, .release-detail-header .button:hover, .release-detail-header {
+    color: #{{ album.color }};
+  }
+</style>
+{% endif %}
+
+<div class="release-detail-header">
+  <div class="row">
+    <div class="large-4 columns">
+      <img class="cover" src="{{ album.image.url }}" alt="">
+    </div>
+    <div class="large-8 columns details">
+      <h1 class="title">{{ album.title }}</h1>
+      {% with artist=album.artists.all.0 %}
+      <p class="artist">an {{ album.release_type }} by <a href="{% url 'apps.music.views.artist_detail' artist.slug  %}">{{ artist.name }}</a></p>
+      {% endwith %}
+
+      <a href="" class="giant-play button">Play</a>
+      {% if album.download_link %}
+      <a href="{{ album.download_link.url }}" class="button">Download</a>
+      {% endif %}
+
+      <dl class="info">
+        <dt>Released</dt>
+        <dd>{{ album.year }}</dd>
+        <dt>Length</dt>
+        <dd>30:00</dd>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-bottom: 1.5em">
+  <div class="large-8 push-4 columns">
+    <h2 class="subheader">Tracklist</h2>
+
+    <ul class="big-tracklist">
+      {% for track in album.track_set.all %}
+        <li><a href="{% url 'apps.music.views.track_detail' track.id %}">{{ track.title }} <span>{{ track.length }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="large-4 pull-8 columns">
+    <h2 class="subheader">Credits</h2>
+    {% credits_list album %}
+  </div>
+</div>
+
+{% endblock %}

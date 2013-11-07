@@ -55,11 +55,11 @@
 					<div class="album-view-info">
 						<h3 class="title">{{ album.title }}</h3>
 						<p class="year">{{ album.year }}</p>
-						<a href="#" class="button">Listen</a>
+						<a href="{% url 'apps.music.views.release_detail' album.id %}?autoplay" class="button">Listen</a>
 						{% if album.download_link %}
 						<a href="{{ album.download_link.url }}" class="button">Download</a>
 						{% endif %}
-						<ul class="album-view-tracklist">
+						<ul class="tracklist">
 							{% for track in album.track_set.all %}
 								<li><a href="#">{{ track.title }} <span>{{ track.length }}</span></a></li>
 							{% endfor %}

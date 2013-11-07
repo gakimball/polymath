@@ -11,6 +11,7 @@ class Track(models.Model):
     description = models.TextField(blank=True, help_text='Optional: write something about this track.')
     pub_date = models.DateField('publish date', help_text='Release date for this track. It\'s probably today, right?')
 
+    secondary_title = models.CharField(max_length=255, blank=True, help_text='Optional: an alternate title for a track or a "featuring" line.')
     album = models.ForeignKey('Album', null=True, blank=True, help_text='The album this track is part of. Leave this blank if the track is a single.')
     artist = models.ForeignKey('Artist', help_text='The artist for this track. It\'s probably the same as the album\'s artist, unless we\'re talking about a collaboration album.')
 
@@ -60,7 +61,7 @@ class Track(models.Model):
 class Album(models.Model):
     title = models.CharField(max_length=255, help_text='Title of the album.')
     description = models.TextField(blank=True, help_text='Optional: keep it to one paragraph.')
-    artist = models.ForeignKey('Artist', help_text='Artist for the album.')
+    artists = models.ManyToManyField('Artist', help_text='Artist for the album. If it\'s a compilation you can add more than one.')
     year = models.CharField('release year', max_length=4, help_text='Four digits, please.')
 
     RELEASE_TYPES = (
@@ -71,11 +72,14 @@ class Album(models.Model):
     release_type = models.CharField(max_length=6, choices=RELEASE_TYPES, help_text='Release type determines the format of the page.')
     
     image = models.ImageField(upload_to='albums/images/', help_text='Album art goes here. However, when you add a track, each track may have its own picture as well.')
+    reverse_image = models.ImageField(upload_to='albums/reverse_images/', blank=True, null=True, help_text='Optional: back side of cover art.')
     download_link = models.FileField(upload_to='downloads/albums/', blank=True, null=True, help_text='Optional: .zip file of album. Don\'t upload it until the entire album has been released for streaming.')
     file_size = models.IntegerField(editable=False, blank=True, null=True)
 
     color = models.CharField(max_length=6, blank=True, help_text='Optional: accent color for album.')
     background = models.ImageField(upload_to='albums/backgrounds/',blank=True,help_text='NOT IN UUUUSE.')
+
+    flavor_text = models.CharField(max_length=50, blank=True, help_text='Optional: flavor text to display above album title.')
 
     class Meta:
         ordering = ['-year']
