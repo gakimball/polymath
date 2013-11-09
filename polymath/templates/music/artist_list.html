@@ -1,5 +1,5 @@
 {% if artist_list %}
-	<ul class="large-block-grid-3 artist-list">
+	<ul class="artist-list">
 	{% for artist in artist_list %}
 		<li><a href="{% url 'apps.music.views.artist_detail' artist.slug %}" class="block-link">
 			<img src="{{ artist.image.url }}" alt="{{ artist.name }}" class="thumb">

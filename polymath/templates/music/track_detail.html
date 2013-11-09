@@ -55,7 +55,7 @@
 
 		<div class="row">
 			<div class="large-4 columns">
-				<img src="{{ track_album.image.url }}" alt="" style="width: 100%">
+				<img src="{{ track_album.image.url }}" alt="" style="width: 100%; margin-bottom: 1em;">
 			</div>
 			<div class="large-8 columns">
 				<a href="{% url 'apps.music.views.release_detail' track_album.id %}" class="music button">Listen</a>
