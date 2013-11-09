@@ -1,6 +1,7 @@
 .tracklist {
   list-style-type: none;
   counter-reset: tracklist;
+  font-size: 1.25em;
 
   li {
     &::before {
@@ -33,7 +34,7 @@
   }
 
   @media #{$small} {
-    font-size: 1.1em;
+    // font-size: 1.1em;
   }
 }
 

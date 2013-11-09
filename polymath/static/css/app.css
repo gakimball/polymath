@@ -2241,44 +2241,55 @@ blockquote p {
   font-weight: 300;
   margin-right: 0.6rem;
 }
-/* line 37, ../sass/_footer.scss */
+/* line 38, ../sass/_footer.scss */
+.footer .nav li:first-child::after {
+  display: block;
+  content: '';
+}
+@media screen and (min-width: 25em) {
+  /* line 38, ../sass/_footer.scss */
+  .footer .nav li:first-child::after {
+    display: none;
+  }
+}
+/* line 47, ../sass/_footer.scss */
 .footer .nav a {
   font-weight: normal;
   color: #000;
 }
-/* line 40, ../sass/_footer.scss */
+/* line 50, ../sass/_footer.scss */
 .footer .nav a:hover {
   color: #666;
 }
-/* line 42, ../sass/_footer.scss */
+/* line 52, ../sass/_footer.scss */
 .footer .nav .music a {
   color: #ce5e5e;
 }
-/* line 44, ../sass/_footer.scss */
+/* line 54, ../sass/_footer.scss */
 .footer .nav .music a:hover {
   color: #e09999;
 }
-/* line 46, ../sass/_footer.scss */
+/* line 56, ../sass/_footer.scss */
 .footer .nav .video a {
   color: #499e47;
 }
-/* line 48, ../sass/_footer.scss */
+/* line 58, ../sass/_footer.scss */
 .footer .nav .video a:hover {
   color: #74c072;
 }
-/* line 50, ../sass/_footer.scss */
+/* line 60, ../sass/_footer.scss */
 .footer .nav .writing a {
   color: #5e78ce;
 }
-/* line 52, ../sass/_footer.scss */
+/* line 62, ../sass/_footer.scss */
 .footer .nav .writing a:hover {
   color: #99a9e0;
 }
-/* line 54, ../sass/_footer.scss */
+/* line 64, ../sass/_footer.scss */
 .footer .nav .audio a {
   color: #ab4da8;
 }
-/* line 56, ../sass/_footer.scss */
+/* line 66, ../sass/_footer.scss */
 .footer .nav .audio a:hover {
   color: #c57fc3;
 }
@@ -2288,24 +2299,24 @@ blockquote p {
     text-align: center;
     vertical-align: middle;
   }
-  /* line 64, ../sass/_footer.scss */
+  /* line 74, ../sass/_footer.scss */
   .footer .polymath {
     display: inline-block;
     font-size: 2em;
     margin-right: 2rem;
   }
-  /* line 69, ../sass/_footer.scss */
+  /* line 79, ../sass/_footer.scss */
   .footer .logo {
     display: inline-block;
     width: 5em;
     margin-right: 2rem;
   }
-  /* line 74, ../sass/_footer.scss */
+  /* line 84, ../sass/_footer.scss */
   .footer .nav {
     vertical-align: middle;
     display: inline-block;
   }
-  /* line 78, ../sass/_footer.scss */
+  /* line 88, ../sass/_footer.scss */
   .footer .nav ul {
     margin-bottom: 0.25em;
   }
@@ -2315,22 +2326,22 @@ blockquote p {
   .footer {
     text-align: left;
   }
-  /* line 87, ../sass/_footer.scss */
+  /* line 97, ../sass/_footer.scss */
   .footer .polymath, .footer .logo, .footer .nav {
     float: left;
   }
-  /* line 90, ../sass/_footer.scss */
+  /* line 100, ../sass/_footer.scss */
   .footer .polymath {
     font-size: 3em;
     margin-right: 3rem;
     top: 0.75em;
   }
-  /* line 95, ../sass/_footer.scss */
+  /* line 105, ../sass/_footer.scss */
   .footer .logo {
     width: 10em;
     margin-right: 3rem;
   }
-  /* line 99, ../sass/_footer.scss */
+  /* line 109, ../sass/_footer.scss */
   .footer .nav {
     font-size: 1.4em;
   }
@@ -2575,102 +2586,159 @@ a h3:hover {
   padding: 0;
   margin-bottom: 1em;
 }
-/* line 9, ../sass/_media-list.scss */
-.media-list.up-3 {
-  display: block;
-  padding: 0;
-  margin: 0 -0.625em;
-  *zoom: 1;
+@media only screen and (min-width: 768px) {
+  /* line 9, ../sass/_media-list.scss */
+  .media-list.up-3 {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+  }
+  /* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+  .media-list.up-3:before, .media-list.up-3:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+  .media-list.up-3:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-3 > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-3 > li {
+    width: 33.33333%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-3 > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-3 > li:nth-of-type(3n+1) {
+    clear: both;
+  }
 }
-/* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
-.media-list.up-3:before, .media-list.up-3:after {
-  content: " ";
-  display: table;
+@media screen and (min-width: 28.125em) {
+  /* line 14, ../sass/_media-list.scss */
+  .media-list.up-4 {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+  }
+  /* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+  .media-list.up-4:before, .media-list.up-4:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+  .media-list.up-4:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-4 > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-4 > li {
+    width: 50%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-4 > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-4 > li:nth-of-type(2n+1) {
+    clear: both;
+  }
 }
-/* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
-.media-list.up-3:after {
-  clear: both;
+@media only screen and (min-width: 768px) {
+  /* line 14, ../sass/_media-list.scss */
+  .media-list.up-4 {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+  }
+  /* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+  .media-list.up-4:before, .media-list.up-4:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+  .media-list.up-4:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-4 > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-4 > li {
+    width: 33.33333%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-4 > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-4 > li:nth-of-type(3n+1) {
+    clear: both;
+  }
 }
-/* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
-.media-list.up-3 > li {
-  display: inline;
-  height: auto;
-  float: left;
-  padding: 0 0.625em 1.25em;
-}
-/* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
-.media-list.up-3 > li {
-  width: 33.33333%;
-  padding: 0 0.625em 1.25em;
-}
-/* line 40, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
-.media-list.up-3 > li:nth-of-type(n) {
-  clear: none;
-}
-/* line 41, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
-.media-list.up-3 > li:nth-of-type(3n+1) {
-  clear: both;
-}
-/* line 12, ../sass/_media-list.scss */
-.media-list.up-4 {
-  display: block;
-  padding: 0;
-  margin: 0 -0.625em;
-  *zoom: 1;
-}
-/* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
-.media-list.up-4:before, .media-list.up-4:after {
-  content: " ";
-  display: table;
-}
-/* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
-.media-list.up-4:after {
-  clear: both;
-}
-/* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
-.media-list.up-4 > li {
-  display: inline;
-  height: auto;
-  float: left;
-  padding: 0 0.625em 1.25em;
-}
-/* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
-.media-list.up-4 > li {
-  width: 25%;
-  padding: 0 0.625em 1.25em;
-}
-/* line 40, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
-.media-list.up-4 > li:nth-of-type(n) {
-  clear: none;
-}
-/* line 41, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
-.media-list.up-4 > li:nth-of-type(4n+1) {
-  clear: both;
+@media screen and (min-width: 56.25em) {
+  /* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-4 > li {
+    width: 25%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-4 > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .media-list.up-4 > li:nth-of-type(4n+1) {
+    clear: both;
+  }
 }
 
-/* line 17, ../sass/_media-list.scss */
+/* line 27, ../sass/_media-list.scss */
 .media-list-item {
   margin-bottom: 1em;
 }
-/* line 20, ../sass/_media-list.scss */
+/* line 30, ../sass/_media-list.scss */
 .media-list-item li {
   display: block;
   color: black;
 }
-/* line 25, ../sass/_media-list.scss */
+/* line 35, ../sass/_media-list.scss */
 .media-list-item a .subtitle, .media-list-item a .info {
   color: black;
 }
-/* line 28, ../sass/_media-list.scss */
+/* line 38, ../sass/_media-list.scss */
 .media-list-item a:hover + .content .title {
   color: #b40c00;
   -webkit-transition: color 0.25s ease-out;
 }
-/* line 32, ../sass/_media-list.scss */
+/* line 42, ../sass/_media-list.scss */
 .music-page .media-list-item a:hover + .content .title {
   color: #ce5e5e;
 }
-/* line 38, ../sass/_media-list.scss */
+/* line 48, ../sass/_media-list.scss */
 .media-list-item .thumb {
   display: block;
   margin-bottom: 1em;
@@ -2678,40 +2746,40 @@ a h3:hover {
   max-width: 300px;
   width: 100%;
 }
-/* line 45, ../sass/_media-list.scss */
+/* line 55, ../sass/_media-list.scss */
 .media-list-item .cover {
   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
 }
-/* line 47, ../sass/_media-list.scss */
+/* line 57, ../sass/_media-list.scss */
 .media-list-item .cover, .media-list-item .cover:hover {
   -webkit-transition: box-shadow 0.2s ease-out;
 }
-/* line 50, ../sass/_media-list.scss */
+/* line 60, ../sass/_media-list.scss */
 .media-list-item .cover:hover {
   box-shadow: 0 7px 30px rgba(0, 0, 0, 0.8);
 }
-/* line 54, ../sass/_media-list.scss */
+/* line 64, ../sass/_media-list.scss */
 .media-list-item .title {
   margin-bottom: 0.25em;
   -webkit-transition: color 0.75s ease-out;
 }
-/* line 57, ../sass/_media-list.scss */
+/* line 67, ../sass/_media-list.scss */
 .media-list-item .title:hover {
   -webkit-transition: color 0.25s ease-out;
 }
-/* line 61, ../sass/_media-list.scss */
+/* line 71, ../sass/_media-list.scss */
 .media-list-item .subtitle {
   font-weight: 300;
   font-size: 1.1875em;
   line-height: 1.4;
   margin-bottom: 0.15em;
 }
-/* line 67, ../sass/_media-list.scss */
+/* line 77, ../sass/_media-list.scss */
 .media-list-item .info {
   font-weight: 300;
   font-style: italic;
 }
-/* line 72, ../sass/_media-list.scss */
+/* line 82, ../sass/_media-list.scss */
 .media-list-item .flavor {
   font-size: 1em;
   font-weight: bold;
@@ -2721,32 +2789,32 @@ a h3:hover {
   line-height: 1;
 }
 @media screen and (min-width: 40.625em) {
-  /* line 83, ../sass/_media-list.scss */
+  /* line 93, ../sass/_media-list.scss */
   .media-list-item .title {
     margin-bottom: 0;
     font-size: 1.6875em;
   }
-  /* line 87, ../sass/_media-list.scss */
+  /* line 97, ../sass/_media-list.scss */
   .media-list-item .subtitle {
     font-size: 1.5em;
   }
-  /* line 90, ../sass/_media-list.scss */
+  /* line 100, ../sass/_media-list.scss */
   .media-list-item .info {
     font-size: 1.25em;
   }
 }
 @media screen and (min-width: 50em) {
-  /* line 95, ../sass/_media-list.scss */
+  /* line 105, ../sass/_media-list.scss */
   .media-list-item .title {
     font-size: 1.9375em;
   }
-  /* line 98, ../sass/_media-list.scss */
+  /* line 108, ../sass/_media-list.scss */
   .media-list-item .subtitle {
     font-size: 1.6875em;
   }
 }
-@media screen and (min-width: 40.625em) {
-  /* line 106, ../sass/_media-list.scss */
+@media screen and (min-width: 28.125em) {
+  /* line 117, ../sass/_media-list.scss */
   ul:not(.up-3):not(.up-4) .media-list-item {
     *zoom: 1;
   }
@@ -2759,26 +2827,26 @@ a h3:hover {
   ul:not(.up-3):not(.up-4) .media-list-item:after {
     clear: both;
   }
-  /* line 110, ../sass/_media-list.scss */
+  /* line 121, ../sass/_media-list.scss */
   ul:not(.up-3):not(.up-4) .media-list-item .thumb {
     max-width: none;
     width: 25%;
     float: left;
     margin-right: 1.5em;
   }
-  /* line 116, ../sass/_media-list.scss */
+  /* line 127, ../sass/_media-list.scss */
   ul:not(.up-3):not(.up-4) .media-list-item .content {
     float: left;
   }
 }
 @media only screen and (min-width: 768px) {
-  /* line 121, ../sass/_media-list.scss */
+  /* line 132, ../sass/_media-list.scss */
   ul:not(.up-3):not(.up-4) .media-list-item .thumb {
     margin-right: 2em;
   }
 }
 @media screen and (min-width: 56.25em) {
-  /* line 126, ../sass/_media-list.scss */
+  /* line 137, ../sass/_media-list.scss */
   ul:not(.up-3):not(.up-4) .media-list-item .thumb {
     width: 27.5%;
   }
@@ -2788,8 +2856,9 @@ a h3:hover {
 .tracklist, .big-tracklist {
   list-style-type: none;
   counter-reset: tracklist;
+  font-size: 1.25em;
 }
-/* line 6, ../sass/_tracklist.scss */
+/* line 7, ../sass/_tracklist.scss */
 .tracklist li::before, .big-tracklist li::before {
   content: counter(tracklist);
   counter-increment: tracklist;
@@ -2797,11 +2866,11 @@ a h3:hover {
   float: left;
   margin-right: 0.5em;
 }
-/* line 13, ../sass/_tracklist.scss */
+/* line 14, ../sass/_tracklist.scss */
 .tracklist li:hover::before, .big-tracklist li:hover::before {
   color: #e6acac;
 }
-/* line 17, ../sass/_tracklist.scss */
+/* line 18, ../sass/_tracklist.scss */
 .tracklist a, .big-tracklist a {
   display: block;
   font-weight: normal;
@@ -2810,29 +2879,23 @@ a h3:hover {
   padding-bottom: 0.1em;
   margin-bottom: 0.3em;
 }
-/* line 25, ../sass/_tracklist.scss */
+/* line 26, ../sass/_tracklist.scss */
 .tracklist a:hover, .big-tracklist a:hover {
   color: #ce5e5e;
   border-color: #ce5e5e;
 }
-/* line 30, ../sass/_tracklist.scss */
+/* line 31, ../sass/_tracklist.scss */
 .tracklist span, .big-tracklist span {
   float: right;
   color: #666;
 }
-@media only screen and (min-width: 768px) {
-  /* line 1, ../sass/_tracklist.scss */
-  .tracklist, .big-tracklist {
-    font-size: 1.1em;
-  }
-}
 
 @media screen and (min-width: 40.625em) {
-  /* line 44, ../sass/_tracklist.scss */
+  /* line 45, ../sass/_tracklist.scss */
   .big-tracklist li {
     font-size: 1.5em;
   }
-  /* line 47, ../sass/_tracklist.scss */
+  /* line 48, ../sass/_tracklist.scss */
   .big-tracklist a {
     padding-bottom: 0.3em;
     margin-bottom: 0.5em;
@@ -3075,7 +3138,7 @@ a h3:hover {
 /* line 24, ../sass/_track-detail.scss */
 .track-detail .album-art img {
   width: 100px;
-  max-width: 20em;
+  max-width: 300px;
   border: 2px solid white;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
@@ -3118,9 +3181,9 @@ a h3:hover {
   line-height: 100%;
   color: #fff;
   font-weight: 300;
-  font-size: 1.5em;
+  font-size: 2em;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 @media only screen and (min-width: 768px) {
   /* line 49, ../sass/_track-detail.scss */
@@ -3293,59 +3356,121 @@ a h3:hover {
   display: block;
 }
 
-/* line 2, ../sass/_artist.scss */
+/* line 1, ../sass/_artist.scss */
+.artist-list {
+  list-style-type: none;
+}
+/* line 4, ../sass/_artist.scss */
+.artist-list img {
+  display: block;
+  margin-bottom: 0.5em;
+}
+/* line 8, ../sass/_artist.scss */
 .artist-list h3 {
   text-align: center;
 }
+@media screen and (min-width: 28.125em) {
+  /* line 1, ../sass/_artist.scss */
+  .artist-list {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+  }
+  /* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+  .artist-list:before, .artist-list:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+  .artist-list:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .artist-list > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .artist-list > li {
+    width: 50%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .artist-list > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .artist-list > li:nth-of-type(2n+1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .artist-list > li {
+    width: 33.33333%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .artist-list > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .artist-list > li:nth-of-type(3n+1) {
+    clear: both;
+  }
+}
 
-/* line 9, ../sass/_artist.scss */
+/* line 22, ../sass/_artist.scss */
 .artist-detail-index {
   list-style-type: none;
   margin: 1em 0;
   display: none;
 }
 @media only screen and (min-width: 768px) {
-  /* line 9, ../sass/_artist.scss */
+  /* line 22, ../sass/_artist.scss */
   .artist-detail-index {
     display: block;
   }
 }
-/* line 18, ../sass/_artist.scss */
+/* line 31, ../sass/_artist.scss */
 .artist-detail-index li {
   display: inline;
   margin-right: 1em;
   font-weight: 300;
 }
-/* line 23, ../sass/_artist.scss */
+/* line 36, ../sass/_artist.scss */
 .artist-detail-index li a {
   font-weight: normal;
   color: black;
 }
-/* line 26, ../sass/_artist.scss */
+/* line 39, ../sass/_artist.scss */
 .artist-detail-index li a:hover {
   color: #ce5e5e;
 }
-/* line 31, ../sass/_artist.scss */
+/* line 44, ../sass/_artist.scss */
 .artist-detail-index .active a {
   color: #ce5e5e;
 }
-/* line 33, ../sass/_artist.scss */
+/* line 46, ../sass/_artist.scss */
 .artist-detail-index .active a:hover {
   color: #ce5e5e;
   cursor: default;
 }
 
-/* line 40, ../sass/_artist.scss */
+/* line 53, ../sass/_artist.scss */
 .artist-detail-dropdown {
   margin: 1em 0;
 }
-/* line 43, ../sass/_artist.scss */
+/* line 56, ../sass/_artist.scss */
 .artist-detail-dropdown p {
   font-weight: 300;
   float: left;
   margin-right: 1em;
 }
-/* line 48, ../sass/_artist.scss */
+/* line 61, ../sass/_artist.scss */
 .artist-detail-dropdown select {
   float: left;
   width: 150px;
@@ -3353,19 +3478,19 @@ a h3:hover {
   top: 2px;
 }
 @media screen and (min-width: 425px) {
-  /* line 48, ../sass/_artist.scss */
+  /* line 61, ../sass/_artist.scss */
   .artist-detail-dropdown select {
     width: 230px;
   }
 }
 @media only screen and (min-width: 768px) {
-  /* line 40, ../sass/_artist.scss */
+  /* line 53, ../sass/_artist.scss */
   .artist-detail-dropdown {
     display: none;
   }
 }
 
-/* line 64, ../sass/_artist.scss */
+/* line 77, ../sass/_artist.scss */
 .artist-detail-hero {
   background: white;
   position: relative;
@@ -3377,13 +3502,13 @@ a h3:hover {
   background-image: -o-linear-gradient(top, #ce5e5e, #d262e9);
   background-image: linear-gradient(top, #ce5e5e, #d262e9);
 }
-/* line 71, ../sass/_artist.scss */
+/* line 84, ../sass/_artist.scss */
 .artist-detail-hero[style] {
   background-position: top center;
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
-/* line 77, ../sass/_artist.scss */
+/* line 90, ../sass/_artist.scss */
 .artist-detail-hero h1 {
   margin: 0;
   color: white;
@@ -3391,27 +3516,27 @@ a h3:hover {
   text-align: center;
 }
 @media screen and (min-width: 40.625em) {
-  /* line 64, ../sass/_artist.scss */
+  /* line 77, ../sass/_artist.scss */
   .artist-detail-hero {
     padding: 3em 0;
   }
-  /* line 86, ../sass/_artist.scss */
+  /* line 99, ../sass/_artist.scss */
   .artist-detail-hero h1 {
     font-size: 3.5em;
   }
 }
 @media screen and (min-width: 53.125em) {
-  /* line 64, ../sass/_artist.scss */
+  /* line 77, ../sass/_artist.scss */
   .artist-detail-hero {
     padding: 5em 0;
   }
-  /* line 92, ../sass/_artist.scss */
+  /* line 105, ../sass/_artist.scss */
   .artist-detail-hero h1 {
     font-size: 5em;
     position: relative;
     top: -15px;
   }
-  /* line 97, ../sass/_artist.scss */
+  /* line 110, ../sass/_artist.scss */
   .artist-detail-hero h1::after {
     content: '';
     display: block;
@@ -3425,7 +3550,7 @@ a h3:hover {
   }
 }
 
-/* line 114, ../sass/_artist.scss */
+/* line 127, ../sass/_artist.scss */
 .artist-detail-quote {
   text-align: center;
   font-size: 1.5em;
@@ -3434,13 +3559,13 @@ a h3:hover {
   margin-top: 0.2em;
 }
 @media only screen and (min-width: 768px) {
-  /* line 114, ../sass/_artist.scss */
+  /* line 127, ../sass/_artist.scss */
   .artist-detail-quote {
     font-size: 2em;
   }
 }
 
-/* line 126, ../sass/_artist.scss */
+/* line 139, ../sass/_artist.scss */
 .artist-detail-photo {
   padding: 0.6em;
   background: white;

@@ -7,10 +7,20 @@ $title-size: $h3-font-size;
   margin-bottom: 1em;
 
   &.up-3 {
-    @include block-grid(3);
+    @media #{$small} {
+      @include block-grid(3);
+    }
   }
   &.up-4 {
-    @include block-grid(4);
+    @media screen and (min-width: emCalc(450px)) {
+      @include block-grid(2);
+    }
+    @media #{$small} {
+      @include block-grid(3);
+    }
+    @media screen and (min-width: emCalc(900px)) {
+      @include block-grid(4, $base-style: false);
+    }
   }
 }
 
@@ -102,7 +112,8 @@ $title-size: $h3-font-size;
 
   // Layout adjustments
   ul:not(.up-3):not(.up-4) & {
-    @media screen and (min-width: emCalc(650px)) {
+    // Shift to horizontal layout
+    @media screen and (min-width: emCalc(450px)) {
       & {
         @include clearfix;
       }

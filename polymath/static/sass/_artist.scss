@@ -1,6 +1,19 @@
 .artist-list {
+  list-style-type: none;
+
+  img {
+    display: block;
+    margin-bottom: 0.5em;
+  }
   h3 {
     text-align: center;
+  }
+
+  @media screen and (min-width: emCalc(450px)) {
+    @include block-grid(2);
+  }
+  @media #{$small} {
+    @include block-grid(3, $base-style: false);
   }
 }
 

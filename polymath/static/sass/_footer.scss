@@ -33,6 +33,16 @@
       display: inline;
       font-weight: 300;
       margin-right: 0.6rem;
+
+      // Create a line break after the title of each footer nav
+      &:first-child::after {
+        display: block;
+        content: '';
+
+        @media screen and (min-width: emCalc(400px)) {
+          display: none;
+        }
+      }
     }
     a {
       font-weight: normal;
