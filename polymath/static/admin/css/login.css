@@ -31,20 +31,17 @@ body.login {
     background: #fff;
     color: #000;
     pointer-events: none;
+    border: 0;
+}
+.login #header #site-name {
+    border: 0;
+    font-size: 25px;
+    font-weight: 300;
 }
 .login #site-name {
-    color: #fff;
     text-align: center;
     margin: 0;
-    margin-bottom: -20px;
     padding: 0;
-    padding-left: 40px;
-}
-.login #site-name:before {
-    content: 'Who are you?';
-    display: inline;
-    color: #000;
-    font-size: 2em;
 }
 
 .login form {
@@ -69,11 +66,11 @@ body.login {
     border-width: 0;
     border-bottom: 2px dotted #ccc;
     padding-bottom: 8px;
-    color: #e7007b;
+    color: #4a908e;
 }
 .login .form-row #id_username:focus, .login .form-row #id_password:focus {
     outline: none;
-    border-color: #e7007b;
+    border-color: #4a908e;
 }
 
 .login span.help {
@@ -88,7 +85,7 @@ body.login {
 }
 
 .login input[type='submit'] {
-    background: #e7007b;
+    background: #4a908e;
     color: #fff;
     border-radius: 100px;
     padding: 10px 30px;
@@ -99,7 +96,7 @@ body.login {
     -webkit-transition: background-color 0.1s linear;
 }
 .login input[type='submit']:hover {
-    background: #a60058;
+    background: #5cb5b3;
     color: #fff;
     cursor: pointer;
 }
