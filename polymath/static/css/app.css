@@ -3049,6 +3049,7 @@ a h3:hover {
 .track-detail {
   background: #ce5e5e;
   color: #fff;
+  margin-bottom: 1em;
 }
 @media only screen and (min-width: 768px) {
   /* line 4, ../sass/_track-detail.scss */
@@ -3057,12 +3058,12 @@ a h3:hover {
     padding: 1em 0;
   }
 }
-/* line 13, ../sass/_track-detail.scss */
+/* line 14, ../sass/_track-detail.scss */
 .track-detail .row {
   padding-top: 1em;
   padding-bottom: 1em;
 }
-/* line 19, ../sass/_track-detail.scss */
+/* line 20, ../sass/_track-detail.scss */
 .track-detail .album-art {
   position: relative;
   padding-left: 0.9375em;
@@ -3071,7 +3072,7 @@ a h3:hover {
   float: left;
   margin-bottom: 1em;
 }
-/* line 23, ../sass/_track-detail.scss */
+/* line 24, ../sass/_track-detail.scss */
 .track-detail .album-art img {
   width: 100px;
   max-width: 20em;
@@ -3079,7 +3080,7 @@ a h3:hover {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 @media only screen and (min-width: 768px) {
-  /* line 19, ../sass/_track-detail.scss */
+  /* line 20, ../sass/_track-detail.scss */
   .track-detail .album-art {
     position: relative;
     padding-left: 0.9375em;
@@ -3087,13 +3088,13 @@ a h3:hover {
     width: 33.33333%;
     float: left;
   }
-  /* line 32, ../sass/_track-detail.scss */
+  /* line 33, ../sass/_track-detail.scss */
   .track-detail .album-art img {
     width: 100%;
     border-width: 6px;
   }
 }
-/* line 40, ../sass/_track-detail.scss */
+/* line 41, ../sass/_track-detail.scss */
 .track-detail .info {
   position: relative;
   padding-left: 0.9375em;
@@ -3102,7 +3103,7 @@ a h3:hover {
   float: left;
 }
 @media only screen and (min-width: 768px) {
-  /* line 40, ../sass/_track-detail.scss */
+  /* line 41, ../sass/_track-detail.scss */
   .track-detail .info {
     position: relative;
     padding-left: 0.9375em;
@@ -3111,7 +3112,7 @@ a h3:hover {
     float: left;
   }
 }
-/* line 48, ../sass/_track-detail.scss */
+/* line 49, ../sass/_track-detail.scss */
 .track-detail .title {
   display: inline-block;
   line-height: 100%;
@@ -3122,85 +3123,85 @@ a h3:hover {
   line-height: 1.5;
 }
 @media only screen and (min-width: 768px) {
-  /* line 48, ../sass/_track-detail.scss */
+  /* line 49, ../sass/_track-detail.scss */
   .track-detail .title {
     font-size: 3.5em;
     line-height: 1.3;
   }
 }
-/* line 62, ../sass/_track-detail.scss */
+/* line 63, ../sass/_track-detail.scss */
 .track-detail .artist, .track-detail .album {
   font-size: 1em;
   margin: 0;
   line-height: 1.3;
 }
 @media only screen and (min-width: 768px) {
-  /* line 62, ../sass/_track-detail.scss */
+  /* line 63, ../sass/_track-detail.scss */
   .track-detail .artist, .track-detail .album {
     font-size: 1.5em;
     line-height: 1.2;
   }
 }
-/* line 72, ../sass/_track-detail.scss */
+/* line 73, ../sass/_track-detail.scss */
 .track-detail .album {
   font-style: italic;
 }
-/* line 76, ../sass/_track-detail.scss */
+/* line 77, ../sass/_track-detail.scss */
 .track-detail .play-button {
   background: #fff;
 }
-/* line 79, ../sass/_track-detail.scss */
+/* line 80, ../sass/_track-detail.scss */
 .track-detail .play-button::after {
   color: #ce5e5e;
 }
-/* line 82, ../sass/_track-detail.scss */
+/* line 83, ../sass/_track-detail.scss */
 .track-detail .play-button.paused::after {
   background: #ce5e5e;
   -webkit-box-shadow: 0.3em 0 0 #ce5e5e;
   box-shadow: 0.3em 0 0 #ce5e5e;
 }
-/* line 89, ../sass/_track-detail.scss */
+/* line 90, ../sass/_track-detail.scss */
 .track-detail .play-button:hover::after {
   color: #e6acac;
 }
-/* line 92, ../sass/_track-detail.scss */
+/* line 93, ../sass/_track-detail.scss */
 .track-detail .play-button:hover.paused::after {
   background: #e6acac;
   -webkit-box-shadow: 0.3em 0 0 #e6acac;
   box-shadow: 0.3em 0 0 #e6acac;
 }
-/* line 100, ../sass/_track-detail.scss */
+/* line 101, ../sass/_track-detail.scss */
 .track-detail .button {
   background: white;
   color: #ce5e5e;
 }
-/* line 104, ../sass/_track-detail.scss */
+/* line 105, ../sass/_track-detail.scss */
 .track-detail .button:hover {
   background: white;
   color: #e6acac;
 }
 
-/* line 111, ../sass/_track-detail.scss */
+/* line 112, ../sass/_track-detail.scss */
 .audio-player {
   margin: 1.5em 0;
 }
-/* line 114, ../sass/_track-detail.scss */
+/* line 115, ../sass/_track-detail.scss */
 .audio-player .play-button {
   display: inline-block;
   margin-right: 1em;
   vertical-align: middle;
 }
-/* line 119, ../sass/_track-detail.scss */
+/* line 120, ../sass/_track-detail.scss */
 .audio-player .seeker {
   display: inline-block;
   font-size: 1.5em;
   vertical-align: middle;
 }
-/* line 124, ../sass/_track-detail.scss */
+/* line 125, ../sass/_track-detail.scss */
 .audio-player .time-current::after {
   content: ' /';
 }
-/* line 127, ../sass/_track-detail.scss */
+/* line 128, ../sass/_track-detail.scss */
 .audio-player .time-total {
   opacity: 0.75;
 }

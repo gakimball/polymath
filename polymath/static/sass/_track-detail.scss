@@ -4,6 +4,7 @@
 .track-detail {
 	background: $music-color;
 	color: #fff;
+	margin-bottom: 1em;
 	
 	@media #{$small} {
 		text-align: left;
