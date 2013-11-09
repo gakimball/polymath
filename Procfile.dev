@@ -1,2 +1,2 @@
-web: gunicorn polymath.wsgi
+web: gunicorn polymath.wsgi --debug
 compass: compass watch polymath/static
