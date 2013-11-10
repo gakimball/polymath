@@ -35,9 +35,13 @@ $av: 'album-view';
       font-weight: 300;
     }
   }
-  .year {
+  .info {
     font-style: italic;
     color: #666;
+
+    & + .info {
+      margin-top: -1.25em;
+    }
 
     @media #{$small} {
       font-size: 1.25em;

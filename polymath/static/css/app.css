@@ -3034,19 +3034,23 @@ a h3:hover {
   }
 }
 /* line 38, ../sass/_album-view.scss */
-.album-view-info .year {
+.album-view-info .info {
   font-style: italic;
   color: #666;
 }
+/* line 42, ../sass/_album-view.scss */
+.album-view-info .info + .info {
+  margin-top: -1.25em;
+}
 @media only screen and (min-width: 768px) {
   /* line 38, ../sass/_album-view.scss */
-  .album-view-info .year {
+  .album-view-info .info {
     font-size: 1.25em;
   }
 }
 
 @media screen and (min-width: 40.625em) {
-  /* line 49, ../sass/_album-view.scss */
+  /* line 53, ../sass/_album-view.scss */
   .album-view-cover {
     position: relative;
     padding-left: 0.9375em;
@@ -3055,7 +3059,7 @@ a h3:hover {
     float: left;
   }
 
-  /* line 52, ../sass/_album-view.scss */
+  /* line 56, ../sass/_album-view.scss */
   .album-view-info {
     position: relative;
     padding-left: 0.9375em;
@@ -3065,7 +3069,7 @@ a h3:hover {
   }
 }
 @media screen and (min-width: 800px) {
-  /* line 58, ../sass/_album-view.scss */
+  /* line 62, ../sass/_album-view.scss */
   .album-view-cover {
     position: relative;
     padding-left: 0.9375em;
@@ -3074,7 +3078,7 @@ a h3:hover {
     float: left;
   }
 
-  /* line 61, ../sass/_album-view.scss */
+  /* line 65, ../sass/_album-view.scss */
   .album-view-info {
     position: relative;
     padding-left: 0.9375em;
