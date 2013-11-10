@@ -36,7 +36,7 @@ class Credit(models.Model):
         ('recording', 'Recording'),
     )
 
-    person = models.ForeignKey('Person', help_text='Who did it?')
+    person = models.ForeignKey('Person', help_text='Who did it?', related_name='credits')
     role = models.CharField(choices=ROLES, max_length=50, help_text='What\'d they do?')
 
     content_type = models.ForeignKey(ContentType)

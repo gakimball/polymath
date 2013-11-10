@@ -12,7 +12,7 @@ class Track(models.Model):
     pub_date = models.DateField('publish date', help_text='Release date for this track. It\'s probably today, right?')
 
     secondary_title = models.CharField(max_length=255, blank=True, help_text='Optional: an alternate title for a track or a "featuring" line.')
-    album = models.ForeignKey('Album', null=True, blank=True, help_text='The album this track is part of. Leave this blank if the track is a single.')
+    album = models.ForeignKey('Album', null=True, blank=True, help_text='The album this track is part of. Leave this blank if the track is a single.', related_name='tracks')
     artist = models.ForeignKey('Artist', help_text='The artist for this track. It\'s probably the same as the album\'s artist, unless we\'re talking about a collaboration album.')
 
     image = models.ImageField(blank=True,upload_to='tracks/images/',help_text='Optional: unique cover art for this track. If your track is a single, you need to put an image here.')
@@ -61,7 +61,7 @@ class Track(models.Model):
 class Album(models.Model):
     title = models.CharField(max_length=255, help_text='Title of the album.')
     description = models.TextField(blank=True, help_text='Optional: keep it to one paragraph.')
-    artists = models.ManyToManyField('Artist', help_text='Artist for the album. If it\'s a compilation you can add more than one.')
+    artists = models.ManyToManyField('Artist', help_text='Artist for the album. If it\'s a compilation you can add more than one.', related_name='albums')
     year = models.CharField('release year', max_length=4, help_text='Four digits, please.')
 
     RELEASE_TYPES = (
