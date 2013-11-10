@@ -4,28 +4,23 @@ from django.template import RequestContext
 from django.http import Http404
 
 def index(request):
-    # Recent tracks
-    track_count = 4
-    track_list = Track.objects.only('title', 'artist', 'album', 'id').reverse()[:track_count]
-
     # Artists
-    artist_list = Artist.objects.only('name', 'image')
+    # artist_list = Artist.objects.only('id', 'name', 'image', 'slug')
 
     # Albums
-    album_list = Album.objects.order_by('-year')
+    album_list = Album.objects.order_by('-year', '-id').prefetch_related('artists', 'tracks', 'artists__albums')
 
     # Data dictionary
     data_dict = {
-        'track_list': track_list,
-        'artist_list': artist_list,
+        # 'artist_list': artist_list,
         'album_list': album_list,
     }
 
     return render(request, 'music/index.html', data_dict)
 
 def artist_detail(request, artist_slug):
-    artist = get_object_or_404(Artist, slug=artist_slug)
-    artist_list = Artist.objects.only('name')
+    artist = get_object_or_404(Artist.objects.prefetch_related('albums', 'albums__artists', 'albums__tracks'), slug=artist_slug)
+    artist_list = Artist.objects.only('id', 'name', 'slug')
 
     data_dict = {
         'artist': artist,
@@ -36,7 +31,7 @@ def artist_detail(request, artist_slug):
 
 def release_detail(request, album_id):
     album = get_object_or_404(Album, pk=album_id)
-    more_albums = Album.objects.only('title', 'artists', 'image').order_by('?')[:4]
+    more_albums = Album.objects.only('title', 'artists', 'image').prefetch_related('artists').order_by('?')[:4]
 
     data_dict = {
         'album': album,

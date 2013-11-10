@@ -64,7 +64,7 @@
 				{% endif %}
 
 				<ol class="tracklist">
-				{% for track in track_album.track_set.all %}
+				{% for track in track_album.tracks.all %}
 					<li><a href="#">{{ track.title }} <span>{{ track.length }}</span></a></li>
 				{% endfor %}
 				</ol>

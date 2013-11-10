@@ -1,6 +1,7 @@
 {% extends 'music/release_detail.html' %}
 
 {% load credits_list %}
+{% load an %}
 
 {% block title %}{{ album.title }}{% endblock %}
 
@@ -25,7 +26,7 @@
     <div class="large-8 columns details">
       <h1 class="title">{{ album.title }}</h1>
       {% with artist=album.artists.all.0 %}
-      <p class="artist">an {{ album.release_type }} by <a href="{% url 'apps.music.views.artist_detail' artist.slug  %}">{{ artist.name }}</a></p>
+      <p class="artist">{{ album.release_type|an }} {{ album.release_type }} by <a href="{% url 'apps.music.views.artist_detail' artist.slug  %}">{{ artist.name }}</a></p>
       {% endwith %}
 
       <a href="" class="giant-play button">Play</a>
@@ -48,7 +49,7 @@
     <h2 class="subheader">Tracklist</h2>
 
     <ul class="big-tracklist">
-      {% for track in album.track_set.all %}
+      {% for track in album.tracks.all %}
         <li><a href="{% url 'apps.music.views.track_detail' track.id %}">{{ track.title }} <span>{{ track.length }}</span></a></li>
       {% endfor %}
     </ul>

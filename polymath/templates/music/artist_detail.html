@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load forloop_next %}
 
 {% block title %}{{ artist.name }} - Polymath Musicians{% endblock %}
 
@@ -8,7 +9,7 @@
 		<ul class="artist-detail-index">
 			<li>Polymath Artists:</li>
 			{% for a in artist_list %}
-				<li{% if a.id == artist.id %} class="active"{% endif %}><a href="{% url 'apps.music.views.artist_detail' a.slug %}">{{ a.name }}</a></li>
+				<li{% ifequal a.id artist.id %} class="active"{% endifequal %}><a href="{% url 'apps.music.views.artist_detail' a.slug %}">{{ a.name }}</a></li>
 			{% endfor %}
 		</ul>
 		<div class="artist-detail-dropdown">
@@ -45,22 +46,30 @@
 <div class="row">
 	<div class="large-12 columns">
 		<hr class="divider">
-		{% if artist.album_set.all|length > 0 %}
+		{% if artist.albums.all|length > 0 %}
 			<h2>Albums</h2>
-			{% for album in artist.album_set.all %}
+			{% for album in artist.albums.all %}
 				<div class="album-view">
 					<div class="album-view-cover">
 						<img class="cover" src="{{ album.image.url }}" alt="">
 					</div>
 					<div class="album-view-info">
 						<h3 class="title">{{ album.title }}</h3>
-						<p class="year">{{ album.year }}</p>
+						{% if album.artists.all|length > 1 %}
+						<p class="info">with
+							{# What complex logic to catch a stray comma. #}
+							{% for album_artist in album.artists.all %}
+							{% if artist.id != album_artist.id %}{{ album_artist.name }}{% if not forloop.last and album.artists.all|next:forloop.counter0 %}, {% endif %}{% endif %}
+							{% endfor %}
+						</p>
+						{% endif %}
+						<p class="info">{{ album.year }}</p>
 						<a href="{% url 'apps.music.views.release_detail' album.id %}?autoplay" class="button">Listen</a>
 						{% if album.download_link %}
 						<a href="{{ album.download_link.url }}" class="button">Download</a>
 						{% endif %}
 						<ul class="tracklist">
-							{% for track in album.track_set.all %}
+							{% for track in album.tracks.all %}
 								<li><a href="#">{{ track.title }} <span>{{ track.length }}</span></a></li>
 							{% endfor %}
 						</ul>
