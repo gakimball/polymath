@@ -16,8 +16,10 @@
 		{% endif %}
 
 		{% if album_list %}
-		<section>
-				<h2>Releases</h2>
+		<section class="release-list">
+			<div class="large-12 columns"><h2>Releases</h2></div>
+
+			<div class="release-list-main">
 
 				<ul class="media-list">
 				{% for album in album_list %}
@@ -44,6 +46,23 @@
 					</li>
 				{% endfor %}
 				</ul>
+			</div>
+
+			<div class="release-list-sidebar">
+				<section class="panel">
+					<h3>Just want everything?</h3>
+					<p>Alright, sure! Download the entire catalog with one click below. It's a <strong>304.5MB</strong> download that includes 34 tracks from 6 releases.</p>
+					<a href="#" class="button">Download Catalog</a>
+				</section>
+				<section class="panel">
+					<h3>Spotify playlists</h3>
+					<p>We make <a href="http://spotify.com">Spotify</a> playlists here and there for your listening pleasure. Give them a gander sometime:</p>
+					<ul>
+						<li>10.28.13: <a href="http://open.spotify.com/user/polymatharts/playlist/6njVuV7INXCtbhRhytVxP9">Gettin' Freaky for Halloween</a></li>
+					</ul>
+				</section>
+			</div>
+
 		</section>
 		{% endif %}
 	</div>
