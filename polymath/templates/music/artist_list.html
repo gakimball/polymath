@@ -1,4 +1,4 @@
-{% if artist_list %}
+{% if artist_list.exists %}
 	<ul class="artist-list">
 	{% for artist in artist_list %}
 		<li><a href="{% url 'apps.music.views.artist_detail' artist.slug %}" class="block-link">
