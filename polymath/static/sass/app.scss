@@ -6,6 +6,7 @@
 @import "foundation/components/block-grid";
 @import "foundation/components/type";
 @import "foundation/components/flex-video";
+@import "foundation/components/panels";
 
 @import "compass/css3";
 
@@ -16,6 +17,7 @@
 @import "sidebar";
 
 @import "links";
+@import "panel";
 @import "buttons";
 @import "play-button";
 
@@ -165,6 +167,22 @@ ul[class*="large-block-grid"] li a {
   }
 }
 
+$rl: 'release-list';
+.#{$rl} {
+  @include grid-row(nest);
+}
+.#{$rl}-main, .#{$rl}-sidebar {
+  @include grid-column(12);
+}
+@media #{$small} {
+  .#{$rl}-main {
+    @include grid-column(8);
+  }
+  .#{$rl}-sidebar {
+    @include grid-column(4);
+  }
+}
+
 // @import "foundation/components/visibility";
 // @import "foundation/components/buttons";
 // @import "foundation/components/forms"; // *requires components/buttons
@@ -184,7 +202,6 @@ ul[class*="large-block-grid"] li a {
 // @import "foundation/components/labels";
 // @import "foundation/components/inline-lists";
 // @import "foundation/components/pagination";
-// @import "foundation/components/panels";
 // @import "foundation/components/pricing-tables";
 // @import "foundation/components/progress-bars";
 // @import "foundation/components/side-nav";
