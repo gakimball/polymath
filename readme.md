@@ -13,11 +13,27 @@ To run it locally, you need:
 
 ### This is how we do
 
+Get it.
+
     $ git clone https://github.com/gakimball/polymath
     $ cd polymath
+  
+Isolate it.
+
     $ virtualenv venv
     $ source venv/bin/activate
+
+Dependency it.
+
     $ pip install
+
+Database it. (I haven't properly configured South to migrate apps in the needed order yet)
+
+    $ foreman run ./manage.py syncdb
+    $ foreman run ./manage.py migrate people (and then music, and then video)
+
+Start it.
+
     $ foreman start -f Procfile.dev
 
 ### Environemnt variables
