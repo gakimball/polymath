@@ -1,2 +1,3 @@
-web: gunicorn polymath.wsgi --debug
+web:     gunicorn polymath.wsgi --debug
+db:      postgres -D /usr/local/var/postgres
 compass: compass watch polymath/static
