@@ -70,6 +70,7 @@ class Album(models.Model):
         ('split', 'Split'),
     )
     release_type = models.CharField(max_length=6, choices=RELEASE_TYPES, help_text='Release type determines the format of the page.')
+    compilation = models.BooleanField(default=False, editable=False)
     
     image = models.ImageField(upload_to='albums/images/', help_text='Album art goes here. However, when you add a track, each track may have its own picture as well.')
     reverse_image = models.ImageField(upload_to='albums/reverse_images/', blank=True, null=True, help_text='Optional: back side of cover art.')
@@ -98,6 +99,10 @@ class Album(models.Model):
                 self.file_size = self.download_link.size
             except OSError:
                 pass
+        if self.artists.count() > 1:
+            self.compilation = True
+        else:
+            self.compilation = False
         super(Album, self).save()
 
 class Artist(models.Model):
