@@ -10,6 +10,7 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
  	<link rel="stylesheet" href="{{ STATIC_URL }}css/app.css" />
+ 	<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
  	<script src="{{ STATIC_URL }}js/vendor/custom.modernizr.js"></script>
 </head>
 
@@ -75,7 +76,23 @@
 
 			$nav_icon.on('click', function(){
 				$header.toggleClass('nav-open');
-			})
+			});
+
+			$('.cover-toggle').on('click', function(){
+				// Flip the cover
+				$(this).siblings('.covers').toggleClass('flipped');
+
+				// Swap the image source
+				var tmp = $(this).data('alt');
+				$(this).data('alt', $(this).children('img')[0].src);
+				$(this).children('img')[0].src = tmp;
+
+				// Swap the text
+				if ($(this).children('span').text() === 'front')
+					$(this).children('span').text('back');
+				else
+					$(this).children('span').text('front');
+			});
 		})
 	</script>
 
