@@ -54,7 +54,7 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 
 # Local media settings
-MEDIA_ROOT = '/Applications/MAMP/htdocs/polymath/polymath/static/uploads'
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'static/uploads')
 MEDIA_URL = 'http://0.0.0.0:5000/static/uploads/'
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
