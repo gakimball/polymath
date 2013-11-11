@@ -32,7 +32,7 @@
 		<p class="artist-detail-quote">{{ artist.quote }}</p>
 	</div>
 	<div class="large-5 columns">
-		<img class="artist-detail-photo" src="{{ artist.image.url }}">
+		<img class="artist-detail-photo" src="{{ artist.image.url }}" alt="Photograph of {{ artist.name }}">
 	</div>
 	<div class="large-7 columns">
 		<p>{{ artist.name }} is a project by {{ artist.owner }}.
@@ -51,7 +51,20 @@
 			{% for album in artist.albums.all %}
 				<div class="album-view">
 					<div class="album-view-cover">
-						<img class="cover" src="{{ album.image.url }}" alt="">
+						{# Container for 3D flip on covers #}
+						<div class="covers">
+							<img class="cover" src="{{ album.image.url }}" alt="{{ album.title }} cover art">
+							{% if album.reverse_image %}
+							<img class="reverse cover" src="{{ album.reverse_image.url }}" alt="{{ album.title }} back cover">
+							{% endif %}
+						</div>
+						{# Switch to toggle flip #}
+						{% if album.reverse_image %}
+						<a class="cover-toggle" data-alt="{{ album.image.url }}">
+							<img src="{{ album.reverse_image.url }}">
+							&larr; Flip to <span>back</span> cover
+						</a>
+						{% endif %}
 					</div>
 					<div class="album-view-info">
 						<h3 class="title">{{ album.title }}</h3>
@@ -71,6 +84,8 @@
 						<ul class="tracklist">
 							{% for track in album.tracks.all %}
 								<li><a href="#">{{ track.title }} <span>{{ track.length }}</span></a></li>
+							{% empty %}
+								<i>This release has no tracks for some reason.</i>
 							{% endfor %}
 						</ul>
 					</div>
