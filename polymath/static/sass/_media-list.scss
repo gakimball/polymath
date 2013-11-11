@@ -113,6 +113,14 @@ $title-size: $h3-font-size;
 
   // Layout adjustments
   ul:not(.up-3):not(.up-4) & {
+    padding-bottom: 0.75em;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1.25em;
+
+    &:last-child {
+      border: 0;
+    }
+
     // Shift to horizontal layout
     @media screen and (min-width: emCalc(450px)) {
       & {

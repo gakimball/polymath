@@ -11,15 +11,50 @@ $av: 'album-view';
 
 .#{$av}-cover {
   @include grid-column(12);
+  @include perspective(800px);
 
   margin-bottom: 1em;
+  
+  // Container for 3D transform
+  .covers {
+    position: relative;
+    @include transform-style(preserve-3d);
+    @include transition-property(transform);
+    @include transition-duration(1s);
 
+    &.flipped {
+      @include rotateY(180deg);
+    }
+  }
+  // Front and back covers
   .cover {
     width: 100%;
     max-width: 400px;
+    @include backface-visibility(hidden);
 
     @media screen and (min-width: emCalc(650px)) {
       max-width: 100%;
+    }
+  }
+  // Back covers
+  .reverse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include rotateY(180deg);
+  }
+
+  // Switch to toggle flip
+  .cover-toggle {
+    display: block;
+    margin-top: 1em;
+
+    img {
+      width: 40px;
+      margin-right: 0.5em;
+    }
+    &:hover img {
+      opacity: 0.6;
     }
   }
 }
