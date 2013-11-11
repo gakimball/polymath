@@ -1,4 +1,4 @@
-==Polymath, the app==
+## Polymath, the app
 
 Polymath is run on Django, deployed to Heroku, and backed by AWS.
 
@@ -11,16 +11,16 @@ To run it locally, you need:
   - compass
   - zurb-foundation
 
-===This is how we do===
+### This is how we do
 
-  $ git clone https://github.com/gakimball/polymath
-  $ cd polymath
-  $ virtualenv venv
-  $ source venv/bin/activate
-  $ pip install
-  $ foreman start -f Procfile.dev
+    $ git clone https://github.com/gakimball/polymath
+    $ cd polymath
+    $ virtualenv venv
+    $ source venv/bin/activate
+    $ pip install
+    $ foreman start -f Procfile.dev
 
-===Environemnt variables===
+### Environemnt variables
 
 You'll need some environment variables to make everything work.
 
