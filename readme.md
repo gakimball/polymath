@@ -18,11 +18,11 @@ To run it locally, you need:
   $ virtualenv venv
   $ source venv/bin/activate
   $ pip install
-  $ foreman start
+  $ foreman start -f Procfile.dev
 
 ===Environemnt variables===
 
-You need some environment variables to make everything work.
+You'll need some environment variables to make everything work.
 
   - **DATABASE_URL** uses the dj_database_url library to convert a database URL into a settings object for Django.
   - **DJANGO_DEBUG** enables verbose error messages in Django when set to 1.
