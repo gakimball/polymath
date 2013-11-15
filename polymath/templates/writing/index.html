@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Writing{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="large-8 push-4 columns">
+    <h2>Short stories</h2>
+
+    <ul class="media-list">
+      {% for story in story_list %}
+      <li class="media-list-item">
+        <a href="{% url 'apps.writing.views.story_detail' story.id %}" class="widescreen thumb">
+          <img src="{{ story.image.url }}" alt="{{ story.title }}">
+        </a>
+        <div class="content">
+          <a href="{% url 'apps.writing.views.story_detail' story.id %}">
+            <h3 class="title">{{ story.title }}</h3>
+            <p class="info">by Brian Maxwell</p>
+          </a>
+          <p>{{ story.body|truncatewords:30 }}</p>
+          <a href="{% url 'apps.writing.views.story_detail' story.id %}" class="button">Read</a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="large-4 pull-8 columns">
+    <h2>Contributors</h2>
+
+    <ul class="writer-list">
+      <li class="writer-list-item">
+        <img src="http://placehold.it/100x100" alt="" class="photo">
+        <p class="name">Brian Maxwell</p>
+      </li>
+      <li class="writer-list-item">
+        <img src="http://placehold.it/100x100" alt="" class="photo">
+        <p class="name">Brian Maxwell</p>
+      </li>
+      <li class="writer-list-item">
+        <img src="http://placehold.it/100x100" alt="" class="photo">
+        <p class="name">Brian Maxwell</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

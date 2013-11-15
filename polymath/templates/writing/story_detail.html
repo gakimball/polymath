@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load markdown %}
+
+{% block title %}Read {{ story.title }}{% endblock %}
+
+{% block content %}
+
+<div class="row story-detail">
+  
+  <div class="story-detail-info">
+    <h1 class="title">{{ story.title }}</h1>
+    <p class="author">by <a href="">Brian Maxwell</a></p>
+  </div>
+
+  <img src="{{ story.image.url }}" alt="{{ story.title }} image" class="story-detail-image">
+
+  <div class="story-detail-body">
+    <div class="story-detail-controls">
+      <a data-smaller>Smaller text</a>
+      <a data-bigger>Bigger text</a>
+      <a data-lights>Lights off</a>
+    </div>
+
+    {{ story.body|markdown }}
+  </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+{% block script %}
+
+<script>
+  $(function(){
+    var ctrl = $('.story-detail-controls');
+    var body = $('.story-detail-body');
+    var fontSize = 1;
+    var fontSizeInc = 0.1;
+    var minFontSize = 0.8;
+    var maxFontSize = 1.5;
+    var lightsOn = false;
+
+    ctrl.find('[data-bigger]').on('click', function(){
+      if (fontSize < maxFontSize) {
+        fontSize += fontSizeInc;
+        body.find('p').css('font-size', fontSize+'em');
+
+        if (fontSize === maxFontSize) $(this).addClass('is-disabled');
+        else $(this).removeClass('is-disabled');
+      }
+    });
+    ctrl.find('[data-smaller]').on('click', function(){
+      if (fontSize > minFontSize) {
+        fontSize -= fontSizeInc;
+        body.find('p').css('font-size', fontSize+'em');
+
+        if (fontSize === minFontSize) $(this).addClass('is-disabled');
+        else $(this).removeClass('is-disabled');
+      }
+    });
+
+    ctrl.find('[data-lights]').on('click', function(){
+      if (lightsOn === false) {
+        lightsOn = true;
+        $('body').addClass('is-lightsout');
+        $(this).text('Lights on');
+      }
+      else {
+        lightsOn = false;
+        $('body').removeClass('is-lightsout');
+        $(this).text('Lights off');
+      }
+    });
+  });
+</script>
+
+{% endblock %}
