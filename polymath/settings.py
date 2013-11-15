@@ -125,7 +125,7 @@ INSTALLED_APPS = (
 
     'apps.music',
     'apps.video',
-    # 'apps.writing',
+    'apps.writing',
     # 'apps.audio',
     # 'apps.blog',
 

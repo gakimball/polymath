@@ -4,7 +4,7 @@ import re
 def current_dept(request):
   music = '/(music|tracks|releases|artists)'
   video = '/video'
-  writing = '/(writing|story)'
+  writing = '/(writing|read)'
 
   current_dept = 'na'
   if re.match(music, request.path) is not None:
