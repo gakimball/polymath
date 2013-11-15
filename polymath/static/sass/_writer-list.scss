@@ -1,0 +1,25 @@
+$wl: 'writer-list';
+
+.#{$wl} {
+  list-style-type: none;
+}
+
+.#{$wl}-item {
+  @include clearfix;
+  margin-bottom: 1em;
+
+  .photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    display: block;
+    float: left;
+    margin-right: 1em;
+  }
+  .name {
+    font-size: 1.5em;
+    font-weight: 300;
+    position: relative;
+    top: 0.5em;
+  }
+}

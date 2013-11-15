@@ -1,3 +1,20 @@
+/*
+  MEDIA LIST
+  A media list is a collection of links to content of the same type,
+  e.g. tracks, albums, stories.
+
+  Modifiers:
+    .up-3       1, then 3-up layout
+    .up-4       1, then 2, then 3, then 4-up layout
+
+  Component pieces:
+    .thumb      Thumbnail image
+    .title      Title of work
+    .subtitle   Secondary descriptor (artist, author, series)
+    .info       Meta info (year, length)
+    .flavor     Categorical information or flavor text
+*/
+
 $ml: 'media-list';
 $title-size: $h3-font-size;
 
@@ -42,6 +59,15 @@ $title-size: $h3-font-size;
       .music-page & {
         color: $music-color;
       }
+      .video-page & {
+        color: $video-color;
+      }
+      .writing-page & {
+        color: $writing-color;
+      }
+      .audio-page & {
+        color: $audio-color;
+      }
     }
   }
 
@@ -51,6 +77,9 @@ $title-size: $h3-font-size;
     border: 1px solid #ccc;
     max-width: 300px;
     width: 100%;
+  }
+  .widescreen + .content {
+    margin-top: -0.75em;
   }
   .cover {
     box-shadow: 0 7px 15px rgba(#000, 0.4);

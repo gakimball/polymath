@@ -28,4 +28,18 @@ a {
       h3 { color: $video-color; }
     }
   }
+  .writing-page & {
+    color: $writing-color;
+    &:hover {
+      color: lighten($writing-color, $link-highlight-factor);
+      h3 { color: $writing-color; }
+    }
+  }
+  .audio-page & {
+    color: $audio-color;
+    &:hover {
+      color: lighten($audio-color, $link-highlight-factor);
+      h3 { color: $audio-color; }
+    }
+  }
 }
