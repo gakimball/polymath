@@ -25,7 +25,7 @@
 			<ul class="dept-nav">
 				<li class="music"><a href="{% url 'apps.music.views.index' %}">Music</a></li>
 				<li class="video"><a href="{% url 'apps.video.views.index' %}">Video</a></li>
-				<li class="writing disabled"><a href="">Writing</a></li>
+				<li class="writing"><a href="{% url 'apps.writing.views.index' %}">Writing</a></li>
 				<li class="audio disabled"><a href="">Audio</a></li>
 			</ul>
 			<ul class="secondary-nav">
@@ -95,6 +95,7 @@
 			});
 		})
 	</script>
+	{% block script %}{% endblock %}
 
  </body>
 
