@@ -28,6 +28,10 @@ urlpatterns = patterns('',
     # Video
     url(r'^video/$', 'apps.video.views.index'),
     url(r'^video/(?P<video_id>[\d]+)/$', 'apps.video.views.video_detail'),
+
+    # Writing
+    url(r'^writing/$', 'apps.writing.views.index'),
+    url(r'^read/(?P<story_id>[\d]+)/$', 'apps.writing.views.story_detail'),
 )
 
 urlpatterns += staticfiles_urlpatterns()
