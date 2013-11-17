@@ -24,6 +24,8 @@ urlpatterns = patterns('',
     url(r'^artists/(?P<artist_slug>[\w-]+)/$', 'apps.music.views.artist_detail'),
     url(r'^releases/(?P<album_id>[\d]+)/$', 'apps.music.views.release_detail'),
     url(r'^tracks/(?P<track_id>[\d]+)/$', 'apps.music.views.track_detail'),
+    ## Music API
+    url(r'^api/tracks/(?P<tracks>[0-9]+(,[0-9]+)*)', 'apps.music.views.get_playlist'),
 
     # Video
     url(r'^video/$', 'apps.video.views.index'),

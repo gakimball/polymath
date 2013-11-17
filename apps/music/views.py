@@ -1,7 +1,8 @@
 from apps.music.models import Track, Album, Artist
 from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
-from django.http import Http404
+from django.http import HttpResponse, Http404
+import json
 
 def index(request):
     # Artists
@@ -44,3 +45,23 @@ def track_detail(request, track_id):
     track = get_object_or_404(Track, pk=track_id)
 
     return render(request, 'music/track_detail.html', {'track': track, })
+
+def get_playlist(request, tracks):
+    if request.is_ajax or True:
+        track_ids = tracks.split(',')
+        tracks = Track.objects.filter(pk__in=track_ids)
+
+        response = []
+        for track in tracks:
+            obj = {
+                'id': track.id,
+                'title': track.title,
+                'album': track.album.title,
+                'artist': track.artist.name,
+                'cover': track.album.image.url,
+                'length': track.length,
+                'audio_mp3': track.audio_mp3.url,
+                'audio_ogg': track.audio_ogg.url,
+            }
+            response.append(obj)
+        return HttpResponse(json.dumps(response), 'application/javascript')
