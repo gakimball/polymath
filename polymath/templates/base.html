@@ -39,7 +39,9 @@
 		</div>
 	</div></header>
 
+	<div id="content">
 	{% block content %}{% endblock %}
+	</div>
 
 	<footer class="footer">
 		<hr class="divider">
@@ -68,7 +70,24 @@
 		</div>
 	</footer>
 
-	<script src="{{ STATIC_URL }}js/vendor/zepto.js"></script>
+	<div data-player class="master-player">
+		<div class="master-player-inner">
+			<p data-title class="track-title">Title</p>
+			<p data-artist class="track-artist">Artist</p>
+			<a data-playpause>Play</a>
+			<a data-prevtrack>Prev</a>
+			<a data-nexttrack>Next</a>
+			<input type="range" data-slider min="0" step="1" value="0">
+			<p>
+				<span data-currenttime>0:00</span> /
+				<span data-totaltime>0:00</span>
+			</p>
+			<audio data-audio></audio>
+		</div>
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="{% static 'js/script.js' %}"></script>
 	<script>
 		$(function(){
 			var $header = $('.header');
