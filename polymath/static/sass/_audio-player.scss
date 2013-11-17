@@ -1,0 +1,32 @@
+$ap: 'master-player';
+
+.#{$ap} {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10000;
+  margin: 0;
+
+  @media screen and (min-width: $row-width) {
+    bottom: $column-gutter / 2;
+  }
+
+  .track-title, .track-artist, a {
+    margin: 0;
+    display: inline-block;
+    font-size: 1.25em;
+    margin-right: 1em;
+  }
+}
+
+.#{$ap}-inner {
+  @include grid-row;
+
+  border-radius: 0 4px 4px 0;
+  border-left: 5px solid $music-color;
+  box-shadow: 0 3px 10px rgba(#000, 0.75);
+  background: white;
+  height: emCalc(80px);
+  padding: $column-gutter / 2;
+}

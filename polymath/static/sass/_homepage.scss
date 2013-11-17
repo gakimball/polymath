@@ -1,0 +1,49 @@
+.homepage-intro {
+  text-align: center;
+
+  .tagline {
+    font-weight: 300;
+    line-height: 1.4;
+    font-size: 1em;
+    max-width: 500px;
+    margin: 1em auto;
+
+    @media #{$small} {
+      font-size: 1.5em;
+    }
+  }
+  .logo {
+    display: block;
+    max-width: 150px;
+    margin: 1.75em auto;
+  }
+  .followus {
+    margin-bottom: 0;
+
+    @media #{$small} {
+      font-size: 1.35em;
+      font-weight: 300;
+    }
+  }
+  .followlinks {
+    a {
+      margin: 0 1em;
+      display: inline-block;
+      @media #{$small} {
+        font-size: 1.35em;
+      }
+    }
+    .facebook {
+      color: $facebook-color;
+      &:hover { color: lighten($facebook-color, 20%); }
+    }
+    .twitter {
+      color: $twitter-color;
+      &:hover { color: lighten($twitter-color, 20%); }
+    }
+    .tumblr {
+      color: $tumblr-color;
+      &:hover { color: lighten($tumblr-color, 20%); }
+    }
+  }
+}
