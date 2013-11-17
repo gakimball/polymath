@@ -81,9 +81,9 @@
 						{% if album.download_link %}
 						<a href="{{ album.download_link.url }}" class="button">Download</a>
 						{% endif %}
-						<ul class="tracklist">
+						<ul data-player-collection class="tracklist">
 							{% for track in album.tracks.all %}
-								<li player-track="{{ track.id }}"><a href="{% url 'apps.music.views.track_detail' track.id %}">{{ track.title }} <span>{{ track.length }}</span></a></li>
+								<li data-player-track="{{ track.id }}"><a href="{% url 'apps.music.views.track_detail' track.id %}">{{ track.title }} <span>{{ track.length }}</span></a></li>
 							{% empty %}
 								<i>This release has no tracks for some reason.</i>
 							{% endfor %}
