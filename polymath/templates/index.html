@@ -1,10 +1,77 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
 <div class="row">
+  <img src="http://placehold.it/1290x540" alt="">
+
   <div class="large-12 columns">
-    <h1>Yes, it works.</h1>
+
+    <!-- INTRO -->
+    <div class="homepage-intro">
+      <h1 class="tagline">We are Polymath, a collective of independent musicians, filmmakers, and writers.</h1>
+
+      <img src="{% static 'img/logo.svg' %}" alt="Polymath logo" class="logo">
+
+      <p class="followus">Follow us on the Internet to keep up to speed:</p>
+      <p class="followlinks">
+        <a href="http://facebook.com/PolymathArts" target="_blank" class="facebook">Facebook</a>
+        <a href="http://twitter.com/PolymathArts" target="_blank" class="twitter">Twitter</a>
+        <a href="http://polymathtk.tumblr.com" target="_blank" class="tumblr">Tumblr</a>
+      </p>
+    </div>
+    <!-- /INTRO -->
+    
+    <!-- VIDEO -->
+    <h2>Watch This</h2>
+    <div class="row">
+      <div class="large-4 columns">
+        <img src="http://placehold.it/800x450" alt="">
+        <h3>The Outerspaces</h3>
+        <p>The Outerspaces is a film project created to record musicians performing in a visual environment suited to their music. Watch the trailer for the first set, featuring Sapphic.</p>
+        <p><a href="{% url 'apps.video.views.index' %}">More videos &rarr;</a></p>
+      </div>
+      <div class="large-7 columns">
+        <div class="flex-video widescreen">
+          <iframe id="video-detail-player" width="875" height="492" src="http://www.youtube.com/embed/XBreTDGNlHo" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!-- /VIDEO -->
+
+    <!-- MUSIC -->
+    <h2>Listen to This</h2>
+    <div class="row">
+      <div class="large-4 columns">
+        <img src="http://placehold.it/800x450" alt="">
+        <h3>Halloween Music</h3>
+        <p>Check out our special split single for Halloween, featuring a pair of spooky tracks by <a href="{% url 'apps.music.views.artist_detail' 'the-good-morning-players' %}">The Good Morning Players</a> and <a href="{% url 'apps.music.views.artist_detail' 'cigarettes-and-milk' %}">Cigarettes and Milk</a>.</p>
+        <p><a href="{% url 'apps.music.views.index' %}">Hear more music &rarr;</a></p>
+      </div>
+      <div class="large-7 columns">
+        <div class="media-list-item">
+          <a href="#">
+            <img src="http://placehold.it/100x100" alt="" class="thumb cover">
+          </a>
+          <div class="content">
+            <a href="">
+              <h3 class="title">Spooky Split Single</h3>
+              <p class="info">2013</p>
+            </a>
+            <a href="" class="button">Listen</a>
+            <a href="" class="button">Download</a>
+
+          </div>
+          <ul data-player-collection class="tracklist" style="clear: both">
+            <li><a data-player-track="1" href="#">Track <span>10:10</span></a></li>
+            <li><a data-player-track="2" href="#">Track <span>10:10</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /MUSIC -->
+
   </div>
 </div>
 
