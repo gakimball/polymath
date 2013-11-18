@@ -30,7 +30,7 @@
 			<p class="album">{{ track.album }}</p>
 
 			<div class="audio-player">
-				<a href="" class="play-button"></a>
+				<a href="" class="play-button no-ajaxy"></a>
 				<div class="seeker">
 					<span class="time-current">0:00</span>
 					<span class="time-total">{{ track.length }}</span>
@@ -38,7 +38,7 @@
 			</div>
 
 			{% if track.download_link %}
-			<a href="{{ track.download_link.url }}" class="button">Download</a>
+			<a href="{{ track.download_link.url }}" class="button no-ajaxy">Download</a>
 			{% endif %}
 		</div>
 	</div>
@@ -60,12 +60,12 @@
 			<div class="large-8 columns">
 				<a href="{% url 'apps.music.views.release_detail' track_album.id %}" class="music button">Listen</a>
 				{% if track_album.download_link %}
-					<a href="{{ track_album.download_link.url }}" class="music button">Download</a>
+					<a href="{{ track_album.download_link.url }}" class="music button no-ajaxy">Download</a>
 				{% endif %}
 
-				<ol class="tracklist">
+				<ol data-player-collection class="tracklist">
 				{% for track in track_album.tracks.all %}
-					<li><a href="#">{{ track.title }} <span>{{ track.length }}</span></a></li>
+					<li data-player-track="{{ track.id }}"><a href="#" class="no-ajaxy">{{ track.title }} <span>{{ track.length }}</span></a></li>
 				{% endfor %}
 				</ol>
 			</div>

@@ -27,10 +27,10 @@
     <h2>Watch This</h2>
     <div class="row">
       <div class="large-4 columns">
-        <img src="http://placehold.it/800x450" alt="">
+        <img src="{% static 'img/about/outerspaces.jpg' %}" alt="The Outerspaces logo">
         <h3>The Outerspaces</h3>
         <p>The Outerspaces is a film project created to record musicians performing in a visual environment suited to their music. Watch the trailer for the first set, featuring Sapphic.</p>
-        <p><a href="{% url 'apps.video.views.index' %}">More videos &rarr;</a></p>
+        <p><a href="{% url 'apps.video.views.index' %}">Watch more videos &rarr;</a></p>
       </div>
       <div class="large-7 columns">
         <div class="flex-video widescreen">
@@ -50,7 +50,7 @@
         <p><a href="{% url 'apps.music.views.index' %}">Hear more music &rarr;</a></p>
       </div>
       <div class="large-7 columns">
-        <div class="media-list-item">
+        <div class="media-list-item full-width">
           <a href="#">
             <img src="http://placehold.it/100x100" alt="" class="thumb cover">
           </a>
@@ -64,8 +64,8 @@
 
           </div>
           <ul data-player-collection class="tracklist" style="clear: both">
-            <li><a data-player-track="1" href="#">Track <span>10:10</span></a></li>
-            <li><a data-player-track="2" href="#">Track <span>10:10</span></a></li>
+            <li><a data-player-track="1" href="#">You Haunt My Dreams <span>10:10</span></a></li>
+            <li><a data-player-track="2" href="#">Year of the Bat <span>10:10</span></a></li>
           </ul>
         </div>
       </div>

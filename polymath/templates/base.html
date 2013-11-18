@@ -87,7 +87,13 @@
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="{% static 'js/script.js' %}"></script>
+	{% if settings.DEBUG == true %}
+	<script src="{% static 'js/src/jquery-ui-1.10.3.custom.js' %}"></script>
+	<script src="{% static 'js/src/jquery-scrollto.js' %}"></script>
+	<script src="{% static 'js/src/history.js' %}"></script>
+	<script src="{% static 'js/src/ajaxify.js' %}"></script>
+	<script src="{% static 'js/src/script.js' %}"></script>
+	{% endif %}
 	<script>
 		$(function(){
 			var $header = $('.header');

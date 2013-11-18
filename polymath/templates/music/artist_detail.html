@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load forloop_next %}
+{% load markdown %}
 
 {% block title %}{{ artist.name }} - Polymath Musicians{% endblock %}
 
@@ -35,11 +36,11 @@
 		<img class="artist-detail-photo" src="{{ artist.image.url }}" alt="Photograph of {{ artist.name }}">
 	</div>
 	<div class="large-7 columns">
-		<p>{{ artist.name }} is a project by {{ artist.owner }}.
 		{% if artist.biography %}
-			<a href="#bio">Read full bio &darr;</a></p>
-			<p>{{ artist.biography|safe }}
-		{% endif %}</p>
+			{{ artist.biography|markdown }}
+		{% else %}
+			<p>{{ artist.name }} is a project by Polymath's musicians.</p>
+		{% endif %}
 	</div>
 </div>
 
@@ -60,7 +61,7 @@
 						</div>
 						{# Switch to toggle flip #}
 						{% if album.reverse_image %}
-						<a class="cover-toggle" data-alt="{{ album.image.url }}">
+						<a class="cover-toggle no-ajaxy" data-alt="{{ album.image.url }}">
 							<img src="{{ album.reverse_image.url }}">
 							&larr; Flip to <span>back</span> cover
 						</a>
@@ -79,11 +80,11 @@
 						<p class="info">{{ album.year }}</p>
 						<a href="{% url 'apps.music.views.release_detail' album.id %}?autoplay" class="button">Listen</a>
 						{% if album.download_link %}
-						<a href="{{ album.download_link.url }}" class="button">Download</a>
+						<a href="{{ album.download_link.url }}" class="button no-ajaxy">Download</a>
 						{% endif %}
 						<ul data-player-collection class="tracklist">
 							{% for track in album.tracks.all %}
-								<li data-player-track="{{ track.id }}"><a href="{% url 'apps.music.views.track_detail' track.id %}">{{ track.title }} <span>{{ track.length }}</span></a></li>
+								<li data-player-track="{{ track.id }}"><a href="{% url 'apps.music.views.track_detail' track.id %}" class="no-ajaxy">{{ track.title }} <span>{{ track.length }}</span></a></li>
 							{% empty %}
 								<i>This release has no tracks for some reason.</i>
 							{% endfor %}

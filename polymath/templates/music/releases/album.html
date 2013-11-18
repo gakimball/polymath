@@ -25,20 +25,28 @@
     </div>
     <div class="large-8 columns details">
       <h1 class="title">{{ album.title }}</h1>
-      {% with artist=album.artists.all.0 %}
-      <p class="artist">{{ album.release_type|an }} {{ album.release_type }} by <a href="{% url 'apps.music.views.artist_detail' artist.slug  %}">{{ artist.name }}</a></p>
+      {% with artist_list=album.artists.all %}
+        <p class="artist">{{ album.release_type|an }} {{ album.release_type }} by
+        {% if artist_list.count == 2 %}
+          <a href="{% url 'apps.music.views.artist_detail' artist_list.0.slug %}">{{ artist_list.0.name }}</a> and <a href="{% url 'apps.music.views.artist_detail' artist_list.1.slug %}">{{ artist_list.1.name }}</a>
+        {% else %}
+          {% for artist in artist_list %}
+          <a href="{% url 'apps.music.views.artist_detail' artist.slug %}">{{ artist.name }}</a>{% if not forloop.last %}, {% endif %}
+          {% endfor %}
+        {% endif %}
+        </p>
       {% endwith %}
 
-      <a href="" class="giant-play button">Play</a>
+      <a href="" data-load-release="{{ album.id }}" class="giant-play button no-ajaxy">Play</a>
       {% if album.download_link %}
-      <a href="{{ album.download_link.url }}" class="button">Download</a>
+      <a href="{{ album.download_link.url }}" class="button no-ajaxy">Download</a>
       {% endif %}
 
       <dl class="info">
         <dt>Released</dt>
         <dd>{{ album.year }}</dd>
-        <dt>Length</dt>
-        <dd>30:00</dd>
+        <!-- <dt>Length</dt> -->
+        <!-- <dd>30:00</dd> -->
       </dl>
     </div>
   </div>
@@ -48,9 +56,9 @@
   <div class="large-8 push-4 columns">
     <h2 class="subheader">Tracklist</h2>
 
-    <ul class="big-tracklist">
+    <ul data-player-collection="{{ album.id }}" class="big-tracklist">
       {% for track in album.tracks.all %}
-        <li><a href="{% url 'apps.music.views.track_detail' track.id %}">{{ track.title }} <span>{{ track.length }}</span></a></li>
+        <li data-player-track="{{ track.id }}"><a href="{% url 'apps.music.views.track_detail' track.id %}" class="no-ajaxy">{{ track.title }} <span>{{ track.length }}</span></a></li>
       {% endfor %}
     </ul>
   </div>

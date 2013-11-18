@@ -1,54 +1,67 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}About us{% endblock %}
 
 {% block content %}
 
+<img src="{% static 'img/logo.svg' %}" class="giant-logo">
+
 <div class="row about-tagline">
   <div class="large-12 columns">
     <h1 class="weis">We are <em>Polymath</em>.</h1>
     <p class="weis-sub">We’re a group of creatives, collaborating on original music, video, writing, and audio, for you to enjoy and share for free.</p>
-    <p class="weis-nav">Below: <a href="">Our productions</a> • <a href="">Contributors</a> • <a href="">Talk to us</a></p>
+    <p class="weis-nav">Below: <a href="#productions">Our productions</a> • <a href="#contributors">Contributors</a> • <a href="#contact">Talk to us</a></p>
     <hr class="divider">
   </div>
 </div>
 
-<div class="row">
+<div class="row" id="productions">
   <div class="large-12 columns">
     <h2>Our productions</h2>
 
     <div class="row">
       <div class="large-6 columns">
-        <img src="http://placehold.it/16x9" class="thumb" alt="">
+        <img src="{% static 'img/about/music.jpg' %}" class="thumb" alt="">
         <h3>Polymath Musicians</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, numquam harum modi nam temporibus laboriosam vitae iste sint ea similique aliquid quibusdam voluptatibus quaerat eaque enim est totam! Possimus, corrupti.</p>
-        <p><a href="">Listen to Polymath musicians &rarr;</a></p>
+        <p>Polymath's original music spans rock 'n' roll, electronic, and disco. You can stream all of our music right here on the site for free, or you can download it as high-quality MP3's, for free as well.</p>
+        <p><a href="{% url 'apps.music.views.index' %}">Listen to Polymath musicians &rarr;</a></p>
+      </div>
+      <div class="large-6 columns">
+        <img src="{% static 'img/about/outerspaces.jpg' %}" class="thumb" alt="">
+        <h3>The Outerspaces</h3>
+        <p><em>Coming November 25.</em> The Outerspaces is a film series created to showcase musicians performing in a visual environemnt complimentary to their music.</p>
+        <p><a href="{% url 'apps.video.views.index' %}">Watch videos &rarr;</a></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <img src="{% static 'img/about/ath.jpg' %}" class="thumb" style="border: 1px solid #ccc">
+        <h3>Addicted to Humans</h3>
+        <p><em>First issue coming December 1.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, numquam harum modi nam temporibus laboriosam vitae iste sint ea similique aliquid quibusdam voluptatibus quaerat eaque enim est totam! Possimus, corrupti.</p>
       </div>
       <div class="large-6 columns">
         <img src="http://placehold.it/16x9" class="thumb" alt="">
-        <h3>Polymath Musicians</h3>
+        <h3>We Culture</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, numquam harum modi nam temporibus laboriosam vitae iste sint ea similique aliquid quibusdam voluptatibus quaerat eaque enim est totam! Possimus, corrupti.</p>
-        <p><a href="">Listen to Polymath musicians &rarr;</a></p>
-      </div>
-      <div class="large-6 columns">
-        <img src="http://placehold.it/16x9" class="thumb" alt="">
-        <h3>Polymath Musicians</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, numquam harum modi nam temporibus laboriosam vitae iste sint ea similique aliquid quibusdam voluptatibus quaerat eaque enim est totam! Possimus, corrupti.</p>
-        <p><a href="">Listen to Polymath musicians &rarr;</a></p>
-      </div>
-      <div class="large-6 columns">
-        <img src="http://placehold.it/16x9" class="thumb" alt="">
-        <h3>Polymath Musicians</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, numquam harum modi nam temporibus laboriosam vitae iste sint ea similique aliquid quibusdam voluptatibus quaerat eaque enim est totam! Possimus, corrupti.</p>
-        <p><a href="">Listen to Polymath musicians &rarr;</a></p>
       </div>
     </div>
   </div>
 </div>
 
+<div class="row" id="contributors">
+  <div class="large-12 columns">
+    <h2>Contributors</h2>
+    <p>Polymath is made possible by the combined creative energy of dozens of songwriters, musicians, producers, videographers, writers, editors, artists, and designers.</p>
 
-<div class="row">
-  
+    <ul class="contributor-list">
+      {% for person in people_list %}
+      <li>{{ person.name }}</li>
+      {% empty %}
+      <i>Nobody has ever contributed to Polymath, ever.</i>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
 
 {% endblock %}
