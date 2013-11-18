@@ -9,18 +9,100 @@ $ap: 'master-player';
   z-index: 10000;
   margin: 0;
 
-  @media screen and (min-width: $row-width) {
-    bottom: $column-gutter / 2;
+  a {
+    color: $music-color;
+
+    &:hover {
+      color: lighten($music-color, 20%);
+    }
+  }
+  &.radio-mode {
+    .#{$ap}-inner {
+      border-color: $audio-color;
+    }
+
+    a {
+      color: $audio-color;
+      &:hover {
+        color: lighten($audio-color, 20%);
+      }
+    }
   }
 
-  .track-title, .track-artist, a {
+  // Entypo icons
+  .icon {
+    font-family: 'Entypo';
+    font-size: 3em;
+    line-height: 1;
     margin: 0;
-    display: inline-block;
-    font-size: 1.25em;
-    margin-right: 1em;
+    font-weight: normal;
+  }
+
+  // Float every UI element
+  .cover-art, .play-button, .track-info, .data-menu, .next-button {
+    float: left;
+  }
+
+  // Cover art
+  .cover-art {
+    width: emCalc(50px) - $column-gutter / 2;
+    height: emCalc(50px) - $column-gutter / 2;
+    margin-right: 0.5em;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // Play/pause, next, previous buttons
+  .play-button {
+    width: 2em;
+    height: 2em;
+    margin: 0;
+    &::after {
+      line-height: 1.25;
+      font-size: 1.5em;
+    }
+  }
+  .next-button {
+    margin: 0 0.1em;
+    position: relative;
+    top: -0.15em;
+  }
+  .prev-button {
+    @extend .next-button;
+  }
+
+  // Track info: title, artist, current time, total time
+  .track-info {
+    margin: 0 0.7em;
+    white-space: nowrap;
+  }
+    .track-title {
+      margin: 0;
+      line-height: 1.3;
+    }
+    .track-artist {
+      font-size: 0.8em;
+      font-weight: 300;
+      margin: 0;
+      line-height: 1;
+    }
+    .track-time {
+      display: none;
+    }
+
+  // Menu icon
+  .menu-button {
+    float: right;
+    font-size: 5em;
+    margin: 0;
+    line-height: 0.45;
   }
 }
 
+// Inner portion of player
 .#{$ap}-inner {
   @include grid-row;
 
@@ -28,6 +110,13 @@ $ap: 'master-player';
   border-left: 5px solid $music-color;
   box-shadow: 0 3px 10px rgba(#000, 0.75);
   background: white;
-  height: emCalc(80px);
-  padding: $column-gutter / 2;
+  height: 50px;
+  padding: $column-gutter / 4;
+}
+
+// Large breakpoint
+@media screen and (min-width: $row-width) {
+  .#{$ap} {
+    bottom: $column-gutter / 2;
+  }
 }

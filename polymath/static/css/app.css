@@ -1992,6 +1992,14 @@ blockquote p {
   height: 100%;
 }
 
+@font-face {
+  font-family: "Entypo";
+  src: url("../fonts/entypo/entypo.eot");
+  src: url("../fonts/entypo/entypo.eot?#iefix") format("embedded-opentype"), url("../fonts/entypo/entypo.woff") format("woff"), url("../fonts/entypo/entypo.ttf") format("truetype"), url("../fonts/entypo/entypo.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* line 3, ../sass/_header.scss */
 .header {
   *zoom: 1;
@@ -2419,21 +2427,96 @@ blockquote p {
   z-index: 10000;
   margin: 0;
 }
-@media screen and (min-width: 62.5em) {
-  /* line 3, ../sass/_audio-player.scss */
-  .master-player {
-    bottom: 0.9375em;
-  }
+/* line 12, ../sass/_audio-player.scss */
+.master-player a {
+  color: #ce5e5e;
 }
-/* line 16, ../sass/_audio-player.scss */
-.master-player .track-title, .master-player .track-artist, .master-player a {
+/* line 15, ../sass/_audio-player.scss */
+.master-player a:hover {
+  color: #e6acac;
+}
+/* line 20, ../sass/_audio-player.scss */
+.master-player.radio-mode .master-player-inner {
+  border-color: #ab4da8;
+}
+/* line 24, ../sass/_audio-player.scss */
+.master-player.radio-mode a {
+  color: #ab4da8;
+}
+/* line 26, ../sass/_audio-player.scss */
+.master-player.radio-mode a:hover {
+  color: #cd91cb;
+}
+/* line 33, ../sass/_audio-player.scss */
+.master-player .icon {
+  font-family: 'Entypo';
+  font-size: 3em;
+  line-height: 1;
   margin: 0;
-  display: inline-block;
-  font-size: 1.25em;
-  margin-right: 1em;
+  font-weight: normal;
+}
+/* line 42, ../sass/_audio-player.scss */
+.master-player .cover-art, .master-player .play-button, .master-player .track-info, .master-player .data-menu, .master-player .next-button, .master-player .prev-button {
+  float: left;
+}
+/* line 47, ../sass/_audio-player.scss */
+.master-player .cover-art {
+  width: 2.1875em;
+  height: 2.1875em;
+  margin-right: 0.5em;
+}
+/* line 52, ../sass/_audio-player.scss */
+.master-player .cover-art img {
+  width: 100%;
+  height: 100%;
+}
+/* line 59, ../sass/_audio-player.scss */
+.master-player .play-button {
+  width: 2em;
+  height: 2em;
+  margin: 0;
+}
+/* line 63, ../sass/_audio-player.scss */
+.master-player .play-button::after {
+  line-height: 1.25;
+  font-size: 1.5em;
+}
+/* line 68, ../sass/_audio-player.scss */
+.master-player .next-button, .master-player .prev-button {
+  margin: 0 0.1em;
+  position: relative;
+  top: -0.15em;
+}
+/* line 78, ../sass/_audio-player.scss */
+.master-player .track-info {
+  margin: 0 0.7em;
+  white-space: nowrap;
+}
+/* line 82, ../sass/_audio-player.scss */
+.master-player .track-title {
+  margin: 0;
+  line-height: 1.3;
+}
+/* line 86, ../sass/_audio-player.scss */
+.master-player .track-artist {
+  font-size: 0.8em;
+  font-weight: 300;
+  margin: 0;
+  line-height: 1;
+}
+/* line 92, ../sass/_audio-player.scss */
+.master-player .track-time {
+  display: none;
+}
+/* line 97, ../sass/_audio-player.scss */
+.master-player .menu-button {
+  float: right;
+  font-size: 5em;
+  margin: 0;
+  line-height: 0.45;
 }
 
-/* line 24, ../sass/_audio-player.scss */
+/* line 106, ../sass/_audio-player.scss */
 .master-player-inner {
   width: 100%;
   margin-left: auto;
@@ -2446,8 +2529,8 @@ blockquote p {
   border-left: 5px solid #ce5e5e;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.75);
   background: white;
-  height: 5em;
-  padding: 0.9375em;
+  height: 50px;
+  padding: 0.46875em;
 }
 /* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
 .master-player-inner:before, .master-player-inner:after {
@@ -2459,6 +2542,12 @@ blockquote p {
   clear: both;
 }
 
+@media screen and (min-width: 62.5em) {
+  /* line 119, ../sass/_audio-player.scss */
+  .master-player {
+    bottom: 0.9375em;
+  }
+}
 /* line 3, ../sass/_links.scss */
 a {
   font-weight: 600;
@@ -4178,12 +4267,12 @@ body.is-lightsout .footer a {
   color: #ccc;
 }
 
-/* line 40, ../sass/app.scss */
+/* line 41, ../sass/app.scss */
 body {
   -webkit-font-smoothing: antialiased;
 }
 @media screen and (min-width: 72.5em) {
-  /* line 40, ../sass/app.scss */
+  /* line 41, ../sass/app.scss */
   body {
     background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(10%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.1)));
     background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0) 90%, rgba(0, 0, 0, 0.1) 100%);
@@ -4193,13 +4282,13 @@ body {
   }
 }
 
-/* line 51, ../sass/app.scss */
+/* line 52, ../sass/app.scss */
 h2 {
   padding-bottom: 0.1em;
   border-bottom: 1px solid #999999;
   margin-bottom: 0.75em;
 }
-/* line 56, ../sass/app.scss */
+/* line 57, ../sass/app.scss */
 h2.subheader {
   border: none;
   color: #666;
@@ -4208,36 +4297,36 @@ h2.subheader {
   font-size: 1.4em;
 }
 @media only screen and (min-width: 768px) {
-  /* line 56, ../sass/app.scss */
+  /* line 57, ../sass/app.scss */
   h2.subheader {
     font-size: 1.75em;
   }
 }
 
-/* line 69, ../sass/app.scss */
+/* line 70, ../sass/app.scss */
 ul, ol {
   list-style-position: inside;
 }
 
-/* line 73, ../sass/app.scss */
+/* line 74, ../sass/app.scss */
 ul[class*="large-block-grid"] li a {
   display: block;
 }
 
-/* line 77, ../sass/app.scss */
+/* line 78, ../sass/app.scss */
 .thumb {
   width: 100%;
   display: block;
   margin-bottom: 0.75em;
 }
 
-/* line 92, ../sass/app.scss */
+/* line 93, ../sass/app.scss */
 .main {
   padding: 1em;
   box-shadow: -30px -30px 45px -30px rgba(0, 0, 0, 0.5), 30px -30px 45px -30px rgba(0, 0, 0, 0.5);
 }
 
-/* line 97, ../sass/app.scss */
+/* line 98, ../sass/app.scss */
 .divider {
   max-width: 62.5em;
   height: 1px;
@@ -4249,44 +4338,44 @@ ul[class*="large-block-grid"] li a {
   display: none;
 }
 @media only screen and (min-width: 768px) {
-  /* line 97, ../sass/app.scss */
+  /* line 98, ../sass/app.scss */
   .divider {
     margin: 3em auto;
   }
 }
 
-/* line 112, ../sass/app.scss */
+/* line 113, ../sass/app.scss */
 .dept-promo {
   display: block;
   position: relative;
   margin: 1em 0;
 }
-/* line 120, ../sass/app.scss */
+/* line 121, ../sass/app.scss */
 .dept-promo .content {
   background: #000;
   padding: 1em;
 }
-/* line 124, ../sass/app.scss */
+/* line 125, ../sass/app.scss */
 .dept-promo .content p {
   font-size: 1em;
   margin-bottom: 0em;
   line-height: 1.4;
 }
-/* line 129, ../sass/app.scss */
+/* line 130, ../sass/app.scss */
 .dept-promo .content p:not(.link) {
   color: #ccc;
 }
-/* line 133, ../sass/app.scss */
+/* line 134, ../sass/app.scss */
 .dept-promo .content .link {
   font-weight: 600;
   font-size: 1.5em;
 }
 @media only screen and (min-width: 768px) {
-  /* line 112, ../sass/app.scss */
+  /* line 113, ../sass/app.scss */
   .dept-promo {
     margin: 1.5em 0;
   }
-  /* line 142, ../sass/app.scss */
+  /* line 143, ../sass/app.scss */
   .dept-promo .content {
     position: absolute;
     bottom: 0;
@@ -4294,17 +4383,17 @@ ul[class*="large-block-grid"] li a {
     padding: 1.5em;
     text-shadow: 0 0 20px black;
   }
-  /* line 151, ../sass/app.scss */
+  /* line 152, ../sass/app.scss */
   .dept-promo .content p {
     font-size: 1.5em;
   }
-  /* line 154, ../sass/app.scss */
+  /* line 155, ../sass/app.scss */
   .dept-promo .content .link {
     font-size: 2em;
   }
 }
 
-/* line 161, ../sass/app.scss */
+/* line 162, ../sass/app.scss */
 .related-track {
   *zoom: 1;
   display: inline-block;
@@ -4321,7 +4410,7 @@ ul[class*="large-block-grid"] li a {
 .related-track:after {
   clear: both;
 }
-/* line 169, ../sass/app.scss */
+/* line 170, ../sass/app.scss */
 .related-track a {
   *zoom: 1;
   display: block;
@@ -4335,29 +4424,29 @@ ul[class*="large-block-grid"] li a {
 .related-track a:after {
   clear: both;
 }
-/* line 174, ../sass/app.scss */
+/* line 175, ../sass/app.scss */
 .related-track .album-art {
   width: 4.375em;
   display: inline-block;
   margin-right: 1em;
   float: left;
 }
-/* line 180, ../sass/app.scss */
+/* line 181, ../sass/app.scss */
 .related-track .info {
   display: inline-block;
   float: left;
   padding-top: 0.75em;
 }
-/* line 185, ../sass/app.scss */
+/* line 186, ../sass/app.scss */
 .related-track .info p {
   color: #000;
   margin: 0;
 }
-/* line 190, ../sass/app.scss */
+/* line 191, ../sass/app.scss */
 .related-track .album {
   font-size: 1em;
 }
-/* line 193, ../sass/app.scss */
+/* line 194, ../sass/app.scss */
 .related-track .link {
   display: block;
   float: left;
@@ -4365,12 +4454,12 @@ ul[class*="large-block-grid"] li a {
   padding-top: 1.5em;
   padding-left: 2em;
 }
-/* line 202, ../sass/app.scss */
+/* line 203, ../sass/app.scss */
 .related-track:hover .info p, .related-track:hover .link {
   color: #62b860;
 }
 
-/* line 209, ../sass/app.scss */
+/* line 210, ../sass/app.scss */
 .release-list {
   width: auto;
   margin-left: -0.9375em;
@@ -4390,7 +4479,7 @@ ul[class*="large-block-grid"] li a {
   clear: both;
 }
 
-/* line 212, ../sass/app.scss */
+/* line 213, ../sass/app.scss */
 .release-list-main, .release-list-sidebar {
   position: relative;
   padding-left: 0.9375em;
@@ -4400,7 +4489,7 @@ ul[class*="large-block-grid"] li a {
 }
 
 @media only screen and (min-width: 768px) {
-  /* line 216, ../sass/app.scss */
+  /* line 217, ../sass/app.scss */
   .release-list-main {
     position: relative;
     padding-left: 0.9375em;
@@ -4409,7 +4498,7 @@ ul[class*="large-block-grid"] li a {
     float: left;
   }
 
-  /* line 219, ../sass/app.scss */
+  /* line 220, ../sass/app.scss */
   .release-list-sidebar {
     position: relative;
     padding-left: 0.9375em;

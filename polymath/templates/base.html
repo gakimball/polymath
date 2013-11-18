@@ -72,16 +72,22 @@
 
 	<div data-player class="master-player">
 		<div class="master-player-inner">
-			<p data-title class="track-title">Title</p>
-			<p data-artist class="track-artist">Artist</p>
-			<a data-playpause>Play</a>
-			<a data-prevtrack>Prev</a>
-			<a data-nexttrack>Next</a>
-			<input type="range" data-slider min="0" step="1" value="0">
-			<p>
-				<span data-currenttime>0:00</span> /
-				<span data-totaltime>0:00</span>
-			</p>
+			<div class="cover-art">
+				<img src="http://placehold.it/1x1">
+			</div>
+			<a data-prevtrack class="icon prev-button">&#9194;</a>
+			<a data-playpause class="play-button"></a>
+			<a data-nexttrack class="icon next-button">&#9193;</a>
+			<div class="track-info">
+				<p data-title class="track-title">No Music Playing</p>
+				<p data-artist class="track-artist">Not never, no way</p>
+				<p class="track-time">
+					<span data-currenttime>0:00</span> /
+					<span data-totaltime>0:00</span>
+				</p>
+			</div>
+			<!-- <input type="range" data-slider min="0" step="1" value="0"> -->
+			<a data-menu class="menu-button icon">&#57349;</a>
 			<audio data-audio></audio>
 		</div>
 	</div>
@@ -93,6 +99,8 @@
 	<script src="{% static 'js/src/history.js' %}"></script>
 	<script src="{% static 'js/src/ajaxify.js' %}"></script>
 	<script src="{% static 'js/src/script.js' %}"></script>
+	{% else %}
+	<script src="{% static 'js/script.min.js' %}"></script>
 	{% endif %}
 	<script>
 		$(function(){
