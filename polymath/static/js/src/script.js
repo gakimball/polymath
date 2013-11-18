@@ -85,9 +85,10 @@
       }
     },
     loadTrack: function(index) {
+      this.playlistIndex = index;
+
       var wasPlaying = !this.$audio[0].paused || !this.initialized;
       this.$audio.empty();
-      console.log(index);
 
       // MP3 file
       var mp3_source = document.createElement('source');
@@ -133,6 +134,9 @@
         this.loadTrack(this.playlistIndex);
       }
     },
+    changeTrack: function(index) {
+      this.loadTrack(index);
+    }
   }
 
   $(function(){
@@ -142,19 +146,44 @@
       e.preventDefault();
 
       var clicked_track = $(this).attr('data-player-track');
-      var collection = $(this).closest('[data-player-collection]').find('[data-player-track]');
+      var $parent = $(this).closest('[data-player-collection]');
+      var $collection = $(this).closest('[data-player-collection]').find('[data-player-track]');
 
-      var track_ids = [];
-      collection.each(function(index){
-        var track_id = $(this).attr('data-player-track');
-        track_ids.push(track_id);
-        if (track_id == clicked_track) {
-          masterPlayer.playlistIndex = index;
-        }
-      });
+      if ($parent.length === 0) {
+        masterPlayer.loadPlaylist($(this).attr('data-player-track'));
+        return;
+      }
 
-      masterPlayer.loadPlaylist(track_ids);
+      // This is the active playlist, don't hit the database
+      if (typeof $parent.attr('data-active-collection') !== 'undefined') {
+        var new_index = $collection.index(this);
+        masterPlayer.changeTrack(new_index);
+      }
+      // Not the active playlist, hit the database for track metadata
+      else {
+        var track_ids = [];
+        $collection.each(function(index){
+          var track_id = $(this).attr('data-player-track');
+          track_ids.push(track_id);
+          if (track_id == clicked_track) {
+            masterPlayer.playlistIndex = index;
+          }
+        });
+        masterPlayer.loadPlaylist(track_ids);
+        $parent.attr('data-active-collection', '');
+      }
+
     });
+
+    $('body').on('click', '[data-load-release]', function(e){
+      e.preventDefault();
+
+      this_id = $(this).attr('data-load-release');
+      $('#content')
+        .find('[data-player-collection="'+this_id+'"]')
+          .find('[data-player-track]').eq(0).click();
+    });
+
   });
 
 })(window.Zepto || window.jQuery);
