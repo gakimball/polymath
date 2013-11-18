@@ -19,16 +19,16 @@ class Track(models.Model):
     color = models.CharField(max_length=6, blank=True, help_text='Optional: accent color for track.')
     length = models.CharField(max_length=5,help_text='Write it like this: "3:04". No leading zeroes in the minutes place.')
     
-    audio_mp3 = models.FileField(upload_to='/tracks/mp3/',null=True,blank=True,help_text='Track in .mp3 format.')
-    audio_ogg = models.FileField(upload_to='/tracks/ogg',null=True,blank=True,help_text='Track in .oga format.')
-    download_link = models.FileField(upload_to='/tracks/zip/',null=True,blank=True,help_text='Track in a .zip file.')
+    audio_mp3 = models.FileField(upload_to='tracks/mp3/',null=True,blank=True,help_text='Track in .mp3 format.')
+    audio_ogg = models.FileField(upload_to='tracks/ogg/',null=True,blank=True,help_text='Track in .oga format.')
+    download_link = models.FileField(upload_to='tracks/zip/',null=True,blank=True,help_text='Track in a .zip file.')
 
     file_size = models.IntegerField(editable=False,null=True,blank=True)
 
     hidden = models.BooleanField(editable=False)
     slug = models.SlugField(editable=False)
 
-    background = models.ImageField(blank=True,upload_to='/tracks/backgrounds/',help_text='Optional, but please upload one: background image for use on the track\'s page and on the home page carousel.')
+    background = models.ImageField(blank=True,upload_to='tracks/backgrounds/',help_text='Optional, but please upload one: background image for use on the track\'s page and on the home page carousel.')
 
     def __unicode__(self):
         return self.title
@@ -44,7 +44,7 @@ class Track(models.Model):
         super(Track, self).save()
 
     class Meta:
-        ordering = ['pub_date']
+        ordering = ['pub_date', 'id']
         get_latest_by = ['pub_date']
 
     # Checks to see if a track is a single
@@ -74,7 +74,7 @@ class Album(models.Model):
     
     image = models.ImageField(upload_to='albums/images/', help_text='Album art goes here. However, when you add a track, each track may have its own picture as well.')
     reverse_image = models.ImageField(upload_to='albums/reverse_images/', blank=True, null=True, help_text='Optional: back side of cover art.')
-    download_link = models.FileField(upload_to='downloads/albums/', blank=True, null=True, help_text='Optional: .zip file of album. Don\'t upload it until the entire album has been released for streaming.')
+    download_link = models.FileField(upload_to='albums/zip/', blank=True, null=True, help_text='Optional: .zip file of album. Don\'t upload it until the entire album has been released for streaming.')
     file_size = models.IntegerField(editable=False, blank=True, null=True)
 
     color = models.CharField(max_length=6, blank=True, help_text='Optional: accent color for album.')
@@ -99,6 +99,7 @@ class Album(models.Model):
                 self.file_size = self.download_link.size
             except OSError:
                 pass
+        super(Album, self).save()
         if self.artists.count() > 1:
             self.compilation = True
         else:
