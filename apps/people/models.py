@@ -23,18 +23,58 @@ class Person(models.Model):
         ordering = ['name']
 
 class Credit(models.Model):
-    # ROLES = (
-    #     ('Production', (('production', 'Production'), ('mixing', 'Mixing'), ('writing', 'Writing'), ('recording', 'Recording'))),
-    #     ('Strings', (('guitar', 'Guitar'), ('violin', 'violin'), ('viloa', 'Viloa'), ('cello', 'Cello'), ('bass', 'Bass'), ('bass_guitar', 'Bass Guitar'))),
-    #     ('Percussion', (('drums', 'Drums'), ('vibraphone', 'Vibraphone'), ('marimba', 'Marimba'))),
-    #     ('Wind', (('flute', 'Flute'))),
-    #     ('Brass', (('trumpet', 'Trumpet'), ('trombone', 'Trombone'), ('saxophone', 'Saxophone')))
-    # )
-    
     ROLES = (
-        ('mixing', 'Mixing'),
-        ('recording', 'Recording'),
+        ('generic', 'Generic'),
+        ('Production', (
+                ('production', 'Production'), 
+                ('mixing', 'Mixing'), 
+                ('writing', 'Writing'), 
+                ('recording', 'Recording'),
+            )
+        ),
+        ('Video', (
+                ('camera', 'Camera'),
+                ('editing', 'Editing'),
+                ('postproduction', 'Post-production'),
+            )
+        ),
+        ('Writing', (
+                ('author', 'Author'),
+                ('coauthor', 'Co-author'),
+                ('editor', 'Editor'),
+            )
+        ),
+        ('Strings', (
+                ('guitar', 'Guitar'), 
+                ('violin', 'violin'), 
+                ('viloa', 'Viloa'), 
+                ('cello', 'Cello'), 
+                ('bass', 'Bass'), 
+                ('bass_guitar', 'Bass Guitar'),
+            )
+        ),
+        ('Percussion', (
+                ('drums', 'Drums'), 
+                ('vibraphone', 'Vibraphone'), 
+                ('marimba', 'Marimba'),
+            )
+        ),
+        ('Wind', (
+                ('flute', 'Flute'),
+            )
+        ),
+        ('Brass', (
+                ('trumpet', 'Trumpet'), 
+                ('trombone', 'Trombone'), 
+                ('saxophone', 'Saxophone'),
+            )
+        ),
     )
+    
+    # ROLES = (
+    #     ('mixing', 'Mixing'),
+    #     ('recording', 'Recording'),
+    # )
 
     person = models.ForeignKey('Person', help_text='Who did it?', related_name='credits')
     role = models.CharField(choices=ROLES, max_length=50, help_text='What\'d they do?')
@@ -44,4 +84,5 @@ class Credit(models.Model):
     content_object = generic.GenericForeignKey()
 
     def __unicode__(self):
-        return str(self.person) + ': ' + str(self.role) + ' for ' + str(self.content_object)
+        # return str(self.person) + ': ' + str(self.role) + ' for ' + str(self.content_object)
+        return str(self.person) + ' on ' + str(self.content_object)

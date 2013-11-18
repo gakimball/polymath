@@ -1,11 +1,13 @@
 <dl class="credits-list">
   {% regroup credits_list by person as credit_person %}
   {% for person in credit_person %}
-  <dt class="person"><a href="#">{{ person.grouper }}</a></dt>
+  <dt class="person">{{ person.grouper }}</dt><dd class="credit"> </dd>
+  {% if False %}
   <dd class="credit">
     {% for credit in person.list %}
     {{ credit.role }}{% if not forloop.last %}, {% endif %}
     {% endfor %}
   </dd>
+  {% endif %}
   {% endfor %}
 </dl>

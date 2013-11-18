@@ -3,7 +3,11 @@ from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
 
 def about(request):
-  data_dict = {}
+  people_list = Person.objects.all()
+  
+  data_dict = {
+    'people_list': people_list
+  }
   return render(request, 'about.html', data_dict)
 
 def person_detail(request, person_id):
