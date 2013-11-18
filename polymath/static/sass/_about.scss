@@ -49,3 +49,33 @@
     }
   }
 }
+
+.giant-logo {
+  width: 45%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.contributor-list {
+  list-style-type: none;
+
+  @media screen and (min-width: emCalc(500px)) {
+    @include block-grid(2);
+    font-size: 1.35em;
+    font-weight: 300;
+
+    li {
+      padding-bottom: 0;
+    }
+  }
+  @media #{$small} {
+    @include block-grid(3, $base-style: false);
+
+    li {
+      padding-bottom: 0;
+    }
+  }
+}

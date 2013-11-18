@@ -2407,6 +2407,11 @@ blockquote p {
 
 /* line 3, ../sass/_audio-player.scss */
 .master-player {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   position: fixed;
   left: 0;
   bottom: 0;
@@ -2420,7 +2425,7 @@ blockquote p {
     bottom: 0.9375em;
   }
 }
-/* line 15, ../sass/_audio-player.scss */
+/* line 16, ../sass/_audio-player.scss */
 .master-player .track-title, .master-player .track-artist, .master-player a {
   margin: 0;
   display: inline-block;
@@ -2428,7 +2433,7 @@ blockquote p {
   margin-right: 1em;
 }
 
-/* line 23, ../sass/_audio-player.scss */
+/* line 24, ../sass/_audio-player.scss */
 .master-player-inner {
   width: 100%;
   margin-left: auto;
@@ -2841,42 +2846,50 @@ a h3:hover {
     clear: both;
   }
 }
+/* line 42, ../sass/_media-list.scss */
+.media-list.up-4 .title {
+  margin-bottom: 0.2em;
+}
+/* line 45, ../sass/_media-list.scss */
+.media-list.up-4 .title, .media-list.up-4 .subtitle {
+  line-height: 1.2;
+}
 
-/* line 44, ../sass/_media-list.scss */
+/* line 51, ../sass/_media-list.scss */
 .media-list-item {
   margin-bottom: 1em;
 }
-/* line 47, ../sass/_media-list.scss */
+/* line 54, ../sass/_media-list.scss */
 .media-list-item li {
   display: block;
   color: black;
 }
-/* line 52, ../sass/_media-list.scss */
+/* line 59, ../sass/_media-list.scss */
 .media-list-item a .subtitle, .media-list-item a .info {
   color: black;
 }
-/* line 55, ../sass/_media-list.scss */
+/* line 62, ../sass/_media-list.scss */
 .media-list-item a:hover + .content .title {
   color: #e7007b;
   -webkit-transition: color 0.25s ease-out;
 }
-/* line 59, ../sass/_media-list.scss */
+/* line 66, ../sass/_media-list.scss */
 .music-page .media-list-item a:hover + .content .title {
   color: #ce5e5e;
 }
-/* line 62, ../sass/_media-list.scss */
+/* line 69, ../sass/_media-list.scss */
 .video-page .media-list-item a:hover + .content .title {
   color: #499e47;
 }
-/* line 65, ../sass/_media-list.scss */
+/* line 72, ../sass/_media-list.scss */
 .writing-page .media-list-item a:hover + .content .title {
   color: #5e78ce;
 }
-/* line 68, ../sass/_media-list.scss */
+/* line 75, ../sass/_media-list.scss */
 .audio-page .media-list-item a:hover + .content .title {
   color: #ab4da8;
 }
-/* line 74, ../sass/_media-list.scss */
+/* line 81, ../sass/_media-list.scss */
 .media-list-item .thumb {
   display: block;
   margin-bottom: 1em;
@@ -2884,44 +2897,44 @@ a h3:hover {
   max-width: 300px;
   width: 100%;
 }
-/* line 81, ../sass/_media-list.scss */
+/* line 88, ../sass/_media-list.scss */
 .media-list-item .widescreen + .content {
   margin-top: -0.75em;
 }
-/* line 84, ../sass/_media-list.scss */
+/* line 91, ../sass/_media-list.scss */
 .media-list-item .cover {
   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
 }
-/* line 86, ../sass/_media-list.scss */
+/* line 93, ../sass/_media-list.scss */
 .media-list-item .cover, .media-list-item .cover:hover {
   -webkit-transition: box-shadow 0.2s ease-out;
 }
-/* line 89, ../sass/_media-list.scss */
+/* line 96, ../sass/_media-list.scss */
 .media-list-item .cover:hover {
   box-shadow: 0 7px 30px rgba(0, 0, 0, 0.8);
 }
-/* line 93, ../sass/_media-list.scss */
+/* line 100, ../sass/_media-list.scss */
 .media-list-item .title {
   margin-bottom: 0.25em;
   -webkit-transition: color 0.75s ease-out;
 }
-/* line 96, ../sass/_media-list.scss */
+/* line 103, ../sass/_media-list.scss */
 .media-list-item .title:hover {
   -webkit-transition: color 0.25s ease-out;
 }
-/* line 100, ../sass/_media-list.scss */
+/* line 107, ../sass/_media-list.scss */
 .media-list-item .subtitle {
   font-weight: 300;
   font-size: 1.1875em;
   line-height: 1.4;
   margin-bottom: 0.15em;
 }
-/* line 106, ../sass/_media-list.scss */
+/* line 113, ../sass/_media-list.scss */
 .media-list-item .info {
   font-weight: 300;
   font-style: italic;
 }
-/* line 111, ../sass/_media-list.scss */
+/* line 118, ../sass/_media-list.scss */
 .media-list-item .flavor {
   font-size: 1em;
   font-weight: bold;
@@ -2931,75 +2944,75 @@ a h3:hover {
   line-height: 1;
 }
 @media screen and (min-width: 40.625em) {
-  /* line 122, ../sass/_media-list.scss */
+  /* line 129, ../sass/_media-list.scss */
   .media-list-item .title {
     margin-bottom: 0;
     font-size: 1.6875em;
   }
-  /* line 126, ../sass/_media-list.scss */
+  /* line 133, ../sass/_media-list.scss */
   .media-list-item .subtitle {
     font-size: 1.5em;
   }
-  /* line 129, ../sass/_media-list.scss */
+  /* line 136, ../sass/_media-list.scss */
   .media-list-item .info {
     font-size: 1.25em;
     margin-bottom: 0.75em;
   }
 }
 @media screen and (min-width: 50em) {
-  /* line 135, ../sass/_media-list.scss */
+  /* line 142, ../sass/_media-list.scss */
   .media-list-item .title {
     font-size: 1.9375em;
   }
-  /* line 138, ../sass/_media-list.scss */
+  /* line 145, ../sass/_media-list.scss */
   .media-list-item .subtitle {
     font-size: 1.6875em;
   }
 }
-/* line 144, ../sass/_media-list.scss */
-:not(.up-3):not(.up-4) .media-list-item {
+/* line 151, ../sass/_media-list.scss */
+ul:not(.up-3):not(.up-4) .media-list-item, .media-list-item.full-width {
   padding-bottom: 0.75em;
   border-bottom: 1px solid #cccccc;
   margin-bottom: 1.25em;
 }
-/* line 149, ../sass/_media-list.scss */
-:not(.up-3):not(.up-4) .media-list-item:last-child {
+/* line 156, ../sass/_media-list.scss */
+ul:not(.up-3):not(.up-4) .media-list-item:last-child, .media-list-item.full-width:last-child {
   border: 0;
 }
 @media screen and (min-width: 28.125em) {
-  /* line 155, ../sass/_media-list.scss */
-  :not(.up-3):not(.up-4) .media-list-item {
+  /* line 162, ../sass/_media-list.scss */
+  ul:not(.up-3):not(.up-4) .media-list-item, .media-list-item.full-width {
     *zoom: 1;
   }
   /* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
-  :not(.up-3):not(.up-4) .media-list-item:before, :not(.up-3):not(.up-4) .media-list-item:after {
+  ul:not(.up-3):not(.up-4) .media-list-item:before, ul:not(.up-3):not(.up-4) .media-list-item:after, .media-list-item.full-width:before, .media-list-item.full-width:after {
     content: " ";
     display: table;
   }
   /* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
-  :not(.up-3):not(.up-4) .media-list-item:after {
+  ul:not(.up-3):not(.up-4) .media-list-item:after, .media-list-item.full-width:after {
     clear: both;
   }
-  /* line 159, ../sass/_media-list.scss */
-  :not(.up-3):not(.up-4) .media-list-item .thumb {
+  /* line 166, ../sass/_media-list.scss */
+  ul:not(.up-3):not(.up-4) .media-list-item .thumb, .media-list-item.full-width .thumb {
     max-width: none;
     width: 25%;
     float: left;
   }
-  /* line 164, ../sass/_media-list.scss */
-  :not(.up-3):not(.up-4) .media-list-item .content {
+  /* line 171, ../sass/_media-list.scss */
+  ul:not(.up-3):not(.up-4) .media-list-item .content, .media-list-item.full-width .content {
     float: left;
     padding-left: 1.5em;
     width: 75%;
   }
 }
 @media screen and (min-width: 56.25em) {
-  /* line 171, ../sass/_media-list.scss */
-  :not(.up-3):not(.up-4) .media-list-item .thumb {
+  /* line 178, ../sass/_media-list.scss */
+  ul:not(.up-3):not(.up-4) .media-list-item .thumb, .media-list-item.full-width .thumb {
     width: 30%;
   }
-  /* line 174, ../sass/_media-list.scss */
-  :not(.up-3):not(.up-4) .media-list-item .content {
+  /* line 181, ../sass/_media-list.scss */
+  ul:not(.up-3):not(.up-4) .media-list-item .content, .media-list-item.full-width .content {
     width: 70%;
   }
 }
@@ -3061,22 +3074,28 @@ a h3:hover {
 /* line 4, ../sass/_credits-list.scss */
 .credits-list .person {
   display: inline;
+  font-weight: normal;
 }
-/* line 7, ../sass/_credits-list.scss */
+/* line 8, ../sass/_credits-list.scss */
 .credits-list .person::after {
-  content: ', ';
   font-weight: 300;
 }
-/* line 12, ../sass/_credits-list.scss */
+@media only screen and (min-width: 768px) {
+  /* line 4, ../sass/_credits-list.scss */
+  .credits-list .person {
+    font-size: 1.25em;
+  }
+}
+/* line 17, ../sass/_credits-list.scss */
 .credits-list .credit {
   display: inline;
 }
-/* line 15, ../sass/_credits-list.scss */
+/* line 20, ../sass/_credits-list.scss */
 .credits-list .credit::after {
   content: '';
   display: block;
 }
-/* line 20, ../sass/_credits-list.scss */
+/* line 25, ../sass/_credits-list.scss */
 .credits-list a {
   font-weight: normal;
 }
@@ -3389,6 +3408,84 @@ a h3:hover {
   /* line 41, ../sass/_about.scss */
   .about-tagline .divider {
     width: 75%;
+  }
+}
+
+/* line 53, ../sass/_about.scss */
+.giant-logo {
+  width: 45%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+/* line 62, ../sass/_about.scss */
+.contributor-list {
+  list-style-type: none;
+}
+@media screen and (min-width: 31.25em) {
+  /* line 62, ../sass/_about.scss */
+  .contributor-list {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625em;
+    *zoom: 1;
+    font-size: 1.35em;
+    font-weight: 300;
+  }
+  /* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+  .contributor-list:before, .contributor-list:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+  .contributor-list:after {
+    clear: both;
+  }
+  /* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .contributor-list > li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .contributor-list > li {
+    width: 50%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .contributor-list > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .contributor-list > li:nth-of-type(2n+1) {
+    clear: both;
+  }
+  /* line 70, ../sass/_about.scss */
+  .contributor-list li {
+    padding-bottom: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .contributor-list > li {
+    width: 33.33333%;
+    padding: 0 0.625em 1.25em;
+  }
+  /* line 40, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .contributor-list > li:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 41, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_block-grid.scss */
+  .contributor-list > li:nth-of-type(3n+1) {
+    clear: both;
+  }
+  /* line 77, ../sass/_about.scss */
+  .contributor-list li {
+    padding-bottom: 0;
   }
 }
 
@@ -4127,13 +4224,20 @@ ul[class*="large-block-grid"] li a {
   display: block;
 }
 
-/* line 86, ../sass/app.scss */
+/* line 77, ../sass/app.scss */
+.thumb {
+  width: 100%;
+  display: block;
+  margin-bottom: 0.75em;
+}
+
+/* line 92, ../sass/app.scss */
 .main {
   padding: 1em;
   box-shadow: -30px -30px 45px -30px rgba(0, 0, 0, 0.5), 30px -30px 45px -30px rgba(0, 0, 0, 0.5);
 }
 
-/* line 91, ../sass/app.scss */
+/* line 97, ../sass/app.scss */
 .divider {
   max-width: 62.5em;
   height: 1px;
@@ -4145,44 +4249,44 @@ ul[class*="large-block-grid"] li a {
   display: none;
 }
 @media only screen and (min-width: 768px) {
-  /* line 91, ../sass/app.scss */
+  /* line 97, ../sass/app.scss */
   .divider {
     margin: 3em auto;
   }
 }
 
-/* line 106, ../sass/app.scss */
+/* line 112, ../sass/app.scss */
 .dept-promo {
   display: block;
   position: relative;
   margin: 1em 0;
 }
-/* line 114, ../sass/app.scss */
+/* line 120, ../sass/app.scss */
 .dept-promo .content {
   background: #000;
   padding: 1em;
 }
-/* line 118, ../sass/app.scss */
+/* line 124, ../sass/app.scss */
 .dept-promo .content p {
   font-size: 1em;
   margin-bottom: 0em;
   line-height: 1.4;
 }
-/* line 123, ../sass/app.scss */
+/* line 129, ../sass/app.scss */
 .dept-promo .content p:not(.link) {
   color: #ccc;
 }
-/* line 127, ../sass/app.scss */
+/* line 133, ../sass/app.scss */
 .dept-promo .content .link {
   font-weight: 600;
   font-size: 1.5em;
 }
 @media only screen and (min-width: 768px) {
-  /* line 106, ../sass/app.scss */
+  /* line 112, ../sass/app.scss */
   .dept-promo {
     margin: 1.5em 0;
   }
-  /* line 136, ../sass/app.scss */
+  /* line 142, ../sass/app.scss */
   .dept-promo .content {
     position: absolute;
     bottom: 0;
@@ -4190,45 +4294,83 @@ ul[class*="large-block-grid"] li a {
     padding: 1.5em;
     text-shadow: 0 0 20px black;
   }
-  /* line 145, ../sass/app.scss */
+  /* line 151, ../sass/app.scss */
   .dept-promo .content p {
     font-size: 1.5em;
   }
-  /* line 148, ../sass/app.scss */
+  /* line 154, ../sass/app.scss */
   .dept-promo .content .link {
     font-size: 2em;
   }
 }
 
-/* line 155, ../sass/app.scss */
+/* line 161, ../sass/app.scss */
 .related-track {
+  *zoom: 1;
+  display: inline-block;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   padding: 0.5em;
+  vertical-align: middle;
 }
-/* line 159, ../sass/app.scss */
+/* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+.related-track:before, .related-track:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+.related-track:after {
+  clear: both;
+}
+/* line 169, ../sass/app.scss */
+.related-track a {
+  *zoom: 1;
+  display: block;
+}
+/* line 121, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+.related-track a:before, .related-track a:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-4.2.3/scss/foundation/components/_global.scss */
+.related-track a:after {
+  clear: both;
+}
+/* line 174, ../sass/app.scss */
 .related-track .album-art {
   width: 4.375em;
   display: inline-block;
   margin-right: 1em;
+  float: left;
 }
-/* line 164, ../sass/app.scss */
+/* line 180, ../sass/app.scss */
 .related-track .info {
   display: inline-block;
+  float: left;
+  padding-top: 0.75em;
 }
-/* line 167, ../sass/app.scss */
+/* line 185, ../sass/app.scss */
 .related-track .info p {
+  color: #000;
   margin: 0;
 }
-/* line 171, ../sass/app.scss */
+/* line 190, ../sass/app.scss */
 .related-track .album {
   font-size: 1em;
 }
-/* line 174, ../sass/app.scss */
+/* line 193, ../sass/app.scss */
 .related-track .link {
   display: block;
+  float: left;
+  position: relative;
+  padding-top: 1.5em;
+  padding-left: 2em;
+}
+/* line 202, ../sass/app.scss */
+.related-track:hover .info p, .related-track:hover .link {
+  color: #62b860;
 }
 
-/* line 180, ../sass/app.scss */
+/* line 209, ../sass/app.scss */
 .release-list {
   width: auto;
   margin-left: -0.9375em;
@@ -4248,7 +4390,7 @@ ul[class*="large-block-grid"] li a {
   clear: both;
 }
 
-/* line 183, ../sass/app.scss */
+/* line 212, ../sass/app.scss */
 .release-list-main, .release-list-sidebar {
   position: relative;
   padding-left: 0.9375em;
@@ -4258,7 +4400,7 @@ ul[class*="large-block-grid"] li a {
 }
 
 @media only screen and (min-width: 768px) {
-  /* line 187, ../sass/app.scss */
+  /* line 216, ../sass/app.scss */
   .release-list-main {
     position: relative;
     padding-left: 0.9375em;
@@ -4267,7 +4409,7 @@ ul[class*="large-block-grid"] li a {
     float: left;
   }
 
-  /* line 190, ../sass/app.scss */
+  /* line 219, ../sass/app.scss */
   .release-list-sidebar {
     position: relative;
     padding-left: 0.9375em;

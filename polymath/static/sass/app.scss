@@ -74,6 +74,12 @@ ul[class*="large-block-grid"] li a {
   display: block;
 }
 
+.thumb {
+  width: 100%;
+  display: block;
+  margin-bottom: 0.75em;
+}
+
 // .thumb {
 //   margin-bottom: 0.75em;
 //   width: 300px;
@@ -153,18 +159,31 @@ ul[class*="large-block-grid"] li a {
 }
 
 .related-track {
+  @include clearfix;
+
+  display: inline-block;
   box-shadow: 0 4px 10px rgba(#000, 0.5);
   padding: 0.5em;
+  vertical-align: middle;
+
+  a {
+    @include clearfix;
+    display: block;
+  }
 
   .album-art {
     width: emCalc(70px);
     display: inline-block;
     margin-right: 1em;
+    float: left;
   }
   .info {
     display: inline-block;
+    float: left;
+    padding-top: 0.75em;
 
     p {
+      color: #000;
       margin: 0;
     }
   }
@@ -173,6 +192,16 @@ ul[class*="large-block-grid"] li a {
   }
   .link {
     display: block;
+    float: left;
+    position: relative;
+    padding-top: 1.5em;
+    padding-left: 2em;
+  }
+
+  &:hover {
+    .info p, .link {
+      color: lighten($video-color, 10%);
+    }
   }
 }
 

@@ -3,10 +3,15 @@
 
   .person {
     display: inline;
+    font-weight: normal;
 
     &::after {
-      content: ', ';
+      // content: ', ';
       font-weight: 300;
+    }
+
+    @media #{$small} {
+      font-size: 1.25em;
     }
   }
   .credit {

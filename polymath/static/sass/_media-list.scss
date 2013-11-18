@@ -38,6 +38,13 @@ $title-size: $h3-font-size;
     @media screen and (min-width: emCalc(900px)) {
       @include block-grid(4, $base-style: false);
     }
+
+    .title {
+      margin-bottom: 0.2em;
+    }
+    .title, .subtitle {
+      line-height: 1.2;
+    }
   }
 }
 
@@ -141,7 +148,7 @@ $title-size: $h3-font-size;
   }
 
   // Layout adjustments
-  :not(.up-3):not(.up-4) & {
+  ul:not(.up-3):not(.up-4) &, &.full-width {
     padding-bottom: 0.75em;
     border-bottom: 1px solid #ccc;
     margin-bottom: 1.25em;
