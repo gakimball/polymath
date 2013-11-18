@@ -69,9 +69,6 @@ if DEBUG is False:
     STATIC_ROOT = '/static/'
     STATIC_URL = 'http://polymathic.s3.amazonaws.com/static/'
 
-# Temporary override for Heroku
-DEBUG = True
-
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
