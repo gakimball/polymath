@@ -1,10 +1,13 @@
 from django.db import models
-from apps.people.models import Credit
+from django.contrib.contenttypes.models import ContentType
+from apps.people.models import Person, Credit
 
 # Create your models here.
 
 class Story(models.Model):
 	title = models.CharField(max_length=255)
+	author = models.ForeignKey('people.Person')
+	# assoc_credit = models.ForeignKey('people.Credit', editable=False)
 	pub_date = models.DateField()
 
 	GENRES = (
@@ -21,6 +24,17 @@ class Story(models.Model):
 
 	def __unicode__(self):
 		return self.title
+
+	# def save(self):
+	# 	if not self.assoc_credit:
+	# 		credit = Credit(person=self.author, role='author', content_object=self)
+	# 		super(Story, self).save()
+	# 		credit.save()
+	# 		assoc_credit = credit
+	# 	else:
+	# 		credit = self.assoc_credit
+	# 		credit.person = self.author
+	# 		credit.save()
 
 	class Meta:
 		ordering = ['-pub_date']
