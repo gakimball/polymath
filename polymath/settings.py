@@ -52,6 +52,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'Kittens')
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_PRELOAD_METADATA = True
 
 # Local media settings
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'static/uploads')
@@ -134,6 +135,7 @@ INSTALLED_APPS = (
     'south',
     'django_extensions',
     'debug_toolbar',
+    'collectfast',
     # 'colors',
 )
 
