@@ -12,13 +12,14 @@
 
 @import "fonts";
 @import "colors";
+@import "links";
 
 @import "header";
 @import "footer";
 @import "sidebar";
+
 @import "audio-player";
 
-@import "links";
 @import "panel";
 @import "buttons";
 @import "play-button";
@@ -30,9 +31,11 @@
 
 @import "homepage";
 @import "about";
+
 @import "track-detail";
 @import "release-detail";
 @import "artist";
+
 @import "video-detail";
 
 @import "writer-list";

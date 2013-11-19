@@ -28,6 +28,15 @@
       border-color: $music-color;
     }
   }
+    li.active {
+      a {
+        color: $music-color;
+        border-color: $music-color;
+      }
+      &::before {
+        color: lighten($music-color, 20%);
+      }
+    }
   span {
     float: right;
     color: #666;

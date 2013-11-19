@@ -70,13 +70,16 @@
 		</div>
 	</footer>
 
-	<div data-player class="master-player">
+	<div data-player class="master-player inactive">
 		<div class="master-player-inner">
 			<div class="cover-art">
-				<img src="http://placehold.it/1x1">
+				<img data-coverart src="http://placehold.it/1x1">
+			</div>
+			<div data-progress class="progress">
+				<span></span>
 			</div>
 			<a data-prevtrack class="icon prev-button">&#9194;</a>
-			<a data-playpause class="play-button"></a>
+			<a data-playpause class="icon playpause-button">&#9654;</a>
 			<a data-nexttrack class="icon next-button">&#9193;</a>
 			<div class="track-info">
 				<p data-title class="track-title">No Music Playing</p>
@@ -88,8 +91,12 @@
 			</div>
 			<!-- <input type="range" data-slider min="0" step="1" value="0"> -->
 			<a data-menu class="menu-button icon">&#57349;</a>
-			<audio data-audio></audio>
 		</div>
+		<div class="master-player-playlist">
+			<ul data-playlist class="tracklist">
+			</ul>
+		</div>
+		<audio data-audio></audio>
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
