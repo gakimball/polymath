@@ -38,6 +38,13 @@
 				<img src="{% static 'img/logo.svg' %}">
 				<span>Polymath</span>
 			</a>
+			<select class="mobile-nav">
+				<option value="home">Polymath</option>
+				<option value="music">Music</option>
+				<option value="video">Video</option>
+				<option value="about">About</option>
+				<!-- <option value="calendar">Calendar</option> -->
+			</select>
 			<ul class="dept-nav">
 				<li class="music"><a href="{% url 'apps.music.views.index' %}">Music</a></li>
 				<li class="video"><a href="{% url 'apps.video.views.index' %}">Video</a></li>

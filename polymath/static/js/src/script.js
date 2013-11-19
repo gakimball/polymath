@@ -206,6 +206,7 @@
   $(function(){
     var masterPlayer = new Player($('[data-player]'));
 
+    // Clicking a track
     $('body').on('click', '[data-player-track]', function(e){
       e.preventDefault();
 
@@ -240,6 +241,7 @@
 
     });
 
+    // Clicking a player
     $('body').on('click', '[data-load-release]', function(e){
       e.preventDefault();
 
@@ -247,6 +249,17 @@
       $('#content')
         .find('[data-player-collection="'+this_id+'"]')
           .find('[data-player-track]').eq(0).click();
+    });
+
+    // Clicking the mobile nav
+    $('.mobile-nav').change(function(){
+      var choice = $(this).children('option:selected').val();
+      console.log(choice);
+
+      if (choice === 'home') $('.header .logo').click();
+      else if (choice === 'music') $('.footer .nav .music a').click();
+      else if (choice === 'video') $('.footer .nav .video a').click();
+      else if (choice === 'about') $('.footer .nav ul:nth-child(2) li:nth-child(2) a').click();
     });
 
   });

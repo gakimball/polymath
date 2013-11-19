@@ -25,25 +25,49 @@ $mobile-nav-break: $small;
 		float: left;
 		border-right: 1px solid #ccc;
 		color: #000;
-		padding: {
-			left: $column-gutter / 2;
-			right: $column-gutter;
+		padding-right: $column-gutter / 3;
+
+		@media #{$small} {
+			padding: {
+				left: $column-gutter / 2;
+				right: $column-gutter;
+			}
 		}
 
 		img {
 			height: 2.8em;
 			margin-right: 0.5em;
 			position: relative;
-			top: -0.5em;
+			top: -0.1em;
+
+			@media #{$small} {
+				top: -0.5em;
+			}
 		}
 		span {
 			color: black;
 			font-weight: normal;
 			font-size: emCalc(30px);
+			display: none;
+
+			@media #{$small} {
+				display: inline;
+			}
 		}
 		&:hover span {
 			color: #666;
 		}
+	}
+}
+
+.mobile-nav {
+	width: 200px;
+	float: right;
+	display: inline-block;
+	margin-top: 1em;
+
+	@media #{$small} {
+		display: none;
 	}
 }
 
@@ -56,10 +80,6 @@ $mobile-nav-break: $small;
 	border-right: 1px solid #ccc;
 	margin-bottom: 0;
 	display: none;
-
-	@media screen and (min-width: emCalc(650px)) {
-		display: block;
-	}
 
 	li {
 		display: inline-block;
@@ -135,10 +155,6 @@ $mobile-nav-break: $small;
 	line-height: 3.5em;
 	display: none;
 
-	@media screen and (min-width: emCalc(650px)) {
-		display: block;
-	}
-
 	li {
 		display: inline-block;
 	}
@@ -152,5 +168,11 @@ $mobile-nav-break: $small;
 	.icon a {
 		width: 2em;
 		text-align: center;
+	}
+}
+
+@media #{$small} {
+	.dept-nav, .secondary-nav {
+		display: block;
 	}
 }
