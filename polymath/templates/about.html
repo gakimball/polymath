@@ -11,7 +11,7 @@
   <div class="large-12 columns">
     <h1 class="weis">We are <em>Polymath</em>.</h1>
     <p class="weis-sub">We’re a group of creatives, collaborating on original music, video, writing, and audio, for you to enjoy and share for free.</p>
-    <p class="weis-nav">Below: <a href="#productions">Our productions</a> • <a href="#contributors">Contributors</a> • <a href="#contact">Talk to us</a></p>
+    <p class="weis-nav">Below: <a class="no-ajaxy" href="#productions">Our productions</a> • <a class="no-ajaxy" href="#contributors">Contributors</a> • <a class="no-ajaxy" href="#talk">Talk to us</a></p>
     <hr class="divider">
   </div>
 </div>
@@ -24,7 +24,7 @@
       <div class="large-6 columns">
         <img src="{% static 'img/about/music.jpg' %}" class="thumb" alt="">
         <h3>Polymath Musicians</h3>
-        <p>Polymath's original music spans rock 'n' roll, electronic, and disco. You can stream all of our music right here on the site for free, or you can download it as high-quality MP3's, for free as well.</p>
+        <p>Polymath's original music spans rock 'n' roll, electronic, and disco. You can stream all of our music right here on the site, or download it entirely for free.</p>
         <p><a href="{% url 'apps.music.views.index' %}">Listen to Polymath musicians &rarr;</a></p>
       </div>
       <div class="large-6 columns">
@@ -38,12 +38,12 @@
       <div class="large-6 columns">
         <img src="{% static 'img/about/ath.jpg' %}" class="thumb" style="border: 1px solid #ccc">
         <h3>Addicted to Humans</h3>
-        <p><em>First issue coming December 1.</em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, numquam harum modi nam temporibus laboriosam vitae iste sint ea similique aliquid quibusdam voluptatibus quaerat eaque enim est totam! Possimus, corrupti.</p>
+        <p><em>First issue coming November.</em> "Addicted to Humans" is a zine for, about, and by those who have sunk in the sink-or-swim game of human interaction.</p>
       </div>
       <div class="large-6 columns">
-        <img src="http://placehold.it/16x9" class="thumb" alt="">
+        <img src="{% static 'img/about/weculture.jpg' %}" class="thumb" alt="">
         <h3>We Culture</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, numquam harum modi nam temporibus laboriosam vitae iste sint ea similique aliquid quibusdam voluptatibus quaerat eaque enim est totam! Possimus, corrupti.</p>
+        <p><em>Coming November.</em> "We Culture" is an interview series by Nick Faidley exploring the inner workings of musicians, artists, designers, and filmmakers.</p>
       </div>
     </div>
   </div>
@@ -61,6 +61,13 @@
       <i>Nobody has ever contributed to Polymath, ever.</i>
       {% endfor %}
     </ul>
+  </div>
+</div>
+
+<div class="row" id="talk">
+  <div class="large-12 columns">
+    <h2>Talk to Us</h2>
+    <p>Get in touch with us at <a href="mailto:polymathcollective@gmail.com">polymathcollective@gmail.com</a>. You can contact the editors of <i>Addicted to Humans</i> at <a href="mailto:addictedtohumanszine@gmail.com">addictedtohumanszine@gmail.com</a>. We also use social media! Talk to us on <a href="https://facebook.com/PolymathArts">Facebook</a> and <a href="https://twitter.com/PolymathArts">Twitter</a>.</p>
   </div>
 </div>
 

@@ -25,12 +25,12 @@
 			<ul class="dept-nav">
 				<li class="music"><a href="{% url 'apps.music.views.index' %}">Music</a></li>
 				<li class="video"><a href="{% url 'apps.video.views.index' %}">Video</a></li>
-				<li class="writing"><a href="{% url 'apps.writing.views.index' %}">Writing</a></li>
-				<li class="audio disabled"><a href="">Audio</a></li>
+				<li class="writing disabled"><a href="">Writing</a></li>
+				<li class="audio disabled"><a href="">Radio</a></li>
 			</ul>
 			<ul class="secondary-nav">
 				<li class="about"><a href="{% url 'apps.people.views.about' %}">What is Polymath?</a></li>
-				<li class="about"><a href="">Calendar</a></li>
+				<li class="about"><a href="/calendar">Calendar</a></li>
 				<!-- <li class="icon"><a href="">c</a></li> -->
 				<!-- <li class="icon"><a href="http://facebook.com/PolymathArts" target="_blank">f</a></li> -->
 				<!-- <li class="icon"><a href="http://twitter.com/PolymathArts" target="_blank">t</a></li> -->
@@ -52,20 +52,20 @@
 				<li>Departments:</li>
 				<li class="music"><a href="{% url 'apps.music.views.index' %}">Music</a></li>
 				<li class="video"><a href="{% url 'apps.video.views.index' %}">Video</a></li>
-				<li class="writing"><a href="">Writing</a></li>
-				<li class="audio"><a href="">Audio</a></li>
+				<li class="writing disabled"><a href="">Writing</a></li>
+				<li class="audio disabled"><a href="">Radio</a></li>
 			</ul>
 			<ul>
 				<li>Colophon:</li>
 				<li><a href="{% url 'apps.people.views.about' %}">About Polymath</a></li>
-				<li><a href="">Release Calendar</a></li>
+				<li><a href="/calendar">Release Calendar</a></li>
 			</ul>
 			<ul>
 				<li>Social:</li>
 				<li><a href="https://facebook.com/PolymathArts" target="_blank">Facebook</a></li>
 				<li><a href="https://twitter.com/PolymathArts" target="_blank">Twitter</a></li>
-				<li><a href="" target="_blank">Tumblr</a></li>
-				<li><a href="" target="_blank">YouTube</a></li>
+				<li><a href="http://polymathtk.tumblr.com" target="_blank">Tumblr</a></li>
+				<li><a href="http://youtube.com/polymathtk" target="_blank">YouTube</a></li>
 			</ul>
 		</div>
 	</footer>
@@ -109,6 +109,7 @@
 	{% else %}
 	<script src="{% static 'js/script.min.js' %}"></script>
 	{% endif %}
+
 	<script>
 		$(function(){
 			var $header = $('.header');
@@ -116,22 +117,6 @@
 
 			$nav_icon.on('click', function(){
 				$header.toggleClass('nav-open');
-			});
-
-			$('.cover-toggle').on('click', function(){
-				// Flip the cover
-				$(this).siblings('.covers').toggleClass('flipped');
-
-				// Swap the image source
-				var tmp = $(this).data('alt');
-				$(this).data('alt', $(this).children('img')[0].src);
-				$(this).children('img')[0].src = tmp;
-
-				// Swap the text
-				if ($(this).children('span').text() === 'front')
-					$(this).children('span').text('back');
-				else
-					$(this).children('span').text('front');
 			});
 		})
 	</script>

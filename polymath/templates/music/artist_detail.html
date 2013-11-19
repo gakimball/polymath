@@ -2,7 +2,7 @@
 {% load forloop_next %}
 {% load markdown %}
 
-{% block title %}{{ artist.name }} - Polymath Musicians{% endblock %}
+{% block title %}{{ artist.name }} - Polymath Artists{% endblock %}
 
 {% block content %}
 <div class="row">
@@ -98,4 +98,26 @@
 		{% endif %}
 	</div>
 </div>
+{% endblock %}
+
+{% block script %}
+<script>
+$(function(){
+	$('.cover-toggle').on('click', function(){
+		// Flip the cover
+		$(this).siblings('.covers').toggleClass('flipped');
+
+		// Swap the image source
+		var tmp = $(this).data('alt');
+		$(this).data('alt', $(this).children('img')[0].src);
+		$(this).children('img')[0].src = tmp;
+
+		// Swap the text
+		if ($(this).children('span').text() === 'front')
+			$(this).children('span').text('back');
+		else
+			$(this).children('span').text('front');
+	});
+});
+</script>
 {% endblock %}
