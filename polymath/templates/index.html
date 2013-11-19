@@ -1,10 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load album %}
+
+{% block title %}Home{% endblock %}
 
 {% block content %}
 
 <div class="row">
-  <img src="http://placehold.it/1290x540" alt="">
+  <a href="https://www.facebook.com/events/426514634116404/" target="_blank" class="dept-promo">
+    <img class="background" src="{% static 'img/promos/show-promo.jpg' %}">
+    <div class="content">
+      <p>Muncie + Bloomington Shows this Week</p>
+      <p class="link">Learn more &rarr;</p>
+    </div>
+  </a>
+</div>
+
+<div class="row">
 
   <div class="large-12 columns">
 
@@ -22,6 +34,21 @@
       </p>
     </div>
     <!-- /INTRO -->
+
+    <!-- MUSIC -->
+    <h2>Listen to This</h2>
+    <div class="row">
+      <div class="large-4 columns">
+        <img src="{% static 'img/promos/jennieandt.jpg' %}" class="thumb" alt="Halloween music">
+        <h3>Celebrities E.P.</h3>
+        <p><a href="{% url 'apps.music.views.artist_detail' 'cigarettes-and-milk' %}">Cigarettes and Milk</a> is flowery Brit-pop. Listen to the <i>Celebrities E.P.</i>, remastered for the twenty-first century.</p>
+        <p><a href="{% url 'apps.music.views.index' %}">Hear more music &rarr;</a></p>
+      </div>
+      <div class="large-7 columns">
+        {% album 8 %}
+      </div>
+    </div>
+    <!-- /MUSIC -->
     
     <!-- VIDEO -->
     <h2>Watch This</h2>
@@ -50,24 +77,7 @@
         <p><a href="{% url 'apps.music.views.index' %}">Hear more music &rarr;</a></p>
       </div>
       <div class="large-7 columns">
-        <div class="media-list-item full-width">
-          <a href="{% url 'apps.music.views.release_detail' 7 %}">
-            <img src="{{ MEDIA_URL }}albums/images/yhmd_cover.jpg" alt="" class="thumb cover">
-          </a>
-          <div class="content">
-            <a href="{% url 'apps.music.views.release_detail' 7 %}">
-              <h3 class="title">Spooky Split Single</h3>
-              <p class="info">2013</p>
-            </a>
-            <a href="{% url 'apps.music.views.release_detail' 7 %}" class="button">Listen</a>
-            <a href="{{ MEDIA_URL }}albums/zip/Polymath_Spooky_Split_Single.zip" class="button">Download</a>
-
-          </div>
-          <ul data-player-collection class="tracklist" style="clear: both">
-            <li data-player-track="31"><a class="no-ajaxy" href="#">You Haunt My Dreams <span>5:37</span></a></li>
-            <li data-player-track="32"><a class="no-ajaxy" href="#">Year of the Bat <span>6:18</span></a></li>
-          </ul>
-        </div>
+        {% album 7 %}
       </div>
     </div>
     <!-- /MUSIC -->

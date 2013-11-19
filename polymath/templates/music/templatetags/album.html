@@ -1,0 +1,23 @@
+{% if album %}
+<div class="media-list-item full-width">
+  <a href="{% url 'apps.music.views.release_detail' album.id %}">
+    <img src="{{ album.image.url }}" alt="{{ album.title }} album art" class="thumb cover">
+  </a>
+  <div class="content">
+    <a href="{% url 'apps.music.views.release_detail' album.id %}">
+      <h3 class="title">{{ album.title }}</h3>
+      <p class="info">{{ album.year }}</p>
+    </a>
+    <a href="{% url 'apps.music.views.release_detail' album.id %}" class="button">Listen</a>
+    {% if album.download_link %}
+    <a href="{{ album.download_link.url }}" class="button">Download</a>
+    {% endif %}
+
+  </div>
+  <ul data-player-collection class="tracklist" style="clear: both">
+  {% for track in album.tracks.all %}
+    <li data-player-track="{{ track.id }}"><a class="no-ajaxy" href="#">{{ track.title }} <span>{{ track.length }}</span></a></li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
