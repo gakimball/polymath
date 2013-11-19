@@ -122,7 +122,8 @@ ul[class*="large-block-grid"] li a {
 
   }
   .content {
-    background: #000;
+    width: 100%;
+    background: rgba(#000, 0.75);
     padding: 1em;
 
     p {
@@ -150,7 +151,7 @@ ul[class*="large-block-grid"] li a {
       padding: 1.5em;
 
       // For black stuff
-      text-shadow: 0 0 20px black;
+      // text-shadow: 0 0 20px black;
 
       p {
         font-size: 1.5em;

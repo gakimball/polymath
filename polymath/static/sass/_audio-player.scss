@@ -35,12 +35,20 @@ body {
 
   &.inactive {
     .next-button, .prev-button, .menu-button {
-      color: #ccc;
-      cursor: default;
+      pointer-events: none;
+
+      &, &:hover {
+        color: #ccc;
+        cursor: default;
+      }
     }
-    .playpause-button, .playpause-button:hover {
-      background: #ccc;
-      cursor: default;
+    .playpause-button {
+      pointer-events: none;
+      
+      &, &:hover {
+        background: #ccc;
+        cursor: default;
+      }
     }
   }
   .inactive {
@@ -168,6 +176,10 @@ body {
     top: 50%;
     right: 0;
   }
+}
+
+.#{$ap}-inner, .#{$ap}-playlist {
+  @include translate(0,0,0);
 }
 
 // Inner portion of player

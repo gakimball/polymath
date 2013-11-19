@@ -65,6 +65,10 @@
       color: $audio-color;
       &:hover { color: lighten($audio-color, 15%); }
     }
+    .disabled a {
+      color: #ccc;
+      &:hover { color: #ccc; cursor: default; }
+    }
   }
 
   @media screen and (min-width: emCalc(650px)) {

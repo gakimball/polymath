@@ -61,9 +61,11 @@
 
 .contributor-list {
   list-style-type: none;
+  margin-bottom: 1em;
 
   @media screen and (min-width: emCalc(500px)) {
     @include block-grid(2);
+    margin-bottom: 1em;
     font-size: 1.35em;
     font-weight: 300;
 
