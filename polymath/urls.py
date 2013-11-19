@@ -16,6 +16,9 @@ urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^about/$', 'apps.people.views.about'),
 
+    # Events
+    url(r'calendar/$', TemplateView.as_view(template_name="events/calendar.html")),
+
     # Admin
     url(r'^admin/', include(admin.site.urls)),
 
