@@ -123,7 +123,7 @@
       this.$audio.append(ogg_source);
 
       this.$audio[0].load();
-      // if (wasPlaying === true) this.$audio[0].play();
+      // if (wasPlaying === true) this.$audio[0].play(); 
       this.$audio[0].play();
       this.updatePlayerUI();
       this.updateTimeUI();
