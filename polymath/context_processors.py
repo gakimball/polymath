@@ -1,3 +1,4 @@
+import os
 import re
 
 # Determines what dept. the user is currently in and creates a new context variable
@@ -15,3 +16,7 @@ def current_dept(request):
     current_dept = 'writing'
 
   return {'current_dept': current_dept, 'current_dept_index': 'apps.' + current_dept.lower() + '.views.index'}
+
+def is_debug(request):
+  is_debug = True if os.environ.get('DJANGO_DEBUG', None) == '1' else False
+  return { 'is_debug': is_debug, }

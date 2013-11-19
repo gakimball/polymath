@@ -110,6 +110,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
     "django.contrib.messages.context_processors.messages",
     "polymath.context_processors.current_dept",
+    "polymath.context_processors.is_debug",
 )
 
 INSTALLED_APPS = (
