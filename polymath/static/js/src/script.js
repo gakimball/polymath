@@ -146,9 +146,13 @@
       var pct = this.$audio[0].currentTime / this.$audio[0].duration * 100;
       this.ui.uProgress.children('span').css('width', pct+'%');
     },
+    updateButtonUI: function() {
+
+    },
     updatePlaylistUI: function() {
       var self = this;
       var tracklist = this.ui.uPlaylist;
+      tracklist.empty();
 
       $.each(this.playlist, function(i){
         var li   = document.createElement('li');
