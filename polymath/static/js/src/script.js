@@ -252,7 +252,7 @@
     });
 
     // Clicking the mobile nav
-    $('.mobile-nav').change(function(){
+    $('.mobile-nav').on('change blur', function(){
       var choice = $(this).children('option:selected').val();
       console.log(choice);
 
