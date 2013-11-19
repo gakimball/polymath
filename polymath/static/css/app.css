@@ -2706,6 +2706,7 @@ body {
   transition-timing-function: ease-out;
   height: 0;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   background: rgba(238, 238, 238, 0.975);
   box-shadow: inset 0 -5px 30px 0 rgba(0, 0, 0, 0.25);
 }
@@ -2727,21 +2728,21 @@ body {
 .master-player-playlist:after {
   clear: both;
 }
-/* line 201, ../sass/_audio-player.scss */
+/* line 202, ../sass/_audio-player.scss */
 .master-player-playlist .tracklist, .master-player-playlist .big-tracklist {
   max-width: 600px;
   margin: 0 auto;
   padding: 0.46875em;
 }
 @media only screen and (min-width: 768px) {
-  /* line 201, ../sass/_audio-player.scss */
+  /* line 202, ../sass/_audio-player.scss */
   .master-player-playlist .tracklist, .master-player-playlist .big-tracklist {
     padding: 0.9375em;
   }
 }
-/* line 211, ../sass/_audio-player.scss */
+/* line 212, ../sass/_audio-player.scss */
 .is-playlist-open:not(.inactive) .master-player-playlist {
-  height: 200px;
+  height: 250px;
   -webkit-transition-property: height;
   -moz-transition-property: height;
   -o-transition-property: height;
@@ -2755,48 +2756,54 @@ body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
+@media screen and (max-aspect-ratio: 1 / 1) {
+  /* line 212, ../sass/_audio-player.scss */
+  .is-playlist-open:not(.inactive) .master-player-playlist {
+    height: 400px;
+  }
+}
 
 @media only screen and (min-width: 768px) {
-  /* line 221, ../sass/_audio-player.scss */
+  /* line 226, ../sass/_audio-player.scss */
   body {
     padding-bottom: 85px;
   }
 
-  /* line 225, ../sass/_audio-player.scss */
+  /* line 230, ../sass/_audio-player.scss */
   .master-player-inner {
     height: 75px;
   }
 
-  /* line 229, ../sass/_audio-player.scss */
+  /* line 234, ../sass/_audio-player.scss */
   .master-player-inner .cover-art {
     width: 3.75em;
     height: 3.75em;
     margin-right: 0.3em;
   }
-  /* line 234, ../sass/_audio-player.scss */
+  /* line 239, ../sass/_audio-player.scss */
   .master-player-inner .icon {
     font-size: 5em;
     line-height: 0.8;
   }
-  /* line 238, ../sass/_audio-player.scss */
+  /* line 243, ../sass/_audio-player.scss */
   .master-player-inner .playpause-button {
     font-size: 5em;
   }
-  /* line 241, ../sass/_audio-player.scss */
+  /* line 246, ../sass/_audio-player.scss */
   .master-player-inner .next-button, .master-player-inner .master-player .prev-button, .master-player .master-player-inner .prev-button {
     margin: 0 0.2em;
   }
-  /* line 244, ../sass/_audio-player.scss */
+  /* line 249, ../sass/_audio-player.scss */
   .master-player-inner .playpause-button, .master-player-inner .next-button, .master-player-inner .master-player .prev-button, .master-player .master-player-inner .prev-button, .master-player-inner .prev-button {
     position: relative;
     top: 0em;
   }
-  /* line 248, ../sass/_audio-player.scss */
+  /* line 253, ../sass/_audio-player.scss */
   .master-player-inner .track-info {
     font-size: 1.4em;
     padding-top: 0.25em;
   }
-  /* line 252, ../sass/_audio-player.scss */
+  /* line 257, ../sass/_audio-player.scss */
   .master-player-inner .menu-button {
     top: 50%;
     margin: 2px 18px 0 0;
@@ -2804,7 +2811,7 @@ body {
   }
 }
 @media screen and (min-width: 62.5em) {
-  /* line 262, ../sass/_audio-player.scss */
+  /* line 267, ../sass/_audio-player.scss */
   .master-player {
     bottom: 0.9375em;
     -webkit-transition-property: bottom;
@@ -2820,7 +2827,7 @@ body {
     -o-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
   }
-  /* line 268, ../sass/_audio-player.scss */
+  /* line 273, ../sass/_audio-player.scss */
   .master-player.is-playlist-open {
     bottom: 0;
     -webkit-transition-property: bottom;
