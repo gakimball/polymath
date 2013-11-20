@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load an %}
 
+{% block fburl %}{% url 'apps.music.views.release_detail' album.id %}{% endblock %}
+{% block fbdesc %}Listen to &quot;{{ album.title }}&quot; by {{ album.artists.all.0 }}, a member of Polymath, a collective of independent musicians, filmmakers, and writers.{% endblock %}
+
 {% block content %}
 
 {% block release %}{% endblock %}

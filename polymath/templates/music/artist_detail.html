@@ -2,6 +2,9 @@
 {% load forloop_next %}
 {% load markdown %}
 
+{% block fburl %}{% url 'apps.music.views.artist_detail' artist.id %}{% endblock %}
+{% block fbdesc %}Listen to music by {{ artist.name }}, a member of Polymath, a collective of independent musicians, filmmakers, and writers.{% endblock %}
+
 {% block title %}{{ artist.name }} - Polymath Artists{% endblock %}
 
 {% block content %}

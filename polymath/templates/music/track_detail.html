@@ -6,6 +6,9 @@
 
 {% block title %}"{{ track.title }}" by {{ track.artist }}{% endblock %}
 
+{% block fburl %}{% url 'apps.music.views.track_detail' track.id %}{% endblock %}
+{% block fbdesc %}Listen to &quot;{{ track.title }}&quot; by {{ track.artist }}, a member of Polymath, a collective of independent musicians, filmmakers, and writers.{% endblock %}
+
 {% block content %}
 
 {% if track.album.color %}
