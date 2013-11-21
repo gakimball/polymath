@@ -42,6 +42,21 @@
     <h2>Listen to This</h2>
     <div class="row">
       <div class="large-4 columns">
+        <img src="{% static 'img/promos/caspiar.jpg' %}" class="thumb" alt="Halloween music">
+        <h3>Caspiar</h3>
+        <p><a href="{% url 'apps.music.views.artist_detail' 'caspiar' %}">Caspiar</a> is a project by Bloomington-based musician Nick Faidley. Listen to their new single, "Leathe".</p>
+        <p><a href="{% url 'apps.music.views.index' %}">Hear more music &rarr;</a></p>
+      </div>
+      <div class="large-7 columns">
+        {% album 9 %}
+      </div>
+    </div>
+    <!-- /MUSIC -->
+
+    <!-- MUSIC -->
+    <h2>Listen to This</h2>
+    <div class="row">
+      <div class="large-4 columns">
         <img src="{% static 'img/promos/jennieandt.jpg' %}" class="thumb" alt="Halloween music">
         <h3>Celebrities E.P.</h3>
         <p><a href="{% url 'apps.music.views.artist_detail' 'cigarettes-and-milk' %}">Cigarettes and Milk</a> is flowery Brit-pop. Listen to the <i>Celebrities E.P.</i>, remastered for the twenty-first century.</p>
