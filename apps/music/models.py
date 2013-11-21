@@ -83,7 +83,7 @@ class Album(models.Model):
     flavor_text = models.CharField(max_length=50, blank=True, help_text='Optional: flavor text to display above album title.')
 
     class Meta:
-        ordering = ['-year']
+        ordering = ['-year', '-id']
         get_latest_by = ['year']
 
     def __unicode__(self):
