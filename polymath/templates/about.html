@@ -30,8 +30,11 @@
       <div class="large-6 columns">
         <img src="{% static 'img/about/outerspaces.jpg' %}" class="thumb" alt="">
         <h3>The Outerspaces</h3>
-        <p><em>Coming November 25.</em> The Outerspaces is a film series created to showcase musicians performing in a visual environemnt complimentary to their music.</p>
-        <p><a href="{% url 'apps.video.views.index' %}">Watch videos &rarr;</a></p>
+        <p>The Outerspaces is a film series created to showcase musicians performing in a visual environemnt complimentary to their music.</p>
+        <p>
+          <a href="{% url 'apps.video.views.outerspaces' %}">Watch The Outerspaces &rarr;</a>
+          <a href="{% url 'apps.video.views.index' %}">Watch more videos &rarr;</a>
+        </p>
       </div>
     </div>
     <div class="row">
