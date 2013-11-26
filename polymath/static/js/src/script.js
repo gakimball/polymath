@@ -1,5 +1,9 @@
 ;(function($) {
 
+  /*
+    Master player object
+  */
+
   var Player = function($obj) {
 
     this.$player = $obj;
@@ -203,6 +207,10 @@
     }
   }
 
+  /*
+    Document ready
+  */
+
   $(function(){
     var masterPlayer = new Player($('[data-player]'));
 
@@ -260,6 +268,15 @@
       else if (choice === 'music') $('.footer .nav .music a').click();
       else if (choice === 'video') $('.footer .nav .video a').click();
       else if (choice === 'about') $('.footer .nav ul:nth-child(2) li:nth-child(2) a').click();
+    });
+
+    $('body').on('click', '[data-os-vid]', function(){
+      var $player = $('[data-os]').eq(0);
+      $player.addClass('is-active');
+      $player.find('.flex-video').append('<iframe width="1000" height="562" src="//www.youtube.com/embed/'+$(this).attr('data-os-vid')+'?autoplay=1" frameborder="0" allowfullscreen></iframe>');
+      $(document.body).animate({
+        scrollTop: $player.offset().top
+      }, 500, 'swing');
     });
 
   });

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}The Outerspaces{% endblock %}
+
+{% block fburl %}{% url 'apps.video.views.outerspaces' %}{% endblock %}
+{% block fbdesc %}The Outerspaces is a film series which presents musicians in a studio which visually compliments their music.{% endblock %}
+
+{% block content %}
+<div class="row os-intro">
+  <div class="large-12 columns">
+    <img src="{% static 'img/os/os-logo.png' %}" class="logo" alt="Logo for The Outerspaces">
+
+    <p class="tagline">The Outerspaces is a film series which presents musicians in a studio which visually compliments their music.</p>
+    <p class="subtagline">Are you in a band? You should <a href="mailto:polymathcollective@gmail.com">film with us</a>.</p>
+  </div>
+</div>
+
+<div class="row os-session-player" data-os>
+  <div class="large-12 columns">
+    <div class="flex-video widescreen">
+    </div>
+  </div>
+</div>
+
+<div class="row os-session">
+  <div class="large-5 columns">
+    <img src="{% static 'img/os/sapphic.jpg' %}" alt="Photo of Sapphic" class="os-thumb thumb">
+    <h2 class="name">Sapphic</h2>
+    <p>James Harris and Nicolas Alcock comrpise Grand Rapids, Michigan-based group Sapphic.</p>
+
+    <p>
+      <a href="https://www.facebook.com/sapphicband" target="_blank">Facebook &rarr;</a><br>
+      <a href="http://sapphicband.tumblr.com">Tumblr &rarr;</a>
+    </p>
+  </div>
+  <div class="large-7 columns">
+    <h3 class="subtitle">Sessions</h3>
+
+    <div class="os-session-video row">
+      <div class="large-5 push-7 columns">
+        <img src="{% static 'img/os/sapphic-thumb1.jpg' %}" alt="" class="os-thumb thumb">
+      </div>
+      <div class="large-7 pull-5 columns">
+        <h4 class="title">Part I</h4>
+        <time class="length">(7:17)</time>
+        <a class="button no-ajaxy" data-os-vid="XPzCXHLdZhY">Watch</a>
+        <p class="tracklist">
+          2. "Late Requiem"<br>
+          1. "High Art"
+        </p>
+      </div>
+    </div>
+
+    <div class="os-session-video row">
+      <div class="large-5 push-7 columns">
+        <img src="{% static 'img/os/sapphic-thumb2.jpg' %}" alt="" class="os-thumb thumb">
+      </div>
+      <div class="large-7 pull-5 columns">
+        <h4 class="title">Part II</h4>
+        <p><i>Coming December 2</i></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

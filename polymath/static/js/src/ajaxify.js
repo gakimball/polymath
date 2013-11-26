@@ -142,7 +142,7 @@
           }
 
           // Update the body class
-          $('body').removeClass('music-page video-page writing-page audio-page').addClass(deptClass);
+          $('body').removeClass('music-page video-page writing-page audio-page os-page').addClass(deptClass);
           
           // Update the menu
           $menuChildren = $menu.find(menuChildrenSelector);

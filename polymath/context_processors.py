@@ -6,6 +6,7 @@ def current_dept(request):
   music = '/(music|tracks|releases|artists)'
   video = '/video'
   writing = '/(writing|read)'
+  os = '/(theouterspaces)'
 
   current_dept = 'na'
   if re.match(music, request.path) is not None:
@@ -14,6 +15,8 @@ def current_dept(request):
     current_dept = 'video'
   if re.match(writing, request.path) is not None:
     current_dept = 'writing'
+  if re.match(os, request.path) is not None:
+    current_dept = 'os'
 
   return {'current_dept': current_dept, 'current_dept_index': 'apps.' + current_dept.lower() + '.views.index'}
 

@@ -33,6 +33,7 @@ urlpatterns = patterns('',
     # Video
     url(r'^video/$', 'apps.video.views.index'),
     url(r'^video/(?P<video_id>[\d]+)/$', 'apps.video.views.video_detail'),
+    url(r'^theouterspaces/$', 'apps.video.views.outerspaces'),
 
     # Writing
     url(r'^writing/$', 'apps.writing.views.index'),

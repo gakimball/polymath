@@ -1,0 +1,152 @@
+.os-page {
+  @extend .video-page;
+  background: #010012;
+
+  h1, h2, h3, h4, p, li {
+    color: white;
+  }
+  .master-player {
+    opacity: 0.5;
+
+    &, &:hover {
+      @include transition-property(opacity);
+      @include transition-duration(0.5s);
+      @include transition-timing-function(ease-out);
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .footer .nav a {
+    color: #ddd;
+  }
+}
+
+.os-thumb {
+  border-bottom: 4px solid white;
+}
+
+.os-intro {
+  margin-bottom: 2em;
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+  }
+  .tagline {
+    max-width: 500px;
+    margin: 0 auto 1em auto;
+    font-size: 1.25em;
+    font-weight: 300;
+    line-height: 1.3;
+    text-align: center;
+
+    @media #{$small} {
+      font-size: 1.75em;
+    }
+  }
+  .subtagline {
+    text-align: center;
+    font-weight: 300;
+
+    a {
+      font-weight: normal;
+    }
+  }
+}
+
+.os-session {
+  margin: {
+    top: 1em;
+    bottom: 1em;
+  }
+
+  .name {
+    font-weight: 900;
+    font-style: italic;
+    border: 0;
+    padding: 0;
+    margin-bottom: 0.3em;
+
+    @media #{$small} {
+      font-size: 2.5em;
+    }
+  }
+
+  .subtitle {
+    text-transform: uppercase;
+    color: #999;
+    font-weight: bold;
+  }
+}
+
+.os-session-player {
+  max-height: 0px;
+  overflow: hidden;
+
+  &.is-active {
+    max-height: 600px;
+  }
+}
+
+.os-session-video {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #888;
+  margin-bottom: 2em !important;
+
+  .title {
+    display: inline-block;
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 0;
+    line-height: 1;
+
+    @media #{$small} {
+      font-size: 2.5em;
+    }
+  }
+  .length {
+    color: #999;
+
+    @media #{$small} {
+      font-size: 1.25em;
+      margin-left: 0.25em;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+    }
+  }
+  .button {
+    background: white;
+    color: black;
+
+    @media #{$small} {
+      font-size: 1.5em;
+    }
+
+    &:hover {
+      color: black;
+      background: #ddd;
+    }
+  }
+  .tracklist {
+    @media #{$small} {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.os-modal {
+  padding-top: 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 1000000;
+  overflow: scroll;
+}
