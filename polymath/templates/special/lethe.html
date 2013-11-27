@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Lethe{% endblock %}
+
+{% block content %}
+
+<div class="row"><div class="large-12 columns">
+  <h1 class="feature-title">Lethe <span>Caspiar</span></h1>
+
+  <div id="unityPlayer" class="flex-video widescreen">
+    <div class="missing">
+      <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+        <img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+      </a>
+    </div>
+    <div class="broken">
+      <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+        <img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-5 large-offset-1 columns">
+      <p class="desc">In Greek mythology, Lethe was one of the five rivers of Hades. All who drank from it experienced complete forgetfulness, allowing them to become reincarnated. Lethe literally means "oblivion".</p>
+    </div>
+    <div class="large-5 pull-1 columns">
+      <p>"Lethe" is a song by <a href="{% url 'apps.music.views.artist_detail' 'caspiar' %}">Caspiar</a>.</p>
+      <a href="https://s3.amazonaws.com/polymathic/media/tracks/zip/Caspiar_-_Lethe.zip" class="dl-button button">Download track</a>
+    </div>
+  </div>
+</div></div>
+
+<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+<script type="text/javascript" src="http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js"></script>
+<script type="text/javascript">
+  var config = {
+    width: 960, 
+    height: 600,
+    params: { enableDebugging:"0" }
+    
+  };
+  var u = new UnityObject2(config);
+
+  jQuery(function() {
+
+    var $missingScreen = jQuery("#unityPlayer").find(".missing");
+    var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+    $missingScreen.hide();
+    $brokenScreen.hide();
+    
+    u.observeProgress(function (progress) {
+      switch(progress.pluginStatus) {
+        case "broken":
+          $brokenScreen.find("a").click(function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            u.installPlugin();
+            return false;
+          });
+          $brokenScreen.show();
+        break;
+        case "missing":
+          $missingScreen.find("a").click(function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            u.installPlugin();
+            return false;
+          });
+          $missingScreen.show();
+        break;
+        case "installed":
+          $missingScreen.remove();
+        break;
+        case "first":
+        break;
+      }
+    });
+    u.initPlugin(jQuery("#unityPlayer")[0], "{% static 'special/lethe.unity3d' %}");
+  });
+</script>
+<style type="text/css">
+  .broken,
+  .missing {
+    margin: auto;
+    position: relative;
+    top: 50%;
+    width: 193px;
+  }
+  .broken a,
+  .missing a {
+    height: 63px;
+    position: relative;
+    top: -31px;
+  }
+  .broken img,
+  .missing img {
+    border-width: 0px;
+  }
+  .broken {
+    display: none;
+  }
+  #unityPlayer {
+    cursor: default;
+    /*height: 600px;
+    width: 960px;*/
+    width: 100%;
+    height: auto;
+    margin-bottom: 2em;
+  }
+
+  .feature-title {
+    margin-top: 0.4em;
+    font-weight: 300;
+    font-size: 1.5em;
+  }
+  @media screen and (min-width: 48em) {
+    .feature-title {
+      font-size: 2.75em;
+    }
+  }
+    .feature-title span {
+      font-size: 0.6em;
+      padding-left: 0.5em;
+    }
+  .desc {
+    font-weight: 300;
+  }
+    @media screen and (min-width: 48em) {
+      .desc {
+        font-size: 1.5em;
+      }
+    }
+
+  .master-player {
+    opacity: 0.5;
+  }
+</style>
+
+{% endblock %}

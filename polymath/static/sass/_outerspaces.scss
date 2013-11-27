@@ -7,15 +7,6 @@
   }
   .master-player {
     opacity: 0.5;
-
-    &, &:hover {
-      @include transition-property(opacity);
-      @include transition-duration(0.5s);
-      @include transition-timing-function(ease-out);
-    }
-    &:hover {
-      opacity: 1;
-    }
   }
   .footer .nav a {
     color: #ddd;

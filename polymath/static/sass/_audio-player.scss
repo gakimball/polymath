@@ -33,6 +33,15 @@ body {
     }
   }
 
+  &, &:hover {
+    @include transition-property(opacity);
+    @include transition-duration(0.5s);
+    @include transition-timing-function(ease-out);
+  }
+  &:hover {
+    opacity: 1;
+  }
+
   &.inactive {
     .next-button, .prev-button, .menu-button {
       pointer-events: none;

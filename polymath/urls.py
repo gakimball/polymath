@@ -38,6 +38,9 @@ urlpatterns = patterns('',
     # Writing
     url(r'^writing/$', 'apps.writing.views.index'),
     url(r'^read/(?P<story_id>[\d]+)/$', 'apps.writing.views.story_detail'),
+
+    # Special
+    url(r'^special/lethe/$', TemplateView.as_view(template_name="special/lethe.html")),
 )
 
 urlpatterns += staticfiles_urlpatterns()
