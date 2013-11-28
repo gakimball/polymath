@@ -1,1 +1,1 @@
-web: gunicorn polymath.wsgi
+web: newrelic-admin run-program gunicorn polymath.wsgi
