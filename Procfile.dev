@@ -1,3 +1,3 @@
-web:     gunicorn polymath.wsgi --debug -w 4 -t 10000
+web:     newrelic-admin run-program gunicorn polymath.wsgi --debug -w 4 -t 10000
 db:      postgres -D /usr/local/var/postgres
 compass: compass watch polymath/static
