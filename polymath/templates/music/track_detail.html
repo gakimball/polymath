@@ -32,7 +32,7 @@
 			<p class="album">{{ track.album }}</p>
 
 			<div class="audio-player">
-				<a href="" class="play-button no-ajaxy"></a>
+				<a data-player-track="{{ track.id }}" class="play-button no-ajaxy"></a>
 				<div class="seeker">
 					<span class="time-current">0:00</span>
 					<span class="time-total">{{ track.length }}</span>

@@ -224,7 +224,7 @@
 
       // No collection found, this is a standalone track
       if ($parent.length === 0) {
-        masterPlayer.loadPlaylist($(this).attr('data-player-track'));
+        masterPlayer.loadPlaylist([$(this).attr('data-player-track')]);
         return;
       }
 
