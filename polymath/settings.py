@@ -45,7 +45,7 @@ USE_TZ = True
 PROJECT_DIR = os.path.dirname(__file__)
 
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_DIR, 'static'),
+    os.path.join(PROJECT_DIR, '../static'),
 )
 
 # Make this unique, and don't share it with anybody.
@@ -57,7 +57,7 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_PRELOAD_METADATA = True
 
 # Local media settings
-MEDIA_ROOT = os.path.join(PROJECT_DIR, 'static/uploads')
+MEDIA_ROOT = os.path.abspath(os.path.join(PROJECT_DIR, '..', 'static/uploads'))
 MEDIA_URL = 'http://0.0.0.0:5000/static/uploads/'
 STATIC_ROOT = ''
 STATIC_URL = '/static/'

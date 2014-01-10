@@ -10,7 +10,7 @@ parts
 src/*.egg-info
 lib
 lib64
-polymath/static/uploads
+uploads
 .DS_Store
 venv
 .env
