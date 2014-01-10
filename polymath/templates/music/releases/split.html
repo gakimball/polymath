@@ -1,0 +1,62 @@
+{% extends 'music/release_detail.html' %}
+
+{% load credits_list %}
+{% load an %}
+
+{% block title %}{{ album.title }} - Music{% endblock %}
+
+{% block release %}
+
+<div class="release-detail-header">
+  <div class="row">
+    <div class="large-5 columns">
+      <img class="cover" src="{{ album.image.url }}" alt="Cover art for {{ album.title }} by {{ album.artist }}">
+    </div>
+    <div class="large-7 columns details">
+      <h1 class="title">{{ album.title }}</h1>
+      {% with artist_list=album.artists.all %}
+        <p class="artist">{{ album.release_type|an }} {{ album.release_type }} by
+        {% if artist_list.count == 2 %}
+          <a href="{% url 'apps.music.views.artist_detail' artist_list.0.slug %}">{{ artist_list.0.name }}</a> and <a href="{% url 'apps.music.views.artist_detail' artist_list.1.slug %}">{{ artist_list.1.name }}</a>
+        {% else %}
+          {% for artist in artist_list %}
+          <a href="{% url 'apps.music.views.artist_detail' artist.slug %}">{{ artist.name }}</a>{% if not forloop.last %}, {% endif %}
+          {% endfor %}
+        {% endif %}
+        </p>
+      {% endwith %}
+
+      <a href="" data-load-release="{{ album.id }}" class="giant-play button no-ajaxy">Play</a>
+      {% if album.download_link %}
+      <a href="{{ album.download_link.url }}" class="secondary button no-ajaxy">Download</a>
+      {% endif %}
+
+      <dl class="info">
+        <dt>Released</dt>
+        <dd>{{ album.year }}</dd>
+        {% if album.style %}
+          <dt>Style</dt>
+          <dd>{{ album.style }}</dd>
+        {% endif %}
+      </dl>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-bottom: 1.5em">
+  <div class="large-8 push-4 columns">
+    <h2 class="subheader">Tracklist</h2>
+
+    <ul data-player-collection="{{ album.id }}" class="big-tracklist">
+      {% for track in album.tracks.all %}
+        <li data-player-track="{{ track.id }}"><a href="{% url 'apps.music.views.track_detail' track.id %}" class="no-ajaxy">{{ track.title }} <span>{{ track.length }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="large-4 pull-8 columns">
+    <h2 class="subheader">Credits</h2>
+    {% credits_list album %}
+  </div>
+</div>
+
+{% endblock %}
