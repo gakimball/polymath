@@ -27,7 +27,7 @@
 	</div>
 </div>
 
-<div class="row artist-detail-hero"{% if artist.background %} style="background-image: url('{{ artist.background.url }}')"{% endif %}>
+<div class="artist-detail-hero"{% if artist.background %} style="background-image: url('{{ artist.background.url }}')"{% endif %}>
 	<h1{% if artist.name|length > 18 %} class="DREW"{% endif %}>{{ artist.name }}</h1>
 </div>
 
@@ -108,8 +108,9 @@
 {% endblock %}
 
 {% block script %}
+
 <script>
-$(function(){
+(function(){
 	$('.cover-toggle').on('click', function(){
 		// Flip the cover
 		$(this).siblings('.covers').toggleClass('flipped');
@@ -125,6 +126,7 @@ $(function(){
 		else
 			$(this).children('span').text('front');
 	});
-});
+})();
+
 </script>
 {% endblock %}
