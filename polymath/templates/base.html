@@ -143,16 +143,6 @@
 	<script src="{% static 'js/script.min.js' %}"></script>
 	{% endif %}
 
-	<script>
-		$(function(){
-			var $header = $('.header');
-			var $nav_icon = $('.nav-icon');
-
-			$nav_icon.on('click', function(){
-				$header.toggleClass('nav-open');
-			});
-		})
-	</script>
 	{% block script %}{% endblock %}
 
  </body>
