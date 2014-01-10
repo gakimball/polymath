@@ -34,8 +34,10 @@
       <dl class="info">
         <dt>Released</dt>
         <dd>{{ album.year }}</dd>
-        <dt>Style</dt>
-        <dd>Electronic</dd>
+        {% if album.style %}
+          <dt>Style</dt>
+          <dd>{{ album.style }}</dd>
+        {% endif %}
         <!-- <dt>Length</dt> -->
         <!-- <dd>30:00</dd> -->
       </dl>

@@ -71,6 +71,7 @@ class Album(models.Model):
     )
     release_type = models.CharField(max_length=6, choices=RELEASE_TYPES, help_text='Release type determines the format of the page.')
     compilation = models.BooleanField(default=False, editable=False)
+    style = models.CharField(max_length=20, blank=True)
     
     image = models.ImageField(upload_to='albums/images/', help_text='Album art goes here. However, when you add a track, each track may have its own picture as well.')
     reverse_image = models.ImageField(upload_to='albums/reverse_images/', blank=True, null=True, help_text='Optional: back side of cover art.')
@@ -111,12 +112,14 @@ class Artist(models.Model):
     slug = models.SlugField(editable=False)
     owner = models.ForeignKey('people.Person', null=True, blank=True, help_text='Who\'s project is this?')
 
-    quote = models.TextField(blank=True)
+    deck = models.TextField(blank=True, help_text='[This band] is...')
     biography = models.TextField(blank=True, help_text='Optional: one paragraph only for now.')
 
+    email = models.EmailField('email address', help_text="Optional: email address for artist", blank=True)
     twitter = models.CharField('twitter name', max_length=30, help_text="Optional: Twitter username without the @ sign", blank=True)
     facebook = models.URLField('facebook page', help_text="Optional: full URL of Facebook page", blank=True)
-    email = models.EmailField('email address', help_text="Optional: email address for artist", blank=True)
+    soundcloud = models.URLField('soundcloud page', blank=True)
+    bandcamp = models.URLField('bandcamp page', blank=True)
 
     image = models.ImageField(blank=True, upload_to='artists/images', help_text='Main artist photo.')
     background = models.ImageField(blank=True,upload_to='artists/backgrounds/',help_text='Optional, but come on: background image for artist.')
