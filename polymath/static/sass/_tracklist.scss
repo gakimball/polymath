@@ -1,7 +1,7 @@
 .tracklist {
+  @include rms(1);
   list-style-type: none;
   counter-reset: tracklist;
-  font-size: 1.25em;
 
   li {
     &::before {
@@ -49,11 +49,9 @@
 
 .big-tracklist {
   @extend .tracklist;
+  @include rms(2);
 
-  @media screen and (min-width: emCalc(650px)) {
-    li {
-      font-size: 1.5em;
-    }
+  @media #{$small} {
     a {
       padding-bottom: 0.3em;
       margin-bottom: 0.5em;

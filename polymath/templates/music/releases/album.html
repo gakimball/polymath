@@ -7,23 +7,12 @@
 
 {% block release %}
 
-{% if album.color %}
-<style type="text/css">
-  .release-detail-header {
-    background-image: -webkit-linear-gradient(top, #ce5e5e, #{{ album.color }});
-  }
-  .release-detail-header .button, .release-detail-header .button:hover {
-    color: #{{ album.color }};
-  }
-</style>
-{% endif %}
-
 <div class="release-detail-header">
   <div class="row">
-    <div class="large-4 columns">
-      <img class="cover" src="{{ album.image.url }}" alt="">
+    <div class="large-5 columns">
+      <img class="cover" src="{{ album.image.url }}" alt="Cover art for {{ album.title }} by {{ album.artist }}">
     </div>
-    <div class="large-8 columns details">
+    <div class="large-7 columns details">
       <h1 class="title">{{ album.title }}</h1>
       {% with artist_list=album.artists.all %}
         <p class="artist">{{ album.release_type|an }} {{ album.release_type }} by
@@ -39,12 +28,14 @@
 
       <a href="" data-load-release="{{ album.id }}" class="giant-play button no-ajaxy">Play</a>
       {% if album.download_link %}
-      <a href="{{ album.download_link.url }}" class="button no-ajaxy">Download</a>
+      <a href="{{ album.download_link.url }}" class="secondary button no-ajaxy">Download</a>
       {% endif %}
 
       <dl class="info">
         <dt>Released</dt>
         <dd>{{ album.year }}</dd>
+        <dt>Style</dt>
+        <dd>Electronic</dd>
         <!-- <dt>Length</dt> -->
         <!-- <dd>30:00</dd> -->
       </dl>

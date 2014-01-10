@@ -1,27 +1,57 @@
-.video-detail-player {
-	background: rgba(#000, 0.75);
+$vd: 'video-detail';
+
+.#{$vd}-player {
+	background: #333;
 
   .flex-video {
     margin-bottom: 0;
   }
 }
-.video-detail-info {
+.#{$vd}-info {
+  @include content-detail-pane;
   padding-top: 1em;
   margin-bottom: 2em;
 
   h1 {
-    font-weight: 200;
+    margin: 0;
+    font-weight: 300;
+    margin-bottom: 0.25em;
   }
   time, p {
-    font-size: 1.25em;
+    @include rms(1);
   }
   time {
     display: block;
     font-weight: 300;
     margin-bottom: 0.5em;
-    font-style: italic;
   }
   p {
     line-height: 1.2;
   }
+}
+.#{$vd}-track {
+  @include content-detail-pane;
+  background: rgba(#fff, 0.70);
+
+  .get-the-track, .cover, .info {
+    display: inline-block;
+  }
+
+  .info {
+    @include clearfix;
+    padding-top: 0.75em;
+
+    p {
+      color: #000;
+      margin: 0;
+    }
+  }
+    .cover {
+      width: 75px;
+      height: 75px;
+      margin-right: 1em;
+    }
+    .album {
+      font-size: 1em;
+    }
 }

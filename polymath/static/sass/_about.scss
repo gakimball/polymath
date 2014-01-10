@@ -1,12 +1,13 @@
 .about-tagline {
-  .weis {
-    font-size: 3em;
-    font-weight: 200;
-    margin-bottom: 0.16em;
+  @include content-detail-pane;
+  position: relative;
+  overflow: hidden;
 
-    @media #{$small} {
-      font-size: 6em;
-    }
+  .weis {
+    @include rms(9);
+    font-weight: 200;
+    margin-top: 0;
+    margin-bottom: 0.16em;
 
     em {
       font-style: normal;
@@ -14,23 +15,18 @@
     }
   }
   .weis-sub {
-    font-size: 1em;
+    @include rms(3);
     font-weight: 200;
     line-height: 1.3;
 
     @media #{$small} {
-      font-size: 2em;
       width: 75%;
     }
   }
   .weis-nav {
-    font-size: 1em;
+    @include rms(2);
     font-weight: 200;
     color: #666;
-
-    @media #{$small} {
-      font-size: 1.5em;
-    }
 
     a {
       font-weight: normal;
@@ -53,20 +49,20 @@
 .giant-logo {
   width: 45%;
   position: absolute;
-  top: 0;
+  top: -2.3em;
   right: 0;
   z-index: 0;
   opacity: 0.15;
 }
 
 .contributor-list {
+  @include rms(2);
   list-style-type: none;
   margin-bottom: 1em;
 
   @media screen and (min-width: emCalc(500px)) {
     @include block-grid(2);
     margin-bottom: 1em;
-    font-size: 1.35em;
     font-weight: 300;
 
     li {

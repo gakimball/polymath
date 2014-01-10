@@ -5,7 +5,7 @@ import re
 def current_dept(request):
   music = '/(music|tracks|releases|artists)'
   video = '/video'
-  writing = '/(writing|read)'
+  writing = '/(writing|read|zine)'
   os = '/(theouterspaces)'
 
   current_dept = 'na'

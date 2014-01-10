@@ -17,20 +17,25 @@
 
 <div class="row">
 	<div class="large-12 columns">
-		<section>
-			<h2>Artists</h2>
-
-			{% load artist_list %}
-			{% artist_list %}
-		</section>
-
 		{% if album_list %}
 		<section class="release-list">
 			<div class="large-12 columns"><h2>Releases</h2></div>
 
 			<div class="release-list-main">
 
-				<ul class="media-list">
+				<ul class="media-list up-3">
+
+				<li class="media-list-item">
+					<div class="master-catalog-pane">
+						<img src="{% static 'img/master-catalog-thumb.jpg' %}" alt="Polymath Master Catalog" class="image">
+						<div class="content">
+							<h3><span>The</span> Master Catalog</h3>
+							<p>Want to download everything? Here you go. It's a <strong>196MB download</strong> that includes 28 tracks from 6 releases.</p>
+							<a href="{{ MEDIA_URL }}master/Polymath+Master+Catalog.zip" class="button">Download</a>
+						</div>
+					</div>					
+				</li>
+
 				{% for album in album_list %}
 					<li class="media-list-item">
 						<a href="{% url 'apps.music.views.release_detail' album.id %}">
@@ -52,30 +57,39 @@
 								{% endwith %}
 							</a>
 							<a href="{% url 'apps.music.views.release_detail' album.id %}" class="button">Listen</a>
-							{% if album.download_link %}<a href="{{ album.download_link.url }}" class="button">Download</a>{% endif %}
+							{% if album.download_link %}<a href="{{ album.download_link.url }}" class="secondary button">Download</a>{% endif %}
 						</div>
 					</li>
 				{% endfor %}
 				</ul>
 			</div>
 
-			<div class="release-list-sidebar">
-				<section class="panel">
-					<h3>Just want everything?</h3>
-					<p>Alright, sure! Download the entire catalog with one click below. It's a <strong>196MB</strong> download that includes 28 tracks from 6 releases.</p>
-					<a href="{{ MEDIA_URL }}master/Polymath+Master+Catalog.zip" class="button">Download Catalog</a>
-				</section>
-				<section class="panel">
-					<h3>Spotify playlists</h3>
-					<p>We make <a href="http://spotify.com">Spotify</a> playlists here and there for your listening pleasure. Give them a gander sometime:</p>
-					<ul>
-						<li>10.28.13: <a href="http://open.spotify.com/user/polymatharts/playlist/6njVuV7INXCtbhRhytVxP9">Gettin' Freaky for Halloween</a></li>
-					</ul>
-				</section>
-			</div>
+			{% comment %}
+				<div class="release-list-sidebar">
+					<section class="panel">
+						<h3>Just want everything?</h3>
+						<p>Alright, sure! Download the entire catalog with one click below. It's a <strong>196MB</strong> download that includes 28 tracks from 6 releases.</p>
+						<a href="{{ MEDIA_URL }}master/Polymath+Master+Catalog.zip" class="button">Download Catalog</a>
+					</section>
+					<section class="panel">
+						<h3>Spotify playlists</h3>
+						<p>We make <a href="http://spotify.com">Spotify</a> playlists here and there for your listening pleasure. Give them a gander sometime:</p>
+						<ul>
+							<li>10.28.13: <a href="http://open.spotify.com/user/polymatharts/playlist/6njVuV7INXCtbhRhytVxP9">Gettin' Freaky for Halloween</a></li>
+						</ul>
+					</section>
+				</div>
+			{% endcomment %}
 
 		</section>
 		{% endif %}
+
+		<section>
+			<h2>Artists</h2>
+
+			{% load artist_list %}
+			{% artist_list %}
+		</section>
 	</div>
 </div>
 

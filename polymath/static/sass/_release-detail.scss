@@ -1,22 +1,21 @@
 $rd: 'release-detail';
 
 .#{$rd}-header {
-  background-color: $music-color;
-  color: #fff;
-  margin-bottom: 1em;
-  padding-top: 1em;
-
-  @media #{$small} {
-    padding: 2em;
-  }
+  @include content-detail-pane;
 
   .cover {
+    @include thumbnail-box-shadow;
     max-width: 300px;
-    border: 4px solid white;
-    box-shadow: 0 7px 15px rgba(0,0,0,0.5);
 
     @media #{$small} {
       max-width: 100%;
+    }
+  }
+
+  @media #{$small} {
+    padding: {
+      top: 2em;
+      bottom: 2.5em;
     }
   }
 
@@ -27,37 +26,30 @@ $rd: 'release-detail';
   }
 
   .title {
+    @include rms(7);
     font-weight: 300;
-    font-size: 3.5em;
-    color: #fff;
-    margin-bottom: 0;
+    margin-bottom: 0.15em;
     line-height: 1;
   }
   .artist {
-    font-size: 1.25em;
-    color: #eee;
+    @include rms(3);
+    font-weight: 300;
+    line-height: 1.2;
+    color: #666;
 
     a {
-      font-weight: 600;
-      color: #eee;
+      color: black;
+      font-weight: 300;
+      color: #000;
       &:hover {
-        color: #fff;
+        text-decoration: underline;
       }
     }
   }
 
-  .button {
-    background: white;
-    color: $music-color;
-
-    &:hover {
-      background: #ddd;
-      color: lighten($music-color, 20%);
-    }
-  }
-
   .info {
-    font-size: 1.1em;
+    @include rms(1);
+    line-height: 1.4;
 
     dt {
       font-weight: 300;

@@ -1,0 +1,22 @@
+@mixin thumbnail-box-shadow {
+  padding: 0.5em;
+  box-shadow: 0 4px 10px rgba(#000, 0.30);
+}
+
+@mixin content-detail-pane {
+  background: #fff;
+  padding: {
+    top: 1em;
+    bottom: 1em;
+  }
+  margin-bottom: 1em;
+  border-bottom: 1px solid #999;
+
+  @media #{$small} {
+    padding: {
+      top: 1.5em;
+      bottom: 1.5em;
+    }
+    margin-bottom: 1.5em;
+  }
+}

@@ -83,7 +83,7 @@ $primary-color: #ce5e5e;
 // $include-html-nav-classes: $include-html-classes;
 // $include-html-top-bar-classes: $include-html-classes;
 // $include-html-label-classes: $include-html-classes;
-$include-html-panel-classes: false;
+// $include-html-panel-classes: false;
 // $include-html-pricing-classes: $include-html-classes;
 // $include-html-progress-classes: $include-html-classes;
 // $include-html-magellan-classes: $include-html-classes;
@@ -852,14 +852,14 @@ $h2-font-size: emCalc(35px);
 
 // Background and border styles
 
-// $panel-bg: darken(#fff, 5%);
+$panel-bg: #fff;
 // $panel-border-style: solid;
-// $panel-border-size: 1px;
+$panel-border-size: 1px;
 
 // Control how much we darken things on hover
 
-// $panel-function-factor: 10%;
-// $panel-border-color: darken($panel-bg, $panel-function-factor);
+$panel-function-factor: 40%;
+$panel-border-color: #999;
 
 // Inner padding and bottom margin
 
@@ -868,7 +868,7 @@ $h2-font-size: emCalc(35px);
 
 // Font colors
 
-// $panel-font-color: #333;
+$panel-font-color: #000;
 // $panel-font-color-alt: #fff;
 // $panel-header-adjust: true; // Set to false to keep default header styles
 

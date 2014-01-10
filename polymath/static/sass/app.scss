@@ -10,9 +10,12 @@
 
 @import "compass/css3";
 
+@import "responsive-modular-scale";
+
 @import "fonts";
 @import "colors";
 @import "links";
+@import "mixins";
 
 @import "header";
 @import "footer";
@@ -20,7 +23,7 @@
 
 @import "audio-player";
 
-@import "panel";
+@import "typography";
 @import "buttons";
 @import "play-button";
 
@@ -41,6 +44,7 @@
 
 @import "writer-list";
 @import "story-detail";
+@import "zine-index";
 
 body {
 	-webkit-font-smoothing: antialiased;
@@ -48,27 +52,11 @@ body {
 	$ege-color: rgba(0,0,0,0.1);
 	$transparent: rgba(0,0,0,0);
 	
-	@media screen and (min-width: $row-width + 10em) {
-		@include background(linear-gradient(left, $ege-color 0%, $transparent 10%, $transparent 90%, $ege-color 100%));
-	}
-}
+	// @media screen and (min-width: $row-width + 10em) {
+	// 	@include background(linear-gradient(left, $ege-color 0%, $transparent 10%, $transparent 90%, $ege-color 100%));
+	// }
 
-h2 {
-  padding-bottom: 0.1em;
-  border-bottom: 1px solid #999;
-  margin-bottom: 0.75em;
-
-  &.subheader {
-    border: none;
-    color: #666;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 1.4em;
-
-    @media #{$small} {
-      font-size: 1.75em;
-    }
-  }
+  background: #f3f3f3;
 }
 
 ul, ol {
@@ -164,53 +152,6 @@ ul[class*="large-block-grid"] li a {
   }
 }
 
-.related-track {
-  @include clearfix;
-
-  display: inline-block;
-  box-shadow: 0 4px 10px rgba(#000, 0.5);
-  padding: 0.5em;
-  vertical-align: middle;
-
-  a {
-    @include clearfix;
-    display: block;
-  }
-
-  .album-art {
-    width: emCalc(70px);
-    display: inline-block;
-    margin-right: 1em;
-    float: left;
-  }
-  .info {
-    display: inline-block;
-    float: left;
-    padding-top: 0.75em;
-
-    p {
-      color: #000;
-      margin: 0;
-    }
-  }
-  .album {
-    font-size: 1em;
-  }
-  .link {
-    display: block;
-    float: left;
-    position: relative;
-    padding-top: 1.5em;
-    padding-left: 2em;
-  }
-
-  &:hover {
-    .info p, .link {
-      color: lighten($video-color, 10%);
-    }
-  }
-}
-
 $rl: 'release-list';
 .#{$rl} {
   @include grid-row(nest);
@@ -220,10 +161,36 @@ $rl: 'release-list';
 }
 @media #{$small} {
   .#{$rl}-main {
-    @include grid-column(8);
+    @include grid-column(12);
   }
   .#{$rl}-sidebar {
     @include grid-column(4);
+  }
+}
+
+.master-catalog-pane {
+  @include panel;
+  padding: 0;
+  text-align: center;
+  margin-right: 14px;
+  max-width: 300px;
+
+  .image {
+    width: 100%;
+  }
+  .content {
+    padding: 1em;
+  }
+  .button {
+    display: block;
+    margin: 0;
+  }
+
+  h3 {
+    margin-top: 0;
+    line-height: 1;
+    margin-bottom: 0.4em;
+    font-weight: 300;
   }
 }
 

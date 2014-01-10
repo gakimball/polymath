@@ -13,7 +13,7 @@
     @include block-grid(2);
   }
   @media #{$small} {
-    @include block-grid(3, $base-style: false);
+    // @include block-grid(3, $base-style: false);
   }
 }
 
@@ -88,22 +88,27 @@ $ad: 'artist-detail';
   }
 
   h1 {
+    @include rms(9);
     margin: 0;
     color: white;
-    font-size: 2.5em;
     text-align: center;
+
+    &.DREW {
+      @include rms(8);
+      line-height: 1.1;
+      padding: {
+        top: 0.3em;
+        bottom: 0.3em;
+      }
+    }
   }
 
   @media screen and (min-width: emCalc(650px)) {
     padding: 3em 0;
-    h1 {
-      font-size: 3.5em;
-    }
   }
   @media screen and (min-width: emCalc(850px)) {
     padding: 5em 0;
     h1 {
-      font-size: 5em;
       position: relative;
       top: -15px;
 
@@ -124,21 +129,24 @@ $ad: 'artist-detail';
   }
 }
 
-.#{$ad}-quote {
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: 300;
-  line-height: 1.3;
-  margin-top: 0.2em;
+.#{$ad}-info {
+  @include content-detail-pane;
 
-  @media #{$small} {
-    font-size: 2em;
+  .photo {
+    @include thumbnail-box-shadow;
+    background: white;
+    margin-bottom: 1em;
   }
-}
+  .bio {
+    @include rms(3);
+    font-weight: 300;
+    line-height: 1.3;
 
-.#{$ad}-photo {
-  padding: 0.6em;
-  background: white;
-  box-shadow: 0 4px 10px rgba(#000, 0.5);
-  margin-bottom: 1em;
+    a {
+      font-weight: 300;
+    }
+    strong {
+      font-weight: normal;
+    }
+  }
 }

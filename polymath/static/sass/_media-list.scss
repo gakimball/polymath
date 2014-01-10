@@ -81,7 +81,6 @@ $title-size: $h3-font-size;
   .thumb {
     display: block;
     margin-bottom: 1em;
-    border: 1px solid #ccc;
     max-width: 300px;
     width: 100%;
   }
@@ -97,54 +96,34 @@ $title-size: $h3-font-size;
       box-shadow: 0 7px 30px rgba(#000, 0.8);
     }
   }
+
   .title {
-    margin-bottom: 0.25em;
+    @include rms(3);
+    line-height: 1.1;
+    margin-bottom: 0.15em;
+
     -webkit-transition: color 0.75s ease-out;
     &:hover {
       -webkit-transition: color 0.25s ease-out;
     }
   }
   .subtitle {
+    @include rms(2);
+    line-height: 1.2;
     font-weight: 300;
-    font-size: $title-size - emCalc(8px);
-    line-height: 1.4;
     margin-bottom: 0.15em;
   }
   .info {
+    @include rms(1);
     font-weight: 300;
-    font-style: italic;
+    margin-bottom: 0.75em;
   }
-
   .flavor {
-    font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 0.5em;
     margin-bottom: 0;
     line-height: 1;
-  }
-
-  // Typographic adjustments
-  @media screen and (min-width: emCalc(650px)) {
-    .title {
-      margin-bottom: 0;
-      font-size: $title-size;
-    }
-    .subtitle {
-      font-size: $title-size - emCalc(3px);
-    }
-    .info {
-      font-size: 1.25em;
-      margin-bottom: 0.75em;
-    }
-  }
-  @media screen and (min-width: emCalc(800px)) {
-    .title {
-      font-size: $title-size + emCalc(4px);
-    }
-    .subtitle {
-      font-size: $title-size;
-    }
   }
 
   // Layout adjustments
@@ -155,6 +134,12 @@ $title-size: $h3-font-size;
 
     &:last-child {
       border: 0;
+    }
+    .title {
+      @include rms(4);
+    }
+    .subtitle {
+      @include rms(3);
     }
 
     // Shift to horizontal layout

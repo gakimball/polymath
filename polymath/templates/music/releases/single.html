@@ -1,0 +1,48 @@
+{% extends 'music/release_detail.html' %}
+
+{% load credits_list %}
+{% load an %}
+
+{% block title %}{{ album.title }} - Music{% endblock %}
+
+{% block release %}
+
+<div class="release-detail-header"><div class="row">
+  <div class="large-5 columns">
+    <img class="cover" src="{{ album.image.url }}" alt="Cover art for {{ album.title }} by {{ album.artist }}">
+  </div>
+  <div class="large-7 columns details">
+    <h1 class="title">{{ album.title }}</h1>
+    {% with artist_list=album.artists.all %}
+      <p class="artist">{{ album.release_type|an }} {{ album.release_type }} by
+      {% if artist_list.count == 2 %}
+        <a href="{% url 'apps.music.views.artist_detail' artist_list.0.slug %}">{{ artist_list.0.name }}</a> and <a href="{% url 'apps.music.views.artist_detail' artist_list.1.slug %}">{{ artist_list.1.name }}</a>
+      {% else %}
+        {% for artist in artist_list %}
+        <a href="{% url 'apps.music.views.artist_detail' artist.slug %}">{{ artist.name }}</a>{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+      {% endif %}
+      </p>
+    {% endwith %}
+
+    {% with single_track=album.tracks.all.0 %}
+    <a data-player-track="{{ single_track.id }}" class="giant-play button no-ajaxy">Play</a>
+    {% if single_track.download_link %}
+    <a href="{{ single_track.download_link.url }}" class="secondary button no-ajaxy">Download</a>
+    {% endif %}
+
+    <dl class="info">
+      <dt>Length</dt>
+      <dd>{{ single_track.length }}</dd>
+      <dt>Released</dt>
+      <dd>{{ album.year }}</dd>
+      <dt>Style</dt>
+      <dd>Electronic</dd>
+      <!-- <dt>Length</dt> -->
+      <!-- <dd>30:00</dd> -->
+    </dl>
+    {% endwith %}
+  </div>
+</div></div>
+
+{% endblock %}

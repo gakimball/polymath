@@ -1,8 +1,0 @@
-.panel {
-  @include panel;
-
-  .music-page & {
-    background: #fff9fa;
-    border-color: darken(#fff9fa, $panel-function-factor);
-  }
-}

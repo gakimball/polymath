@@ -1,30 +1,48 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Writing{% endblock %}
 
 {% block content %}
 
 <div class="row">
-  <div class="large-8 push-4 columns">
-    <h2>Short stories</h2>
+  <a href="{% url 'apps.video.views.outerspaces' %}" class="dept-promo">
+    <img class="background" src="{% static 'img/promos/adh-promo.jpg' %}">
+    <div class="content">
+      <p>Addicted to Humans &mdash; Steps to a Human-Free Life</p>
+      <p class="link">Read Issue 1 &rarr;</p>
+    </div>
+  </a>
+</div>
 
-    <ul class="media-list">
-      {% for story in story_list %}
-      <li class="media-list-item">
-        <a href="{% url 'apps.writing.views.story_detail' story.id %}" class="widescreen thumb">
-          <img src="{{ story.image.url }}" alt="{{ story.title }}">
-        </a>
-        <div class="content">
-          <a href="{% url 'apps.writing.views.story_detail' story.id %}">
-            <h3 class="title">{{ story.title }}</h3>
-            <p class="info">by Brian Maxwell</p>
-          </a>
-          <p>{{ story.body|truncatewords:30 }}</p>
-          <a href="{% url 'apps.writing.views.story_detail' story.id %}" class="button">Read</a>
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
+<div class="row">
+  <div class="large-8 push-4 columns">
+    
+    {% regroup story_list by get_category_display as category_list %}
+
+    {% for category in category_list %}
+
+      <h2>{{ category.grouper }}</h2>
+
+      <ul class="media-list">
+        {% for item in category.list %}
+          <li class="media-list-item">
+            <a href="{% url 'apps.writing.views.story_detail' item.id %}" class="widescreen thumb">
+              <img src="{{ item.image.url }}" alt="{{ item.title }}">
+            </a>
+            <div class="content">
+              <a href="{% url 'apps.writing.views.story_detail' item.id %}">
+                <h3 class="title">{{ item.title }}</h3>
+                <p class="info">by {{ item.author }}</p>
+              </a>
+              <p>{{ item.body|truncatewords:30 }}</p>
+              <a href="{% url 'apps.writing.views.story_detail' item.id %}" class="button">Read</a>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+    {% endfor %}
   </div>
 
   <div class="large-4 pull-8 columns">

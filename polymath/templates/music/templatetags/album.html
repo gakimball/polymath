@@ -10,7 +10,7 @@
     </a>
     <a href="{% url 'apps.music.views.release_detail' album.id %}" class="button">Listen</a>
     {% if album.download_link %}
-    <a href="{{ album.download_link.url }}" class="button">Download</a>
+    <a href="{{ album.download_link.url }}" class="secondary button">Download</a>
     {% endif %}
 
   </div>

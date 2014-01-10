@@ -63,23 +63,18 @@ $av: 'album-view';
   @include grid-column(12);
 
   .title {
+    @include rms(5);
+    font-weight: 300;
+    line-height: 1.2;
     margin-bottom: 0;
-
-    @media #{$small} {
-      font-size: 2.5em;
-      font-weight: 300;
-    }
   }
   .info {
-    font-style: italic;
-    color: #666;
+    @include rms(2);
+    font-weight: 300;
+    margin-bottom: 0.5em;
 
     & + .info {
-      margin-top: -1.25em;
-    }
-
-    @media #{$small} {
-      font-size: 1.25em;
+      margin-top: -0.8em;
     }
   }
 }

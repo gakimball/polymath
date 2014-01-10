@@ -4,7 +4,7 @@ from django.template import RequestContext
 from django.http import Http404
 
 def index(request):
-  story_list = Story.objects.only('title', 'image')
+  story_list = Story.objects.all()
 
   data_dict = {
     'story_list': story_list
@@ -20,3 +20,6 @@ def story_detail(request, story_id):
   }
 
   return render(request, 'writing/story_detail.html', data_dict)
+
+def zine_index(request):
+  return render(request, 'writing/zine_index.html')

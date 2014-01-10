@@ -28,24 +28,28 @@
 </div>
 
 <div class="row artist-detail-hero"{% if artist.background %} style="background-image: url('{{ artist.background.url }}')"{% endif %}>
-	<h1>{{ artist.name }}</h1>
+	<h1{% if artist.name|length > 18 %} class="DREW"{% endif %}>{{ artist.name }}</h1>
 </div>
 
-<div class="row main">
-	<div class="large-8 large-centered columns">
-		<p class="artist-detail-quote">{{ artist.quote }}</p>
-	</div>
+<div class="artist-detail-info"><div class="row">
 	<div class="large-5 columns">
-		<img class="artist-detail-photo" src="{{ artist.image.url }}" alt="Photograph of {{ artist.name }}">
+		<img class="photo" src="{{ artist.image.url }}" alt="Photograph of {{ artist.name }}">
 	</div>
 	<div class="large-7 columns">
-		{% if artist.biography %}
-			{{ artist.biography|markdown }}
-		{% else %}
-			<p>{{ artist.name }} is a project by Polymath's musicians.</p>
-		{% endif %}
+		<p class="bio">
+			<strong>{{ artist.name }}</strong> is
+			{% if artist.quote %}
+				{{ artist.quote }}
+			{% else %}
+				a project by Polymath's musicians.
+			{% endif %}
+
+			{% if artist.biography %}
+				<a data-artist-bio>Read full bio &rarr;</a>
+			{% endif %}
+		</p>
 	</div>
-</div>
+</div></div>
 
 <div class="row">
 	<div class="large-12 columns">
@@ -83,7 +87,7 @@
 						<p class="info">{{ album.year }}</p>
 						<a href="{% url 'apps.music.views.release_detail' album.id %}?autoplay" class="button">Listen</a>
 						{% if album.download_link %}
-						<a href="{{ album.download_link.url }}" class="button no-ajaxy">Download</a>
+						<a href="{{ album.download_link.url }}" class="secondary button no-ajaxy">Download</a>
 						{% endif %}
 						<ul data-player-collection class="tracklist">
 							{% for track in album.tracks.all %}

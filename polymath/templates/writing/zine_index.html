@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Addicted to Humans - a zine{% endblock %}
+
+{% block content %}
+
+<div class="row zine-overview">
+  <div class="large-12 columns">
+    <h1 class="title">Addicted to Humans</h1>
+  </div>
+  <div class="large-6 columns cover">
+    <img src="{% static 'img/adh/issue1-cover.jpg' %}" alt="Cover of issue 1 of Addicted to Humans">
+  </div>
+  <div class="large-6 columns description">
+    <p><i>Addicted to Humans</i> is a zine for, about, and by those who have sunk in the sink-or-swim game of human interaction.</p>
+
+    <a href="#" class="button">Read Issue 1</a>
+
+    <ul class="details">
+      <li><strong>Printed:</strong> November 2013</li>
+      <li><strong>With contributions by:</strong></li>
+      <ul>
+        <li>Brian Maxwell</li>
+        <li>Darcy Stricker</li>
+        <li>Hannah Hadley</li>
+        <li>Jordan Slone</li>
+        <li>Katie Barker</li>
+        <li>Kristen Cherry</li>
+        <li>Nick Faidley</li>
+        <li>Sara Swan</li>
+      </ul>
+    </ul>
+
+    <p class="contact"><a href="addictedtohumanszine@gmail.com">Contact the editors</a></p>
+  </div>
+</div>
+
+{% endblock %}

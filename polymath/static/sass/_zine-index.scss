@@ -1,0 +1,42 @@
+$zo: 'zine-overview';
+
+.#{$zo} {
+  .title {
+    text-align: center;
+    font-weight: 300;
+
+    @media #{$small} {
+      font-size: 4em;
+    }
+  }
+  .cover img {
+    border: 1px solid #ccc;
+  }
+  .description {
+    @media #{$small} {
+      font-size: 1.5em;
+
+      p, li {
+        font-weight: 300;
+      }
+      strong {
+        font-weight: 600;
+      }
+      a {
+        font-weight: normal;
+      }
+      .contact {
+        font-size: 0.8em;
+      }
+    }
+  }
+  .details {
+    &, ul {
+      list-style-type: none;
+    }
+
+    ul {
+      margin-left: 1em;
+    }
+  }
+}
