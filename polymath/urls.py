@@ -36,9 +36,9 @@ urlpatterns = patterns('',
     url(r'^theouterspaces/$', 'apps.video.views.outerspaces'),
 
     # Writing
-    url(r'^writing/$', 'apps.writing.views.index'),
-    url(r'^read/(?P<story_id>[\d]+)/$', 'apps.writing.views.story_detail'),
-    url(r'^zine/$', 'apps.writing.views.zine_index'),
+    # url(r'^writing/$', 'apps.writing.views.index'),
+    # url(r'^read/(?P<story_id>[\d]+)/$', 'apps.writing.views.story_detail'),
+    # url(r'^zine/$', 'apps.writing.views.zine_index'),
 
     # Special
     url(r'^special/lethe/$', TemplateView.as_view(template_name="special/lethe.html")),
