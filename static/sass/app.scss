@@ -193,6 +193,141 @@ $rl: 'release-list';
   }
 }
 
+/*
+  TEMPLES
+*/
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@include keyframes(fadeIn) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.temples-promo {
+  background: url('/static/img/promos/temples-bg.jpg') center top no-repeat;
+  background-size: 100% auto;
+  text-align: center;
+
+  // Aspect ratio trick
+  position: relative;
+  width: 100%;
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 69%;
+  }
+  .row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  @media screen and (max-aspect-ratio: 1/1) {
+    background-size: 100% auto;
+
+    &::before {
+      display: none;
+    }
+    .row {
+      position: static;
+    }
+  }
+
+  p, h1, .button {
+    font-family: 'HelveticaNeue-CondensedBold', Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 0 4px 30px rgba(#000, 0.8);
+  }
+  p {
+    @include experimental('animation', fadeIn 2s ease-in);
+    @include rms(4);
+    padding-top: 2em;
+  }
+  h1 {
+    @include experimental('animation', fadeIn 2s 1s both ease-in);
+    @include rms(9);
+    margin-top: -0.5em;
+  }
+  .button {
+    @include experimental('animation', fadeIn 2s 2s both ease-in);
+    @include rms(5);
+    background: transparent;
+    border: 4px solid white;
+    border-radius: 20px;
+    color: white;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 1em;
+
+    &:hover {
+      color: white;
+      background-color: transparent;
+      text-shadow: 0 0px 10px rgba(#000, 1);
+    }
+
+    &::before {
+      position: absolute;
+      top: 10px;
+      left: -10px;
+      content: '';
+      display: block;
+      border: 2px solid white;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+    &::after {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      content: '';
+      display: block;
+      border: 2px solid white;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+
+    &, &:hover, &::before, &::after {
+      @include transition-duration(0.5s);
+      @include transition-timing-function(ease-out);
+    }
+    &, &:hover {
+      @include transition-property(text-shadow);
+    }
+    &::before, &::after {
+      @include transition-property(top left);
+    }
+    &:hover::before, &:hover::after {
+      top: 0;
+      left: 0;
+      @include transition-property(top left);
+      @include transition-duration(0.5s);
+      @include transition-timing-function(ease-out);
+    }
+  }
+}
+
 // @import "foundation/components/visibility";
 // @import "foundation/components/buttons";
 // @import "foundation/components/forms"; // *requires components/buttons
