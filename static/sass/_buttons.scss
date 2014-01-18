@@ -108,13 +108,13 @@
 		vertical-align: middle;
 
 		&::before {
-			@include rms(9, 4);
+			@include rms(6, 4);
 			vertical-align: middle;
 			font-family: 'Entypo';
 			content: '\25B6';
 			position: relative;
 			line-height: 0;
-			margin-right: 0.1em;
+			margin-right: 0.25em;
 			top: -2px;
 		}
 
