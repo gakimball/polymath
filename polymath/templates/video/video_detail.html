@@ -32,12 +32,12 @@
 		<p class="get-the-track">Get the track</p>
 		<img src="{{ track.album.image.url }}" alt="Cover art for &quot;{{ track.title }}&quot; by {{ track.artist }}" class="cover">
 		<div class="info">
-			<p class="title">{{ track.title }}</p>
+			<p class="title">"{{ track.title }}"</p>
 			<p class="artist">{{ track.artist }}</p>
 			<p class="album">{{ track.album }}</p>
+			<a href="{% url 'apps.music.views.track_detail' track.id %}" data-player-track="{{ track.id }}" class="button no-ajaxy">Listen</a>
+			{% if track.download_link %}<a href="{{ track.download_link.url }}" class="secondary button">Download</a>{% endif %}
 		</div>
-		<a href="{% url 'apps.music.views.track_detail' track.id %}" data-player-track="{{ track.id }}" class="button no-ajaxy">Listen</a>
-		{% if track.download_link %}<a href="{{ track.download_link.url }}" class="secondary button">Download</a>{% endif %}
 	</div>
 </div></div>
 {% endwith %}

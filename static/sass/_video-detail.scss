@@ -34,7 +34,15 @@ $vd: 'video-detail';
   background: rgba(#fff, 0.70);
 
   .get-the-track, .cover, .info {
-    display: inline-block;
+    display: block;
+  }
+
+  .get-the-track {
+    @include rms(1);
+    text-transform: uppercase;
+    color: $video-color;
+    font-weight: 700;
+    margin-bottom: 0.25em;
   }
 
   .info {
@@ -44,14 +52,42 @@ $vd: 'video-detail';
     p {
       color: #000;
       margin: 0;
+      line-height: $fourth;
     }
   }
     .cover {
-      width: 75px;
-      height: 75px;
+      @include thumbnail-box-shadow;
+      width: 120px;
+      height: 120px;
       margin-right: 1em;
+      margin-bottom: 0.25em;
+      padding: 0.25em;
+    }
+    .title {
+      @include rms(2);
+    }
+    .artist {
+      @include rms(1);
     }
     .album {
+      @include rms(1);
       font-size: 1em;
+      font-style: italic;
     }
+    .button {
+      margin-top: 0.5em;
+    }
+
+
+  @media screen and (min-width: em-calc(550px)) {
+    .cover {
+      float: left;
+      width: 160px;
+      height: 160px;
+    }
+    .info {
+      margin-left: 1em;
+      float: left;
+    }
+  }
 }
