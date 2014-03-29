@@ -4,12 +4,9 @@ Polymath is run on Django, deployed to Heroku, and backed by AWS.
 
 To run it locally, you need:
 - Python 2.7.2
+- Some gems
 - Foreman
 - A database, preferably Postgres
-- These gems:
-  - sass
-  - compass
-  - zurb-foundation
 
 ### This is how we do
 
@@ -26,6 +23,7 @@ Isolate it.
 Dependency it.
 
     $ pip install
+    $ bundle install
 
 Database it. (I haven't properly configured South to migrate apps in the needed order yet)
 

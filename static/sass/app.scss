@@ -1,6 +1,8 @@
+// Basics
 @import "settings";
 @import "normalize";
 
+// Foundation
 @import "foundation/components/global";
 @import "foundation/components/grid";
 @import "foundation/components/block-grid";
@@ -8,40 +10,45 @@
 @import "foundation/components/flex-video";
 @import "foundation/components/panels";
 
+// Plugins
 @import "compass/css3";
-
 @import "responsive-modular-scale";
 
+// Core elements
+@import "mixins";
 @import "fonts";
 @import "colors";
 @import "links";
-@import "mixins";
+@import "typography";
 
+// Page template
 @import "header";
 @import "footer";
 @import "sidebar";
-
 @import "audio-player";
 
-@import "typography";
+// UI components
 @import "buttons";
 @import "play-button";
 
+// Music UI
 @import "media-list";
 @import "tracklist";
 @import "credits-list";
 @import "album-view";
 
+// Page-specific
+/// General
 @import "homepage";
 @import "about";
-
+/// Music
 @import "track-detail";
 @import "release-detail";
 @import "artist";
-
+/// Video
 @import "video-detail";
 @import "outerspaces";
-
+/// Writing
 @import "writer-list";
 @import "story-detail";
 @import "zine-index";

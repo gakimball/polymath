@@ -52,10 +52,10 @@
           self.updateTimeUI();
         },
         'play': function() {
-          self.ui.bPlayPause.html('&#8214;');
+          self.ui.bPlayPause.html('&#xE601;').removeClass('loading');
         },
         'pause': function() {
-          self.ui.bPlayPause.html('&#9654;');
+          self.ui.bPlayPause.html('&#xE600;');
         }
       });
       this.$player.on({
@@ -110,6 +110,8 @@
     },
     loadTrack: function(index) {
       this.playlistIndex = index;
+
+      this.ui.bPlayPause.html('&#128340;').addClass('loading');
 
       var wasPlaying = !this.$audio[0].paused || !this.initialized;
       this.$audio.empty();

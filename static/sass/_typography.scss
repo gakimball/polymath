@@ -1,4 +1,4 @@
-@include set-scales(16px 100px, fourth(), 768px fifth());
+@include rms-set-scales(16px 100px, $fourth, 768px $fifth);
 
 h1 {
   @include rms(5);

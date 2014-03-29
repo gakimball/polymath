@@ -133,7 +133,7 @@ $title-size: $h3-font-size;
       border: 0;
     }
     .title {
-      @include rms(4);
+      @include rms(3);
     }
     .subtitle {
       @include rms(3);
